@@ -41,7 +41,8 @@
 $route['default_controller'] = "pages";
 $route['404_override'] = '';
 
-
+$route['migrate'] = "migrate";
+$route['auth/(:any)'] = "auth/$1";
 // Keep the following line at the bottom
 $route['(:any)'] = "pages/$1";
 
