@@ -53,16 +53,7 @@ class Auth extends CI_Controller {
 
 	function register($budget_token = null)
 	{
-		// AT point of registration, grab new user_id and check for budget_token session data, then match to a shared budget and save info
-		// DO THE SAME IF THE USER LOGS IN INSTEAD.
-		// NEED TO GENERATE A NEW TOKEN FOR EACH SHARE, NOT FOR EACH BUDGET, THEN DELETE TOKEN AFTER IT IS USED.
-		if($budget_token)
-		{
-			$this->session->set_userdata('budget_token', $budget_token);
-		}
-
-		//print_r($this->session->all_userdata());
-
+		
 		$this->data['title'] = "Register";
 
 		//validate form input
@@ -153,7 +144,10 @@ class Auth extends CI_Controller {
 
 			if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
 			{
-				//if the login is successful
+				// If the login is successful
+				// Set the user's first name in a session var
+				$user = $this->ion_auth->user()->row();
+				$this->session->set_userdata('user_firstname', $user->first_name);
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
 				redirect('/', 'refresh');

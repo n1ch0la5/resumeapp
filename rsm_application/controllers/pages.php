@@ -6,6 +6,12 @@ class Pages extends CI_Controller {
    {
         parent::__construct();
        	$this->load->library('ion_auth');
+
+       	$this->load->vars(
+            array(
+			'firstname' => $this->session->userdata('user_firstname') // Set on login in the /auth/login controller/method
+			)
+        );
    }
 
 	public function index()
