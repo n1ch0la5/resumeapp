@@ -15,7 +15,7 @@
 |
 */
 $sn = $_SERVER['SERVER_NAME'];
-if($sn == '*.dev'){$sn = 'resumeapp.dev';}
+if($sn == '*.dev'){$sn = 'erezzy.dev';}
 
 $config['base_url']	= 'http://' . $sn . '/';
 
