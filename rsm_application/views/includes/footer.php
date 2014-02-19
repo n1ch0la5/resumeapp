@@ -1,5 +1,5 @@
             <footer>
-				<p class="copyright">&copy; Copyright 2014 <a href="">eRezzy.com</a> All rights reserved.</p>
+				<p class="copyright">&copy; Copyright <?php echo date("Y") ?> <a href="">eRezzy.com</a> All rights reserved.</p>
 				<nav class="footer-nav">
 					<ul>
 						<li><a href="">About Us</a></li>
