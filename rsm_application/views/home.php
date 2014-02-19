@@ -1,4 +1,4 @@
-			<div class="site-content">
+
 				<main class="alpha" role="main">
 					<div class="feature-video">
 						<div class="content">
@@ -56,4 +56,3 @@
 						</div>
 					</div>
 				</main>
-			</div><!--End Site-Content-->

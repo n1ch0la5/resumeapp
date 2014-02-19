@@ -1,3 +1,4 @@
+			</div><!--End Site-Content-->
             <footer>
 				<p class="copyright">&copy; Copyright <?php echo date("Y") ?> <a href="">eRezzy.com</a> All rights reserved.</p>
 				<nav class="footer-nav">
