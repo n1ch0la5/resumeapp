@@ -22,11 +22,20 @@
 		<![endif]-->
 
 	</head>
-	<body>
+	<?php 
+	$page_slug = end(explode ("/", $_SERVER["REQUEST_URI"]));
+	if (strlen($page_slug) > 0) {
+		$page_class = $page_slug;
+	}
+	else {
+		$page_class = 'home';
+	}
+	?>
+	<body class="<?php echo $page_class; ?>">
 		<div class="wrapper">
 			<header>
 				<div class="logo">
-					<h1><a href="">eRezzy</a></h1>
+					<h1><a href="/">eRezzy</a></h1>
 				</div>
 				<p class="button-menu transform"><a href="#nav"><span></span></a></p>
 				<nav class="sign-in">

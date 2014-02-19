@@ -252,7 +252,7 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
        -moz-box-shadow: 0 0 5px rgba(0,0,0,0.6);
             box-shadow: 0 0 5px rgba(0,0,0,0.6);
   }
-  .site-content {padding:0 1em;}
+  .site-content {padding:1em; border-bottom:1px solid #ccc;}
 
   /* Offcanvas Menu */
   .wrapper,
@@ -284,6 +284,7 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
             box-shadow: 0 0 5px rgba(0,0,0,0.5);
   }
   header h1 {margin:0; float:left; background:url(/images/logo.png) top left no-repeat; background-size: 100%; width:150px; height:50px; text-indent:-999px;}
+  header h1 a {display:block; height:100%; width:100%;}
   .button-menu {float:right; margin:0;}
   .button-menu a {position:relative; display:block; width:45px; height:45px; padding:0.5em 0; text-indent:2.1875em; line-height:2.0625em; color:white;  background-color:#ddd;}
   .button-menu span { margin:0 auto; position:relative; top:12px;}
@@ -371,6 +372,7 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
         }
 
   /* Homepage */
+  .home .site-content {padding-top:0; padding-bottom:0; border-bottom:none;}
   .feature-video {background:url(/images/fpo.jpg) center top no-repeat; background-size:cover; padding:2em 1em; margin:0 -1em; text-align:center;}
   .feature-video .content {background:rgba(255,255,255,0.85); padding:0.75em 1.25em; display:inline-block; border-radius:5px;}
   .feature-video h2 {margin-top:0;}
