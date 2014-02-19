@@ -20,17 +20,6 @@
 		  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		  <script src="/javascripts/respond.js" type="text/javascript"></script>
 		<![endif]-->
-
-	<?php 
-	$page_slug = end(explode ("/", $_SERVER["REQUEST_URI"]));
-	if (strlen($page_slug) > 0) {
-		$page_class = $page_slug;
-	}
-	else {
-		$page_class = 'home';
-	}
-	?>
-
 	</head>
 	<body class="<?php echo $page_class; ?>">
 		<div class="wrapper">

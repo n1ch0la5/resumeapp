@@ -6,10 +6,13 @@ class Pages extends CI_Controller {
    {
         parent::__construct();
        	$this->load->library('ion_auth');
+       	$uri = end($this->uri->segments);
+       	if($uri == ''){$page_class = 'home';}else{$page_class = $uri;}
 
        	$this->load->vars(
             array(
-			'firstname' => $this->session->userdata('user_firstname') // Set on login in the /auth/login controller/method
+			'firstname' => $this->session->userdata('user_firstname'), // Set on login in the /auth/login controller/method
+			'page_class' => $page_class
 			)
         );
    }
