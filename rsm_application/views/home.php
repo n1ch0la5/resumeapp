@@ -4,13 +4,13 @@
 						<div class="content">
 							<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
 							<p>Pellenteque velit augue, elementum et interdum vel, molestie et ante.</p>
-							<a class="watch" href="#">Watch Our Video</a>
+							<a class="watch" href="#"><i class="fa fa-play-circle-o"></i> Watch Our Video</a>
 					    </div>
 					</div>
 					<div class="cta-bar is-sticky">
 						<p>Get started on your professional resume today.</p>
-						<a class="cta-bar green" href="">Create a Resume</a>
-						<a class="cta-bar white icon-arrow-right" href="">Sign Up</a>
+						<a class="green" href="">Create a Resume</a>
+						<a class="white icon-arrow-right" href="">Sign Up</a>
 					</div>
 					<div class="trust">
 					</div>

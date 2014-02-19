@@ -18,8 +18,12 @@
 		</div><!--End Wrapper-->
 		<nav class="offcanvas-menu">
 			<ul>
+				<?php if( $this->ion_auth->logged_in() ) : ?>
+				<li class="login"><a href="/auth/logout/">Logout</a></li>
+				<?php else : ?>
 				<li><a class="login" href="">Sign In</a></li>
 				<li><a class="login" href="">Sign Up</a></li>
+				<?php endif; ?>
 				<li><a href="">Examples</a></li>
 				<li><a href="">Resume Builder</a></li>
 				<li><a href="">Tips</a></li>
