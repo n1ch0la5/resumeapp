@@ -18,7 +18,8 @@
 
 		<!--[if lt IE 9]>
 		  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		  <script src="/javascripts/respond.js" type="text/javascript"></script>
+		  <script src="/js/respond.js" type="text/javascript"></script>
+		  <script src="/js/modernizr.js" type="text/javascript"></script>
 		<![endif]-->
 	</head>
 	<body class="<?php echo $page_class; ?>">
