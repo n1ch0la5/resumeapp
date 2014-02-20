@@ -4,7 +4,7 @@
 						<div class="content">
 							<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
 							<p>Pellenteque velit augue, elementum et interdum vel, molestie et ante.</p>
-							<a class="watch" href="#"><i class="fa fa-play-circle-o"></i> Watch Our Video</a>
+							<a class="watch" href="#" data-id="pTZ2Tp9yXyM"><i class="fa fa-play-circle-o"></i> Watch Our Video</a>
 					    </div>
 					</div>
 					<div class="cta-bar is-sticky">

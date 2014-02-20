@@ -215,10 +215,11 @@ $(document).ready(function(){
     $(".site-content").fitVids();
   });
 
-/*
+
 $('.watch').click(function(event) {
   event.preventDefault();
-  $('.feature-video').append('<div class="vid"><iframe width="560" height="315" src="//www.youtube.com/embed/pTZ2Tp9yXyM?autoplay=1" frameborder="0" allowfullscreen></iframe></div>');
-  $(".vid").fitVids();
+  var $src = $(this).attr("data-id");
+  $('.feature-video > .content').replaceWith('<iframe width="560" height="315" src="//www.youtube.com/embed/' + $src + '?autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>');
+  $('.feature-video').css('padding', '0').fitVids();
 });
-*/
+
