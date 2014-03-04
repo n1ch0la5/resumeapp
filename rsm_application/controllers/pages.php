@@ -29,6 +29,12 @@ class Pages extends CI_Controller {
 		$this->load->view('includes/template',$data);
 	}
 
+	public function examples()
+	{
+		$data['main_content'] = 'examples';
+		$this->load->view('includes/template',$data);
+	}
+
 }
 
 /* End of file pages.php */
