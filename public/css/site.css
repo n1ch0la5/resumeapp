@@ -149,7 +149,7 @@ img {max-width:100%; width:auto; height:auto; border:none; vertical-align:bottom
 .image-left a {display:block; text-decoration:none; border:none;}
 .image-left + h2 {margin-top:0;}
 .captioned img {margin-bottom:0.5em;}
-.resume-thumb { border: 1px solid #000;
+.resume-thumb { border: 1px solid #000; margin-bottom:1em;
   -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
      -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
           box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
