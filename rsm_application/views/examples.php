@@ -21,21 +21,21 @@
 	<div class="col col1">
 		<h3>Most Popular Resume Examples</h3>
 		<ul>
-			<li>Business Analyst</li>
-			<li>Teacher</li>
-			<li>Engineer</li>
-			<li>Software Developer</li>
-			<li>Web Developer</li>
+			<li><a href="">Business Analyst</a></li>
+			<li><a href="">Teacher</a></li>
+			<li><a href="">Engineer</a></li>
+			<li><a href="">Software Developer</a></li>
+			<li><a href="">Web Developer</a></li>
 		</ul>
 	</div>
 	<div class="col col2">
 		<h3>Most Popular Resume Templates</h3>
 		<ul>
-			<li>Executive Design</li>
-			<li>Contemporary Design</li>
-			<li>Modern Design</li>
-			<li>Creative Design</li>
-			<li>Tech Design</li>
+			<li><a href="">Executive Design</a></li>
+			<li><a href="">Contemporary Design</a></li>
+			<li><a href="">Modern Design</a></li>
+			<li><a href="">Creative Design</a></li>
+			<li><a href="">Tech Design</a></li>
 		</ul>
 	</div>
 </div>

@@ -408,6 +408,8 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
   .secondary .col {padding:1em; margin:0 -1em; color:#fff;}
   .secondary .col1 {background:#ec7964;}
   .secondary .col2 {background:#2e3f53;}
+  .secondary .col a {color:#fff;}
+  .secondary .col a:hover {color:#eee;}
   
   ul.arrow{padding:0 0.25em; list-style-type: none;}
   ul.arrow li {padding:0 1.65em;background:url(/images/arrow_white.png) no-repeat left center;}
