@@ -660,7 +660,7 @@ class Migration_erezzy extends CI_Migration {
 				'unsigned' => TRUE,
 				'auto_increment' => TRUE
 			),
-			'user_id' => array(
+			'resume_id' => array(
 				'type' => 'INT',
 				'constraint' => '11',
 				'unsigned' => TRUE
@@ -672,6 +672,35 @@ class Migration_erezzy extends CI_Migration {
 		));
 		$this->dbforge->add_key('id', TRUE);
 		$this->dbforge->create_table('res_user_custom_sections');
+
+		// Drop table 'res_resume_sections' if it exists		
+		$this->dbforge->drop_table('res_resume_sections');
+
+		// Table structure for table 'res_resume_sections'
+		$this->dbforge->add_field(array(
+			'id' => array(
+				'type' => 'INT',
+				'constraint' => '11',
+				'unsigned' => TRUE,
+				'auto_increment' => TRUE
+			),
+			'resume_id' => array(
+				'type' => 'INT',
+				'constraint' => '11',
+				'unsigned' => TRUE
+			),
+			'section_id' => array(
+				'type' => 'VARCHAR',
+				'constraint' => '250'
+			),
+			'order' => array(
+				'type' => 'INT',
+				'constraint' => '2',
+				'unsigned' => TRUE
+			)
+		));
+		$this->dbforge->add_key('id', TRUE);
+		$this->dbforge->create_table('res_resume_sections');
 
 		// Drop table 'res_templates' if it exists		
 		$this->dbforge->drop_table('res_templates');
@@ -692,6 +721,10 @@ class Migration_erezzy extends CI_Migration {
 				'type' => 'VARCHAR',
 				'constraint' => '250'
 			),
+			'thumb_path' => array(
+				'type' => 'VARCHAR',
+				'constraint' => '250'
+			),
 			'created_at' => array(
 				'type' => 'DATETIME'
 			),
@@ -701,6 +734,30 @@ class Migration_erezzy extends CI_Migration {
 		));
 		$this->dbforge->add_key('id', TRUE);
 		$this->dbforge->create_table('res_templates');
+
+		// Drop table 'res_resume_templates' if it exists		
+		$this->dbforge->drop_table('res_resume_templates');
+
+		// Table structure for table 'res_resume_templates'
+		$this->dbforge->add_field(array(
+			'id' => array(
+				'type' => 'INT',
+				'constraint' => '11',
+				'unsigned' => TRUE,
+				'auto_increment' => TRUE
+			),
+			'resume_id' => array(
+				'type' => 'INT',
+				'constraint' => '11',
+				'unsigned' => TRUE
+			),
+			'template_id' => array(
+				'type' => 'VARCHAR',
+				'constraint' => '250'
+			)
+		));
+		$this->dbforge->add_key('id', TRUE);
+		$this->dbforge->create_table('res_resume_templates');
 
 		//ION AUTH SPECIFIC TABLES
 
@@ -963,7 +1020,9 @@ class Migration_erezzy extends CI_Migration {
 		$this->dbforge->drop_table('resumes');
 		$this->dbforge->drop_table('res_sections');
 		$this->dbforge->drop_table('res_user_custom_sections');
+		$this->dbforge->drop_table('res_resume_sections');
 		$this->dbforge->drop_table('res_templates');
+		$this->dbforge->drop_table('res_resume_templates');
 		$this->dbforge->drop_table('auth_users');
 		$this->dbforge->drop_table('auth_groups');
 		$this->dbforge->drop_table('auth_users_groups');
