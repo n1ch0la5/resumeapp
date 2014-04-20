@@ -35,9 +35,9 @@ class Pages extends CI_Controller {
 		$this->load->view('includes/template',$data);
 	}
 
-	public function howitworks()
+	public function tips()
 	{
-		$data['main_content'] = 'how-it-works';
+		$data['main_content'] = 'tips';
 		$this->load->view('includes/template',$data);
 	}
 

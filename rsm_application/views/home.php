@@ -1,8 +1,8 @@
 				<main class="alpha" role="main">
 					<div class="feature-video">
 						<div class="content">
-							<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-							<p>Pellenteque velit augue, elementum et interdum vel, molestie et ante.</p>
+							<h2>It's Not You, It's Your Resume</h2>
+							<p>Make your resume stand out. Let erezzy help.</p>
 							<a class="watch" href="#" data-id="pTZ2Tp9yXyM"><i class="fa fa-play-circle-o"></i> Watch Our Video</a>
 					    </div>
 					</div>
@@ -14,43 +14,36 @@
 					<div class="trust">
 					</div>
 					<div class="primary three-col">
-						<h2>Build your professional resume in just a few minutes</h2>
+						<h2>erezzy’s free customizable resume templates allow you to tell the story of your career in an attractive, professional way.</h2>
 						<div class="col col1">
 							<div class="image"><img src="/images/file.png" alt="What is eRezzy?" /></div>
 							<h3>What is eRezzy?</h3>
-							<p>An online tool that helps you creat your resume quickly and professionally without the hassle and struggle of figuring out how to format everything.</p>
-							<p>With a good resume, you have the passport to a better job.</p>
+							<p>erezzy provides the free tools to build a customizable resume that helps job seekers take the next step in their career. With a better resume, you’re more likely to earn a better job.</p>
 						</div>
 						<div class="col col2">
 							<div class="image"><img src="/images/macbook.png" alt="How Does it Work?" /></div>
 							<h3>How Does it Work?</h3>
-							<p>Enter your occupation (and experience), it will suggest the best template. Select key phrases where resume writing experience is not required.</p>
-							<p>Easily save and export to PDF, or publish online</p>
+							<p>You tell us about your career. We suggest the best way to format it in a resume. Enter your work history, select from key phrases, and let erezzy handle the rest.</p>
 						</div>
 						<div class="col col3">
 							<div class="image"><img src="/images/browser.png" alt="Key Phrases" /></div>
 							<h3>Key Phrases</h3>
-							<p>Search and customize thousands of professional phrases. You pick from samples written by experts. No more writers block.</p>
-							<p>We include context-sensitive resume writing tips</p>
+							<p>Recruiters screen hundreds of resumes, looking for the words that will make candidates stand out. Erezzy lets you build those words into your resume at the start.</p>
 						</div>
 					</div>
 					<div class="secondary two-col">
 						<div class="col col1">
-							<h3>Heading</h3>
+							<h3>Resume Templates</h3>
 							<ul class="arrow">
-								<li>List item</li>
-								<li>List item</li>
-								<li>List item</li>
-								<li>List item</li>
+								<li>Take some of the hassle out of job hunting</li>
+								<li>Clearly tell your future employer about your work experience</li>
 							</ul>
 						</div>
 						<div class="col col2">
-							<h3>Heading</h3>
+							<h3>Erezzy Helps You</h3>
 							<ul class="arrow">
-								<li>List item</li>
-								<li>List item</li>
-								<li>List item</li>
-								<li>List item</li>
+								<li>Put your tailored resume in more hands, faster</li>
+								<li>Build a professional resume for free</li>
 							</ul>
 						</div>
 					</div>
