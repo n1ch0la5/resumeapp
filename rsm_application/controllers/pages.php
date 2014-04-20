@@ -40,6 +40,11 @@ class Pages extends CI_Controller {
 		$data['main_content'] = 'tips';
 		$this->load->view('includes/template',$data);
 	}
+	public function builder()
+	{
+		$data['main_content'] = 'builder';
+		$this->load->view('includes/template',$data);
+	}
 
 }
 
