@@ -11,7 +11,8 @@ class Pages extends CI_Controller {
 
        	$this->load->vars(
             array(
-			'firstname' => $this->session->userdata('user_firstname'), // Set on login in the /auth/login controller/method
+            // This is set on login in the /auth/login controller/method	
+			'firstname' => $this->session->userdata('user_firstname'),
 			'page_class' => $page_class
 			)
         );
