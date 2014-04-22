@@ -36,6 +36,7 @@
 	<!--[if lt IE 9]><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><![endif]-->
     <!--[if gte IE 9]><!--><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!--<![endif]-->
 
+    <script src="/js/backbone.js" type="text/javascript" async></script>
     <script src="/js/site.js" type="text/javascript" async></script>
 
 </html>
