@@ -1006,6 +1006,146 @@ class Migration_erezzy extends CI_Migration {
 		$this->dbforge->create_table('auth_login_attempts');
 	}
 
+	// Drop table 'user_account_types' if it exists		
+		$this->dbforge->drop_table('user_account_types');
+
+		// Table structure for table 'user_account_types'
+		$this->dbforge->add_field(array(
+			'id' => array(
+				'type' => 'MEDIUMINT',
+				'constraint' => '8',
+				'unsigned' => TRUE,
+				'auto_increment' => TRUE
+			),
+			'account_type' => array(
+				'type' => 'VARCHAR',
+				'constraint' => '25'
+			)
+		));
+		$this->dbforge->add_key('id', TRUE);
+		$this->dbforge->create_table('user_account_types');
+
+		// Dumping data for table 'user_account_types'
+		$data = array(
+			array(
+				'id' => '1',
+				'account_type' => 'free',
+			),
+			array(
+				'id' => '2',
+				'account_type' => 'standard',
+			),
+			array(
+				'id' => '3',
+				'account_type' => 'pro',
+			)
+		);
+		$this->db->insert_batch('user_account_types', $data);
+
+	// Drop table 'user_users_account_type' if it exists		
+		$this->dbforge->drop_table('user_users_account_type');
+
+		// Table structure for table 'user_users_account_type'
+		$this->dbforge->add_field(array(
+			'id' => array(
+				'type' => 'MEDIUMINT',
+				'constraint' => '8',
+				'unsigned' => TRUE,
+				'auto_increment' => TRUE
+			),
+			'user_id' => array(
+				'type' => 'MEDIUMINT',
+				'constraint' => '8',
+				'unsigned' => TRUE
+			),
+			'account_type_id' => array(
+				'type' => 'MEDIUMINT',
+				'constraint' => '8',
+				'unsigned' => TRUE
+			)
+		));
+		$this->dbforge->add_key('id', TRUE);
+		$this->dbforge->create_table('user_users_account_type');
+
+		// Dumping data for table 'user_users_account_type'
+		$data = array(
+			array(
+				'id' => '1',
+				'user_id' => '1',
+				'account_type_id' => '1',
+			)
+		);
+		$this->db->insert_batch('user_users_account_type', $data);
+
+	// Drop table 'user_account_type_options' if it exists		
+		$this->dbforge->drop_table('user_account_type_options');
+
+		// Table structure for table 'user_account_type_options'
+		$this->dbforge->add_field(array(
+			'id' => array(
+				'type' => 'MEDIUMINT',
+				'constraint' => '8',
+				'unsigned' => TRUE,
+				'auto_increment' => TRUE
+			),
+			'account_type_id' => array(
+				'type' => 'MEDIUMINT',
+				'constraint' => '8',
+				'unsigned' => TRUE
+			),
+			'option_name' => array(
+				'type' => 'VARCHAR',
+				'constraint' => '75'
+			)
+			'option_value' => array(
+				'type' => 'VARCHAR',
+				'constraint' => '50'
+			)
+		));
+		$this->dbforge->add_key('id', TRUE);
+		$this->dbforge->create_table('user_account_type_options');
+
+		// Dumping data for table 'user_account_type_options'
+		$data = array(
+			array(
+				'id' => '1',
+				'account_type_id' => '1',//free
+				'option_name' => 'resume_limit',
+				'option_value' => 1
+			),
+			array(
+				'id' => '2',
+				'account_type_id' => '1',//free
+				'option_name' => 'price',
+				'option_value' => 0
+			),
+			array(
+				'id' => '3',
+				'account_type_id' => '2',//standard
+				'option_name' => 'resume_limit',
+				'option_value' => 5
+			),
+			array(
+				'id' => '4',
+				'account_type_id' => '2',//standard
+				'option_name' => 'price',
+				'option_value' => 29
+			),
+			array(
+				'id' => '5',
+				'account_type_id' => '3',//premium
+				'option_name' => 'resume_limit',
+				'option_value' => 'unlimited'
+			),
+			array(
+				'id' => '6',
+				'account_type_id' => '3',//premium
+				'option_name' => 'price',
+				'option_value' => 49
+			)
+		);
+		$this->db->insert_batch('user_account_type_options', $data);
+
 	public function down()
 	{
 		$this->dbforge->drop_table('user_profiles');
@@ -1031,5 +1171,8 @@ class Migration_erezzy extends CI_Migration {
 		$this->dbforge->drop_table('groups');
 		$this->dbforge->drop_table('users_groups');
 		$this->dbforge->drop_table('login_attempts');
+		$this->dbforge->drop_table('user_account_types');
+		$this->dbforge->drop_table('user_users_account_type');
+		$this->dbforge->drop_table('user_account_type_options');
 	}
 }

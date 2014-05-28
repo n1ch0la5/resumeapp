@@ -22,4 +22,60 @@ class user_model extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	function add_resume_custom_section($section_name, $resume_id)
+	{
+		$data = array(
+			'resume_id' => $resume_id,
+			'section' => $section_name
+		);
+		$insert = $this->db->insert('res_user_custom_sections', $data);
+		return $insert;
+	}
+
+	function delete_resume_section()//for custom and app resume sections?
+	{
+
+	}
+
+	function get_all_resume_templates()
+	{
+		$this->db->select('*');
+		$this->db->from('res_templates');
+
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_resume_template_by_id($template_id)
+	{
+		$this->db->select('*');
+		$this->db->from('res_templates');
+		$this->db->where("id = $template_id");
+
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function create_new_template($template_data)
+	{
+		date_default_timezone_set('America/New_York');
+		$created = date('Y-m-d H:i:s');
+
+		$data = array(
+			'template_name' => $template_data['template_name'],
+			'file_path' => $template_data['file_path'],
+			'thumb_path' => $template_data['thumb_path'],
+			'created_at' => $created
+		);
+
+		$insert = $this->db->insert('res_user_custom_sections', $data);
+		return $insert;
+	}
+
+	function delete_resume_template($template_id)
+	{
+		$this->db->delete('res_templates', array('id' => $template_id));
+	}
+
 }
