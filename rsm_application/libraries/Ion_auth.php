@@ -125,9 +125,10 @@ class Ion_auth
 	 * @param	$var
 	 * @return	mixed
 	 */
-	public function __get($var)
+	public function __get($key)
 	{
-		return get_instance()->$var;
+		 $CI =& get_instance();
+    	return $CI->$key;
 	}
 
 

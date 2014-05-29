@@ -47,6 +47,16 @@ class Pages extends CI_Controller {
 		$this->load->view('includes/template',$data);
 	}
 
+	public function test()
+	{
+		//Testing the erezzy app library functions
+		$this->load->library('erezzy');
+		//print_r( $this->session->all_userdata() );
+		$account_type = $this->erezzy->get_account_type(1);
+		$account_price = $this->erezzy->get_account_price($account_type);
+		echo $account_type . ' = ' . $account_price;
+	}
+
 }
 
 /* End of file pages.php */
