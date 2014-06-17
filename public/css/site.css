@@ -419,6 +419,11 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
     .elevator p {text-align:left;}
     .elevator .btn {text-transform:uppercase; font-size:1.25em; padding:0.75em;}
 
+  /* Resume Builder Page */
+  .resume-preview {border:1px solid #000; padding:1em;
+    -webkit-box-shadow:0 0 5px rgba(0,0,0,0.3);
+  }
+
   /* Footer */
   footer {color:#666; font-size:0.9em; text-align:center; background-color:#fff;}
   footer nav a:hover {text-decoration:underline;}

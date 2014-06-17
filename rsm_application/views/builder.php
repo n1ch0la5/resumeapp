@@ -1,11 +1,12 @@
 <h1>Resume Builder</h1>
 <div class="col col1">
 	<form>
+		<h4>Contact Information</h4>
 		<input id ="first_name" name="first_name" type="text" placeholder="First Name" />
 		<input id="last_name" name="last_name" type="text" placeholder="Last Name" />
 		<input id="phone_number" name="phone_number" type="text" placeholder="Phone Number"/>
 		<input id="email" name="email" type="text" placeholder="Email Address" />
-		<hr />
+		<h4>Address</h4>
 		<input id="street_address" name="street_address" type="text" placeholder="Street Address" />
 		<input id="city" name="city" type="text" placeholder="City" />
 		<select id="state" name="state">
@@ -62,9 +63,9 @@
 			<option value="WY">Wyoming</option>
 		</select>
 		<input id="zip" name="zip" type="text" placeholder="Zip Code" />
-		<hr />
+		<h4>Personal Statement</h4>
 		<textarea id="statement" name="statement"></textarea>
-		<hr />
+		<h4>Education</h4>
 		<input id="school_name" name="school_name" type="text" placeholder="School Name" />
 		<input id="school_location" name="school_location" type="text" placeholder="School Location" />
 		<select id="degree" name="degree">
@@ -85,7 +86,7 @@
 			<option value="">J.D.</option>
 		</select>
 		<input id="concentration" name="concentration" type="text" placeholder="Area of Study or Specialty" />
-		<hr />
+		<h4>Work Experience</h4>
 		<input id="company_name" name="company_name" type="text" placeholder="Company Name" />
 		<input id="title" name="title" type="text" placeholder="Title" />
 		<input id="current" name="current" value="yes" type="radio" /> This is my current position
@@ -95,5 +96,5 @@
 		<input type="submit" value="save">
 	</form>
 </div>
-<div class="col col2">
+<div class="col col2 resume-preview">
 </div>
