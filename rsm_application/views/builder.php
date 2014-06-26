@@ -1,11 +1,11 @@
 <h1>Resume Builder</h1>
 <div class="col col1">
-	<form>
+	<form method="post" action="javascript:void(0)">
 		<h4>Contact Information</h4>
 		<input id ="first_name" name="first_name" type="text" placeholder="First Name" />
 		<input id="last_name" name="last_name" type="text" placeholder="Last Name" />
-		<input id="phone_number" name="phone_number" type="text" placeholder="Phone Number"/>
-		<input id="email" name="email" type="text" placeholder="Email Address" />
+		<input id="phone_number" name="phone_number" type="tel" placeholder="Phone Number" required />
+		<input id="email" name="email" type="email" placeholder="Email Address" required />
 		<h4>Address</h4>
 		<input id="street_address" name="street_address" type="text" placeholder="Street Address" />
 		<input id="city" name="city" type="text" placeholder="City" />
@@ -97,4 +97,7 @@
 	</form>
 </div>
 <div class="col col2 resume-preview">
+	<h2><span class="first-name">First</span>&nbsp;<span class="last-name">Last</span></h2>
+	<p class="phone">000-000-0000</p>
+	<p class="email">example@erezzy.com</p>
 </div>
