@@ -89,7 +89,7 @@
 		<h4>Work Experience</h4>
 		<input id="company_name" name="company_name" type="text" placeholder="Company Name" />
 		<input id="title" name="title" type="text" placeholder="Title" />
-		<input id="current" name="current" value="yes" type="radio" /> This is my current position
+		<input id="current" name="current" type="checkbox" /> This is my current position
 		<input id="start_date" name="start_date" type="text" placeholder="Start Date" />
 		<input id="end_date" name="end_date" type="text" placeholder="End Date" />
 		<textarea id="position_description" name="position_description"></textarea>
