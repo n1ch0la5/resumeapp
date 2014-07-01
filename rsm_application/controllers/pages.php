@@ -11,7 +11,7 @@ class Pages extends CI_Controller {
 
        	$this->load->vars(
             array(
-            // This is set on login in the /auth/login controller/method	
+            // This session data is set on login in the /auth/login controller/method	
 			'firstname' => $this->session->userdata('user_firstname'),
 			'page_class' => $page_class
 			)
@@ -50,11 +50,14 @@ class Pages extends CI_Controller {
 	public function test()
 	{
 		//Testing the erezzy app library functions
-		$this->load->library('erezzy');
+		/*$this->load->library('erezzy');
 		//print_r( $this->session->all_userdata() );
 		$account_type = $this->erezzy->get_account_type(1);
 		$account_price = $this->erezzy->get_account_price($account_type);
-		echo $account_type . ' = ' . $account_price;
+		echo $account_type . ' = ' . $account_price;*/
+		$this->load->model('resume_model');
+
+		print_r($this->resume_model->get_resume_sections(1));
 	}
 
 }
