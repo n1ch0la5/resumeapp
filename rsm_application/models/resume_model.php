@@ -11,7 +11,16 @@ class resume_model extends CI_Model{
 		return $query->result_array();
 	}
 
-	function get_resume_sections($resume_id)
+	function get_resume_data_by_resume_id($resume_id)
+	{
+		// return array('result' => 'Success!');
+		// resume_template, sections (in the proper order), resume contact info, 
+		// resume companies and company duties, res schools, 
+		// that's it for now. need a db spot for objective, references, objective, career summary, cover letter.
+		$this->db->select('tpl.file_path, sec.section, rescon.*, usrcmp.company, usrcmp');
+	}
+
+	/*function get_resume_sections($resume_id)
 	{
 		// This needs more work. Res_resume_sections needs to join custom sections and default sections some how. (look at budgeter app)
 		//$this->db->select('rsec.section, usec.section, res_sec.order as def_order, usec.order as cus_order');
@@ -24,12 +33,50 @@ class resume_model extends CI_Model{
 		$this->db->order_by('res_sec.order', 'asc');
 		$query = $this->db->get();
 		return $query->result_array();
+	}*/
+
+	function get_resume_sections($resume_id)
+	{
+		$this->db->select('section');
+		$this->db->from('res_sections, res_resume_sections');
+		$this->db->where("res_resume_sections.resume_id = $resume_id");
+		$this->db->where("res_sections.id = res_resume_sections.section_id");
+		$this->db->order_by("res_resume_sections.order", "asc");
+
+		$query = $this->db->get();
+		return $query->result_array();
 	}
 
-	function get_resume_data_by_id($resume_id)
+	function get_resume_companies($resume_id)
 	{
+		$this->db->select('*');
+		$this->db->from('user_companies, res_resume_user_companies');
+		// Need to add res_resume_user_companies table
+		$this->db->where("res_resume_user_companies.resume_id = $resume_id");
+		$this->db->where("user_comanies.id = es_resume_user_companies.company_id");
 
-		//return array('result' => 'Success!');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
+	function get_resume_company_duties($resume_id)
+	{
+		$this->db->select();
+		$this->db->from();
+		$this->db->where();
+
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
+	function get_resume_schools($resume_id)
+	{
+		$this->db->select();
+		$this->db->from();
+		$this->db->where();
+
+		$query = $this->db->get();
+		return $query->result_array();
 	}
 
 	function add_resume_custom_section($section_name, $resume_id)

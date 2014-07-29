@@ -20,7 +20,7 @@ class Resumes extends REST_Controller {
 	public function index_get()
 	{
 		// Get resume
-		if( !$this->get('user_id') && !$this->get('id') )
+		if( !$this->get('user_id') && !$this->get('resume_id') )
         {
         	$this->response(NULL, 400);
         }
@@ -31,7 +31,7 @@ class Resumes extends REST_Controller {
         }
         else
         {
-        	$resume = $this->resume_model->get_resume_data_by_id( $this->get('id') );
+        	$resume = $this->resume_model->get_resume_data_by_resume_id( $this->get('resume_id') );
         }
 
         if($resume)

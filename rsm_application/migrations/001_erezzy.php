@@ -1345,8 +1345,43 @@ class Migration_erezzy extends CI_Migration {
 		);
 		
 		$this->db->insert_batch('res_resume_user_schools', $data);
-	}
 
+	// Drop table 'res_resume_user_schools' if it exists		
+		$this->dbforge->drop_table('res_resume_user_companies');
+
+		// Table structure for table 'res_resume_user_companies'
+		$this->dbforge->add_field(array(
+			'id' => array(
+				'type' => 'INT',
+				'constraint' => '11',
+				'unsigned' => TRUE,
+				'auto_increment' => TRUE
+			),
+			'resume_id' => array(
+				'type' => 'INT',
+				'constraint' => '11',
+				'unsigned' => TRUE
+			),
+			'company_id' => array(
+				'type' => 'INT',
+				'constraint' => '11',
+				'unsigned' => TRUE
+			)
+		));
+		$this->dbforge->add_key('id', TRUE);
+		$this->dbforge->create_table('res_resume_user_companies');
+
+		// Dumping data for table 'res_resume_user_companies'
+		$data = array(
+			array(
+				'id' => '1',
+				'resume_id' => '1',
+				'company_id' => '1'
+			)
+		);
+		
+		$this->db->insert_batch('res_resume_user_companies', $data);
+	}
 	public function down()
 	{
 		$this->dbforge->drop_table('user_profiles');
@@ -1378,5 +1413,6 @@ class Migration_erezzy extends CI_Migration {
 		$this->dbforge->drop_table('user_user_contact');
 		$this->dbforge->drop_table('res_resume_user_skills');
 		$this->dbforge->drop_table('res_resume_user_schools');
+		$this->dbforge->drop_table('res_resume_user_companies');
 	}
 }
