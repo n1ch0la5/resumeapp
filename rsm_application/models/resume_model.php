@@ -17,23 +17,46 @@ class resume_model extends CI_Model{
 		// resume_template, sections (in the proper order), resume contact info, 
 		// resume companies and company duties, res schools, 
 		// that's it for now. need a db spot for objective, references, objective, career summary, cover letter.
-		$this->db->select('tpl.file_path, sec.section, rescon.*, usrcmp.company, usrcmp');
+		//$this->db->select('tpl.file_path, sec.section, rescon.*, usrcmp.company, usrcmp');
+		$sections = $this->get_resume_sections($resume_id);
+		
+		foreach($sections as $sect){
+			if($sect == 'experience' || $sect == 'education')
+			{
+				if($sect == 'experience'){$section = 'companies';}elseif($sect == 'education'){$section = 'schools';}
+				${$section} = $this->get_resume_section_data($section, $resume_id);
+			}
+		}
+		//$companies = $this->get_resume_section_data('companies', $resume_id);
+		//$schools = $this->get_resume_section_data('schools', $resume_id);
+		//print_r($sections);
+		foreach($companies as $company)
+		{
+			$companies_arr['companies'] = $companies; 
+		}
+		foreach($schools as $school)
+		{
+			$schools_arr['schools'] = $schools; 
+		}
+		return array_merge($companies_arr, $schools_arr);
 	}
 
-	/*function get_resume_sections($resume_id)
+	function get_resume_section_data($section, $resume_id)
 	{
-		// This needs more work. Res_resume_sections needs to join custom sections and default sections some how. (look at budgeter app)
-		//$this->db->select('rsec.section, usec.section, res_sec.order as def_order, usec.order as cus_order');
-		$this->db->select('rsec.section');
-		$this->db->from('res_sections rsec, res_resume_sections res_sec');
-		//$this->db->join('res_resume_sections res_sec', 'res_sec.section_id = rsec.id');
-		//$this->db->join('res_user_custom_sections usec', 'usec.resume_id = rsec.resume_id');
-		$this->db->where("res_sec.section_id = rsec.id");
-		$this->db->where("res_sec.resume_id = $resume_id");
-		$this->db->order_by('res_sec.order', 'asc');
+		if($section == 'companies'){
+			$singular = 'company';
+		}elseif($section == 'schools'){
+			$singular = 'school';
+		}
+		$this->db->select('user_'.$section.'.*');
+		$this->db->from('user_'.$section.', res_resume_user_'.$section);
+		// Need to add res_resume_user_companies table
+		$this->db->where("res_resume_user_".$section.".resume_id = $resume_id");
+		$this->db->where("user_".$section.".id = res_resume_user_".$section.".".$singular."_id");
+
 		$query = $this->db->get();
 		return $query->result_array();
-	}*/
+	}
 
 	function get_resume_sections($resume_id)
 	{
@@ -44,36 +67,19 @@ class resume_model extends CI_Model{
 		$this->db->order_by("res_resume_sections.order", "asc");
 
 		$query = $this->db->get();
-		return $query->result_array();
+		$sections = $query->result_array();
+		foreach($sections as $section)
+		{
+			$array[] = $section['section'];	
+		}
+		return $array;
 	}
 
-	function get_resume_companies($resume_id)
+	function get_resume_company_duties($company_id)
 	{
-		$this->db->select('*');
-		$this->db->from('user_companies, res_resume_user_companies');
-		// Need to add res_resume_user_companies table
-		$this->db->where("res_resume_user_companies.resume_id = $resume_id");
-		$this->db->where("user_comanies.id = es_resume_user_companies.company_id");
-
-		$query = $this->db->get();
-		return $query->result_array();
-	}
-
-	function get_resume_company_duties($resume_id)
-	{
-		$this->db->select();
-		$this->db->from();
-		$this->db->where();
-
-		$query = $this->db->get();
-		return $query->result_array();
-	}
-
-	function get_resume_schools($resume_id)
-	{
-		$this->db->select();
-		$this->db->from();
-		$this->db->where();
+		$this->db->select('duty');
+		$this->db->from('user_company_duties');
+		$this->db->where("company_id = $company_id");
 
 		$query = $this->db->get();
 		return $query->result_array();

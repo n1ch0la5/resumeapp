@@ -57,7 +57,7 @@ class Pages extends CI_Controller {
 		echo $account_type . ' = ' . $account_price;*/
 		$this->load->model('resume_model');
 
-		print_r($this->resume_model->get_resume_sections(1));
+		print_r($this->resume_model->get_resume_data_by_resume_id(1));
 	}
 
 }
