@@ -389,6 +389,24 @@ class Migration_erezzy extends CI_Migration {
 				'work_type' => 'Permanent Assignment',
 				'currently_employed' => '1',
 				'created_at' => date('Y-m-d H:i:s')
+			),
+			array(
+				'id' => '2',
+				'user_id' => '2',
+				'company' => 'G&H Publishing',
+				'address' => '127 Main St.',
+				'address_2' => '',
+				'city' => 'Midtown',
+				'state' => 'Virginia',
+				'postal_code' => '12345',
+				'title' => 'Mr. Publisher',
+				'start_date' => '1/25/2005',
+				'parent_company' => '',
+				'department' => 'Printing',
+				'division' => '',
+				'work_type' => 'Permanent Assignment',
+				'currently_employed' => '1',
+				'created_at' => date('Y-m-d H:i:s')
 			)
 		);
 		$this->db->insert_batch('user_companies', $data);
@@ -494,6 +512,15 @@ class Migration_erezzy extends CI_Migration {
 				'degree' => 'Bachelors',
 				'degree_type' => 'Business Administration',
 				'year_graduated' => '2009',
+				'created_at' => date('Y-m-d H:i:s')
+			),
+			array(
+				'id' => '2',
+				'user_id' => '2',
+				'school' => 'Yale University',
+				'degree' => 'Masters',
+				'degree_type' => 'Business Administration',
+				'year_graduated' => '2012',
 				'created_at' => date('Y-m-d H:i:s')
 			)
 		);
@@ -1341,6 +1368,11 @@ class Migration_erezzy extends CI_Migration {
 				'id' => '1',
 				'resume_id' => '1',
 				'school_id' => '1'
+			),
+			array(
+				'id' => '2',
+				'resume_id' => '1',
+				'school_id' => '2'
 			)
 		);
 		
@@ -1377,6 +1409,11 @@ class Migration_erezzy extends CI_Migration {
 				'id' => '1',
 				'resume_id' => '1',
 				'company_id' => '1'
+			),
+			array(
+				'id' => '2',
+				'resume_id' => '1',
+				'company_id' => '2'
 			)
 		);
 		

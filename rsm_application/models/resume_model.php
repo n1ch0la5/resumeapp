@@ -19,41 +19,52 @@ class resume_model extends CI_Model{
 		// that's it for now. need a db spot for objective, references, objective, career summary, cover letter.
 		//$this->db->select('tpl.file_path, sec.section, rescon.*, usrcmp.company, usrcmp');
 		$sections = $this->get_resume_sections($resume_id);
-		
+
 		foreach($sections as $sect){
-			if($sect == 'experience' || $sect == 'education')
+			if($sect == 'experience' || $sect == 'education' || $sect == 'skills')
 			{
-				if($sect == 'experience'){$section = 'companies';}elseif($sect == 'education'){$section = 'schools';}
-				${$section} = $this->get_resume_section_data($section, $resume_id);
+				if($sect == 'experience'){$section = 'companies';}elseif($sect == 'education'){$section = 'schools';}else{$section = $sect;}
+				$array[$section] = $this->get_resume_section_data($section, $resume_id);
+			}
+			if($sect == 'contact')
+			{
+				$sn = $this->get_resume_section_data($sect, $resume_id);
+				foreach($sn as $s)
+				{
+					$array[$sect] = $s;
+				}
 			}
 		}
 		//$companies = $this->get_resume_section_data('companies', $resume_id);
 		//$schools = $this->get_resume_section_data('schools', $resume_id);
-		//print_r($sections);
-		foreach($companies as $company)
-		{
-			$companies_arr['companies'] = $companies; 
-		}
-		foreach($schools as $school)
-		{
-			$schools_arr['schools'] = $schools; 
-		}
-		return array_merge($companies_arr, $schools_arr);
+		//print_r($array);
+		
+		return $array;
 	}
-
+	// For companies, schools, and skills?
 	function get_resume_section_data($section, $resume_id)
 	{
 		if($section == 'companies'){
 			$singular = 'company';
 		}elseif($section == 'schools'){
 			$singular = 'school';
+		}elseif($section == 'skills'){
+			$singular = 'skill';
 		}
-		$this->db->select('user_'.$section.'.*');
-		$this->db->from('user_'.$section.', res_resume_user_'.$section);
-		// Need to add res_resume_user_companies table
-		$this->db->where("res_resume_user_".$section.".resume_id = $resume_id");
-		$this->db->where("user_".$section.".id = res_resume_user_".$section.".".$singular."_id");
-
+		if($section == 'contact')
+		{
+			$this->db->select('*');
+			$this->db->from('res_user_contact');
+			$this->db->where("res_user_contact.resume_id = $resume_id");
+		}
+		else
+		{
+			$this->db->select('user_'.$section.'.*');
+			$this->db->from('user_'.$section.', res_resume_user_'.$section);
+			// Need to add res_resume_user_companies table
+			$this->db->where("res_resume_user_".$section.".resume_id = $resume_id");
+			$this->db->where("user_".$section.".id = res_resume_user_".$section.".".$singular."_id");
+		}
 		$query = $this->db->get();
 		return $query->result_array();
 	}
