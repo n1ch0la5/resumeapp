@@ -14,8 +14,8 @@ class resume_model extends CI_Model{
 	function get_resume_data_by_resume_id($resume_id)
 	{
 		// return array('result' => 'Success!');
-		// resume_template, sections (in the proper order), resume contact info, 
-		// resume companies and company duties, res schools, 
+		// resume_template, sections (in the proper order), resume contact info,
+		// resume companies and company duties, res schools,
 		// that's it for now. need a db spot for objective, references, objective, career summary, cover letter.
 		//$this->db->select('tpl.file_path, sec.section, rescon.*, usrcmp.company, usrcmp');
 		$sections = $this->get_resume_sections($resume_id);
@@ -24,7 +24,39 @@ class resume_model extends CI_Model{
 			if($sect == 'experience' || $sect == 'education' || $sect == 'skills')
 			{
 				if($sect == 'experience'){$section = 'companies';}elseif($sect == 'education'){$section = 'schools';}else{$section = $sect;}
-				$array[$section] = $this->get_resume_section_data($section, $resume_id);
+				if($sect == 'skills')
+				{
+					$sk = $this->get_resume_section_data($section, $resume_id);
+					$array[$sect] = array();
+					foreach($sk as $s){
+						array_push($array[$sect], $s['skill']);
+					}
+				}
+				elseif($section == 'companies')
+				{
+
+					$cp = $this->get_resume_section_data($section, $resume_id);
+					$i = 0;
+					foreach($cp as $c){
+
+						$array['companies'][] = $c;
+
+						$duties = $this->get_resume_company_duties( $c['id'] );
+
+						if(!empty($duties))
+						{
+							$array['companies'][$i]['duties'] = array();
+							foreach($duties as $duty){
+								array_push($array['companies'][$i]['duties'], $duty['duty']);
+							}
+						}
+						$i++;
+					}
+				}
+				else
+				{
+					$array[$section] = $this->get_resume_section_data($section, $resume_id);
+				}
 			}
 			if($sect == 'contact')
 			{
@@ -38,24 +70,38 @@ class resume_model extends CI_Model{
 		//$companies = $this->get_resume_section_data('companies', $resume_id);
 		//$schools = $this->get_resume_section_data('schools', $resume_id);
 		//print_r($array);
-		
+
 		return $array;
 	}
 	// For companies, schools, and skills?
-	function get_resume_section_data($section, $resume_id)
+	function get_resume_section_data( $section, $resume_id )
 	{
-		if($section == 'companies'){
-			$singular = 'company';
-		}elseif($section == 'schools'){
-			$singular = 'school';
-		}elseif($section == 'skills'){
-			$singular = 'skill';
+
+		switch($section){
+			case 'companies':
+				$singular = 'company';
+				break;
+			case 'schools':
+				$singular = 'school';
+				break;
+			case 'skills':
+				$singular = 'skill';
+				break;
+			default:
+				$singular = '';
 		}
 		if($section == 'contact')
 		{
 			$this->db->select('*');
 			$this->db->from('res_user_contact');
 			$this->db->where("res_user_contact.resume_id = $resume_id");
+		}
+		elseif($section == 'skills')
+		{
+			$this->db->select('skill');
+			$this->db->from('user_skills, res_resume_user_skills');
+			$this->db->where("res_resume_user_skills.resume_id = $resume_id");
+			$this->db->where("user_skills.id = res_resume_user_skills.skill_id");
 		}
 		else
 		{
@@ -65,6 +111,7 @@ class resume_model extends CI_Model{
 			$this->db->where("res_resume_user_".$section.".resume_id = $resume_id");
 			$this->db->where("user_".$section.".id = res_resume_user_".$section.".".$singular."_id");
 		}
+
 		$query = $this->db->get();
 		return $query->result_array();
 	}
@@ -81,7 +128,7 @@ class resume_model extends CI_Model{
 		$sections = $query->result_array();
 		foreach($sections as $section)
 		{
-			$array[] = $section['section'];	
+			$array[] = $section['section'];
 		}
 		return $array;
 	}
