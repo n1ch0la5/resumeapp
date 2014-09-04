@@ -280,3 +280,16 @@ $(function(){
   });
 });
 
+$(function(){
+  storedText = localStorage.getItem("Statement");
+  if (storedText) { 
+    $('.resume-preview').find('.statement').text(storedText); 
+    $('#statement').val(storedText);
+  };
+  $('#statement').keyup(function(){
+    text = $(this).val();
+    localStorage.setItem("Statement", text);
+    $('.resume-preview').find('.statement').text(text);
+  });
+});
+

@@ -100,4 +100,5 @@
 	<h2><span class="first-name">First</span>&nbsp;<span class="last-name">Last</span></h2>
 	<p class="phone">000-000-0000</p>
 	<p class="email">example@erezzy.com</p>
+	<div class="statement"></div>
 </div>
