@@ -38,14 +38,29 @@
 |
 */
 
-$route['default_controller'] = "pages";
-$route['404_override'] = '';
+function getUriSegments() {
+    return explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+}
+ 
+function getUriSegment($n) {
+    $segs = getUriSegments();
+    return count($segs)>0&&count($segs)>=($n-1)?$segs[$n]:'';
+}
 
-$route['migrate'] = "migrate";
-$route['auth/(:any)'] = "auth/$1";
-// Keep the following line at the bottom
-$route['(:any)'] = "pages/$1";
+if( getUriSegment(1) == 'rest' )
+{
+	$route['default_controller'] = "rest/".getUriSegment(2);
+}
+else
+{
+	$route['default_controller'] = "pages";
+	$route['404_override'] = '';
 
+	$route['migrate'] = "migrate";
+	$route['auth/(:any)'] = "auth/$1";
+	// Keep the following line at the bottom
+	$route['(:any)'] = "pages/$1";
+}
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
