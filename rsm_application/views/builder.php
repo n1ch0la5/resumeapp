@@ -1,6 +1,7 @@
 <h1>Resume Builder</h1>
-<div class="col col1">
+<div>
 	<form method="post" action="javascript:void(0)">
+	  <div class="contact-info">
 		<h4>Contact Information</h4>
 		<input id ="first_name" name="first_name" type="text" placeholder="First Name" />
 		<input id="last_name" name="last_name" type="text" placeholder="Last Name" />
@@ -63,42 +64,45 @@
 			<option value="WY">Wyoming</option>
 		</select>
 		<input id="zip" name="zip" type="text" placeholder="Zip Code" />
-		<h4>Personal Statement</h4>
-		<textarea id="statement" name="statement"></textarea>
+	  </div><!--/Contact Info-->
+	  <h4>Personal Statement</h4>
+	  <textarea id="statement" name="statement"></textarea>
+	  <div class="education">
 		<h4>Education</h4>
-		<input id="school_name" name="school_name" type="text" placeholder="School Name" />
-		<input id="school_location" name="school_location" type="text" placeholder="School Location" />
-		<select id="degree" name="degree">
+		<input id="school_name1" name="school_name1" type="text" placeholder="School Name" />
+		<input id="school_location1" name="school_location1" type="text" placeholder="School Location" />
+		<select id="degree1" name="degree1">
 			<option></option>
-			<option value="">GED</option>
-			<option value="">High School Diploma</option>
-			<option value="">A.A.</option>
-			<option value="">A.S.</option>
-			<option value="">B.A.</option>
-			<option value="">B.S.</option>
-			<option value="">M.A.</option>
-			<option value="">M.S.</option>
-			<option value="">Ph.D.</option>
-			<option value="">D.D.S.</option>
-			<option value="">D.M.D</option>
-			<option value="">M.D.</option>
-			<option value="">D.O.</option>
-			<option value="">J.D.</option>
+			<option value="GED">GED</option>
+			<option value="HS Diploma">High School Diploma</option>
+			<option value="AA">A.A.</option>
+			<option value="AS">A.S.</option>
+			<option value="BA">B.A.</option>
+			<option value="BS">B.S.</option>
+			<option value="MA">M.A.</option>
+			<option value="MS">M.S.</option>
+			<option value="PhD">Ph.D.</option>
+			<option value="DDS">D.D.S.</option>
+			<option value="DMD">D.M.D</option>
+			<option value="MD">M.D.</option>
+			<option value="DO">D.O.</option>
+			<option value="JD">J.D.</option>
 		</select>
-		<input id="concentration" name="concentration" type="text" placeholder="Area of Study or Specialty" />
+		<input id="concentration" name="concentration" type="text" placeholder="Area of Study" />
+		<div class="add-ed">Add Education</div>
+	  </div><!--/Education-->
+	  <div class="work-experienc">
 		<h4>Work Experience</h4>
-		<input id="company_name" name="company_name" type="text" placeholder="Company Name" />
-		<input id="title" name="title" type="text" placeholder="Title" />
-		<input id="current" name="current" type="checkbox" /> This is my current position
-		<input id="start_date" name="start_date" type="text" placeholder="Start Date" />
-		<input id="end_date" name="end_date" type="text" placeholder="End Date" />
-		<textarea id="position_description" name="position_description"></textarea>
-		<input type="submit" value="save">
+		<input id="company_name1" name="company_name1" type="text" placeholder="Company Name" />
+		<input id="title1" name="title1" type="text" placeholder="Title" />
+		<input id="current1" name="current1" type="checkbox" /> This is my current position
+		<input id="start_date1" name="start_date1" type="text" placeholder="Start Date" />
+		<input id="end_date1" name="end_date1" type="text" placeholder="End Date" />
+		<textarea id="position_description1" name="position_description1"></textarea>
+		<div class="add-work">Add Work Experience</div>
+	  </div><!--/Work Experience-->
+	  <input type="submit" value="save">
 	</form>
 </div>
-<div class="col col2 resume-preview">
-	<h2><span class="first-name">First</span>&nbsp;<span class="last-name">Last</span></h2>
-	<p class="phone">000-000-0000</p>
-	<p class="email">example@erezzy.com</p>
-	<div class="statement"></div>
-</div>
+
+

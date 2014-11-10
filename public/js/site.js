@@ -223,73 +223,36 @@ $('.watch').click(function(event) {
   $('.feature-video').css('padding', '0').fitVids();
 });
 
-/**************
-*
-* Live Editor
-*
-**************/
-$(function(){
-  storedText = localStorage.getItem("First Name");
-  if (storedText) { 
-    $('.resume-preview').find('.first-name').text(storedText); 
-    $('#first_name').val(storedText);
-  };
-  $('#first_name').keyup(function(){
-    text = $(this).val();
-    localStorage.setItem("First Name", text);
-    $('.resume-preview').find('.first-name').text(text);
-  });
-});
 
-$(function(){
-  storedText = localStorage.getItem("Last Name");
-  if (storedText) { 
-    $('.resume-preview').find('.last-name').text(storedText); 
-    $('#last_name').val(storedText);
-  };
-  $('#last_name').keyup(function(){
-    text = $(this).val();
-    localStorage.setItem("Last Name", text);
-    $('.resume-preview').find('.last-name').text(text);
-  });
-});
+education = 0;
+function newEd(){
+  education = education + 1
+  $container = $(this).parent()
+  $containerClass = $container.attr('class');
+  $block = $container.html();
+  $container.after('<div class="' + $containerClass + '">' + $block + '</div>');
+  $(this).remove();
+  if (education < 3) {
+    $('.add-ed').click(newEd);
+  } else {
+    $('.add-ed').remove();
+  }
+};
+experience = 0;
+function newWork(){
+  experience = experience + 1
+  $container = $(this).parent()
+  $containerClass = $container.attr('class');
+  $block = $container.html();
+  $container.after('<div class="' + $containerClass + '">' + $block + '</div>');
+  $(this).remove();
+  if (experience < 3) {
+    $('.add-work').click(newWork);
+  } else {
+    $('.add-work').remove();
+  }
+};
+$('.add-ed').click(newEd);
+$('.add-work').click(newWork);
 
-$(function(){
-  storedText = localStorage.getItem("Phone");
-  if (storedText) { 
-    $('.resume-preview').find('.phone').text(storedText); 
-    $('#phone_number').val(storedText);
-  };
-  $('#phone_number').keyup(function(){
-    text = $(this).val();
-    localStorage.setItem("Phone", text);
-    $('.resume-preview').find('.phone').text(text);
-  });
-});
-
-$(function(){
-  storedText = localStorage.getItem("Email");
-  if (storedText) { 
-    $('.resume-preview').find('.email').text(storedText); 
-    $('#email').val(storedText);
-  };
-  $('#email').keyup(function(){
-    text = $(this).val();
-    localStorage.setItem("Email", text);
-    $('.resume-preview').find('.email').text(text);
-  });
-});
-
-$(function(){
-  storedText = localStorage.getItem("Statement");
-  if (storedText) { 
-    $('.resume-preview').find('.statement').text(storedText); 
-    $('#statement').val(storedText);
-  };
-  $('#statement').keyup(function(){
-    text = $(this).val();
-    localStorage.setItem("Statement", text);
-    $('.resume-preview').find('.statement').text(text);
-  });
-});
 
