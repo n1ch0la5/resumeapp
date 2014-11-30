@@ -43,10 +43,8 @@ class Pages extends CI_Controller {
 	}
 	public function builder()
 	{
-		$this->load->helper('dompdf');
 		$data['main_content'] = 'builder';
-		$html = $this->load->view('includes/template', $data, true);
-		pdf_create($html, 'filename');
+		$this->load->view('includes/template',$data);
 	}
 	public function pdfview()
 	{ 
