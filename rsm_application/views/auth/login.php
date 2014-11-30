@@ -1,6 +1,8 @@
 <h1><?php echo lang('login_heading');?></h1>
 <p><?php echo lang('login_subheading');?></p>
 
+<p><?php echo anchor('user/login', 'Sign in with Linkedin'); ?></p>
+
 <div id="infoMessage"><?php echo $message;?></div>
 
 <?php echo form_open("auth/login");?>
