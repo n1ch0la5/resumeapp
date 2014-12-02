@@ -224,11 +224,5 @@ $('.watch').click(function(event) {
 });
 
 
-$('.add_ed').click(function(){
-  education = $('.education')
-  number = education.length;
-  html = education.html().replace('-1', '-' + number + 1);
-  $('.education:last').after(html);
-  console.log(number)
-});
+
 
