@@ -224,35 +224,11 @@ $('.watch').click(function(event) {
 });
 
 
-education = 0;
-function newEd(){
-  education = education + 1
-  $container = $(this).parent()
-  $containerClass = $container.attr('class');
-  $block = $container.html();
-  $container.after('<div class="' + $containerClass + '">' + $block + '</div>');
-  $(this).remove();
-  if (education < 3) {
-    $('.add-ed').click(newEd);
-  } else {
-    $('.add-ed').remove();
-  }
-};
-experience = 0;
-function newWork(){
-  experience = experience + 1
-  $container = $(this).parent()
-  $containerClass = $container.attr('class');
-  $block = $container.html();
-  $container.after('<div class="' + $containerClass + '">' + $block + '</div>');
-  $(this).remove();
-  if (experience < 3) {
-    $('.add-work').click(newWork);
-  } else {
-    $('.add-work').remove();
-  }
-};
-$('.add-ed').click(newEd);
-$('.add-work').click(newWork);
-
+$('.add_ed').click(function(){
+  education = $('.education')
+  number = education.length;
+  html = education.html().replace('-1', '-' + number + 1);
+  $('.education:last').after(html);
+  console.log(number)
+});
 
