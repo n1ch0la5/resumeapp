@@ -1,6 +1,6 @@
 <h1>Resume Builder</h1>
 <div>
-<form class="form-horizontal">
+<form class="form-horizontal" action="/pdf" method="POST">
 <!-- Personal Info -->
 <div class="group">
 	<h3>Personal Information</h2>
@@ -145,9 +145,9 @@
 
 	<!-- Text input-->
 	<div class="control-group">
-	  <label class="control-label" for="school_location">School Location</label>
+	  <label class="control-label" for="school_year">Graduation Year</label>
 	  <div class="controls">
-	    <input id="school_location" name="school_location" type="text" placeholder="New Haven, CT" class="input-large">
+	    <input id="school_year" name="school_year" type="text" placeholder="2007" class="input-large">
 	    
 	  </div>
 	</div>
@@ -233,7 +233,7 @@
 	  </div>
 	</div>
 </div>
-
+<input type="submit" value="submit">
 </form>
 
 </div>
