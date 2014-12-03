@@ -3,7 +3,7 @@
 						<div class="content">
 							<h2>It's Not You, It's Your Resume</h2>
 							<p>Make your resume stand out. Let erezzy help.</p>
-							<a class="watch" href="#" data-id="sVFHEFPaE_M"><i class="fa fa-play-circle-o"></i> Watch Our Video</a>
+							<a class="watch" href="#" data-id="sVFHEFPaE_Mj"><i class="fa fa-play-circle-o"></i> Watch Our Video</a>
 					    </div>
 					</div>
 					<div class="cta-bar is-sticky">
