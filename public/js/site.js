@@ -223,6 +223,36 @@ $('.watch').click(function(event) {
   $('.feature-video').css('padding', '0').fitVids();
 });
 
+/*!
+ * Equal Heights
+ * Updated 2014-03-19
+ * Usage: $(object).equalHeights([minHeight], [maxHeight]);
+ *
+ * Example 1: $(".cols").equalHeights(); Sets all columns to the same height.
+ * Example 2: $(".cols").equalHeights(400); Sets all cols to at least 400px tall.
+ * Example 3: $(".cols").equalHeights(100,300); Cols are at least 100 but no more
+ * than 300 pixels tall. Elements with too much content will gain a scrollbar.
+ */
+(function($) {
+  $.fn.equalHeights = function(minHeight, maxHeight) {
+    tallest = (minHeight) ? minHeight : 0;
+    this.css({'height':'auto'});
 
+    if (matchMedia('only screen and (min-width:50em)').matches) {
+      this.each(function() {
+        if($(this).height() > tallest) {
+          tallest = $(this).height();
+        }
+      });
+      if((maxHeight) && tallest > maxHeight) tallest = maxHeight;
+      return this.each(function() {
+        $(this).height(tallest).css("overflow","visible");
+      });
+    }
+  }
+})(jQuery);
+$(window).on('load resize', function(){
+  $(".secondary").find('.col').equalHeights();
+});
 
 
