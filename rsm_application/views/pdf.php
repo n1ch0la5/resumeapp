@@ -9,17 +9,17 @@
 
 <body>
 
-    <h1><?php echo $_POST["first_name"]; ?> <?php echo $_POST["last_name"]; ?></h1>
-    <p><?php echo $_POST["phone"]; ?> <?php echo $_POST["email"]; ?></p>
-    <p><?php echo $_POST["statement"]; ?></p>
+    <h1><?php if ($_POST["first_name"]) {echo $_POST["first_name"];} ?> <?php if ($_POST["last_name"]) { echo $_POST["last_name"]; } ?></h1>
+    <p><?php if ($_POST["phone"]) { echo $_POST["phone"]; } ?> <?php echo $_POST["email"]; ?></p>
+    <p><?php if ($_POST["statement"]) { echo $_POST["statement"]; } ?></p>
 
     <h2>Experience</h2>
-    <p><?php echo $_POST["title"]; ?>, <?php echo $_POST["employer"]; ?></p>
-    <p><?php echo $_POST["employer_location"]; ?></p>
+    <p><?php if ($_POST["title"]) { echo $_POST["title"]; } ?>, <?php if ($_POST["employer"]) { echo $_POST["employer"]; } ?></p>
+    <p><?php if ($_POST["employer_location"]) { echo $_POST["employer_location"]; } ?></p>
 
     <h2>Education</h2>
-    <p><?php echo $_POST["school"]; ?>, <?php echo $_POST["school_year"]; ?></p>
-    <p><?php echo $_POST["degree"]; ?>, <?php echo $_POST["area_of_study"]; ?></p>
+    <p><?php if ($_POST["school"]) { echo $_POST["school"]; } ?>, <?php if ($_POST["school_year"]) { echo $_POST["school_year"]; } ?></p>
+    <p><?php if ($_POST["degree"]) { echo $_POST["degree"]; } ?>, <?php if ($_POST["area_of_study"]) { echo $_POST["area_of_study"]; } ?></p>
 
 </body>
 

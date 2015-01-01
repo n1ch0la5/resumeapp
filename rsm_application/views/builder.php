@@ -232,6 +232,21 @@
 	    </label>
 	  </div>
 	</div>
+
+	<!-- Resume Template -->
+	<div class="control-group">
+	  <h3>Select Resume Template</h3>
+	  <label class="control-label" for="degree">Style</label>
+	  <div class="controls">
+	    <select id="template-select" name="template-select" class="input-small">
+	    	<option value="pdf">Classic</option>
+	    	<option value="executive-pdf">Executive</option>
+	    	<option value="creative-pdf">Creative</option>
+	    	<option value="modern-pdf">Modern</option>
+	    	<option value="tech-pdf">Tech</option>
+	    </select>
+	  </div>
+	</div>
 </div>
 <input type="submit" value="submit">
 </form>

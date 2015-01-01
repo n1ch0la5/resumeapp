@@ -22,7 +22,7 @@
 		<h3>Most Popular Resume Examples</h3>
 		<ul>
 			<li><a href="/images/resume-examples/executive_marketing_1.jpg">Executive Design</a></li>
-			<li><a href="/images/resume-examples/tech-resume.jpg">Classic Design</a></li>
+			<li><a href="/images/resume-examples/classic-resume.jpg">Classic Design</a></li>
 			<li><a href="/images/resume-examples/modern-template.jpg">Modern Design</a></li>
 			<li><a href="/images/resume-examples/creative-resume.jpg">Creative Design</a></li>
 			<li><a href="/images/resume-examples/tech-resume.jpg">Tech Design</a></li>

@@ -255,4 +255,9 @@ $(window).on('load resize', function(){
   $(".secondary").find('.col').equalHeights();
 });
 
+$('#template-select').change(function(){
+  $template = $(this).val();
+  $('.form-horizontal').attr('action', '/' + $template);
+});
+
 
