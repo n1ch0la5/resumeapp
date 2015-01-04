@@ -260,4 +260,11 @@ $('#template-select').change(function(){
   $('.form-horizontal').attr('action', '/' + $template);
 });
 
+$('.add_education').click(function(){
+  $('.education:hidden:first').slideDown();
+});
+
+$('.add_experience').click(function(){
+  $('.experience:hidden:first').slideDown();
+});
 
