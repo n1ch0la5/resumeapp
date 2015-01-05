@@ -1,5 +1,7 @@
 <?php
 $server_path = dirname($_SERVER['DOCUMENT_ROOT']);
+echo $server_path;
+exit();
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -18,7 +20,15 @@ $server_path = dirname($_SERVER['DOCUMENT_ROOT']);
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	define('ENVIRONMENT', 'development');
+    if($_SERVER['SERVER_NAME'] == 'erezzy.com')
+    {
+        define('ENVIRONMENT', 'production');
+    }
+    else
+    {
+        define('ENVIRONMENT', 'development');
+    }
+	
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
