@@ -1,7 +1,7 @@
 <?php
 $server_path = dirname($_SERVER['DOCUMENT_ROOT']);
-echo $server_path;
-exit();
+//added for temporary live server (nick's digital ocean vps)
+$server_path = '/var/nick/erezzy.com';
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
