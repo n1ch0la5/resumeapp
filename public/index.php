@@ -1,8 +1,15 @@
 <?php
-$server_path = dirname($_SERVER['DOCUMENT_ROOT']);
+
 //added for temporary live server (nick's digital ocean vps)
-$server_path = '/var/nick/erezzy.com';
-/*
+if($_SERVER['SERVER_NAME'] == 'erezzy.com')
+{
+    $server_path = '/var/nick/erezzy.com';
+}
+else
+{
+    $server_path = dirname($_SERVER['DOCUMENT_ROOT']);
+}
+    /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
  *---------------------------------------------------------------
