@@ -63,11 +63,41 @@ class Pages extends CI_Controller {
 
 	public function executive()
 	{ 
-	    //$this->load->helper('dompdf');
+	    $this->load->helper('dompdf');
+		$data['main_content'] = 'executive';
+		$html = $this->load->view('includes/pdf_template',$data, true);
+		pdf_create($html, 'Executive Resume');
 		//$data['main_content'] = 'executive';
+		//$this->load->view('includes/pdf_template',$data);
+	}
+
+	public function modern()
+	{ 
+	    $this->load->helper('dompdf');
+		$data['main_content'] = 'modern';
+		$html = $this->load->view('includes/pdf_template',$data, true);
+		pdf_create($html, 'modern Resume');
+		//$data['main_content'] = 'executive';
+		//$this->load->view('includes/pdf_template',$data);
+	}
+
+	public function creative()
+	{ 
+	    $this->load->helper('dompdf');
+		$data['main_content'] = 'creative';
+		$html = $this->load->view('includes/pdf_template',$data, true);
+		pdf_create($html, 'Creative Resume');
+		//$data['main_content'] = 'executive';
+		//$this->load->view('includes/pdf_template',$data);
+	}
+
+	public function tech()
+	{ 
+	    //$this->load->helper('dompdf');
+		//$data['main_content'] = 'tech';
 		//$html = $this->load->view('includes/pdf_template',$data, true);
-		//pdf_create($html, 'Executive Resume');
-		$data['main_content'] = 'executive-resume';
+		//pdf_create($html, 'Technology Resume');
+		$data['main_content'] = 'tech';
 		$this->load->view('includes/pdf_template',$data);
 	}
 
