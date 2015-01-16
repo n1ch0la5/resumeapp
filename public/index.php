@@ -1,6 +1,15 @@
 <?php
-$server_path = dirname($_SERVER['DOCUMENT_ROOT']);
-/*
+
+//added for temporary live server (nick's digital ocean vps)
+if($_SERVER['SERVER_NAME'] == 'erezzy.com')
+{
+    $server_path = '/var/nick/erezzy.com';
+}
+else
+{
+    $server_path = dirname($_SERVER['DOCUMENT_ROOT']);
+}
+    /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
  *---------------------------------------------------------------
@@ -18,7 +27,15 @@ $server_path = dirname($_SERVER['DOCUMENT_ROOT']);
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	define('ENVIRONMENT', 'development');
+    if($_SERVER['SERVER_NAME'] == 'erezzy.com')
+    {
+        define('ENVIRONMENT', 'production');
+    }
+    else
+    {
+        define('ENVIRONMENT', 'development');
+    }
+	
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING

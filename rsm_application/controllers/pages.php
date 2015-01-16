@@ -46,12 +46,59 @@ class Pages extends CI_Controller {
 		$data['main_content'] = 'builder';
 		$this->load->view('includes/template',$data);
 	}
+	public function how()
+	{
+		$data['main_content'] = 'how';
+		$this->load->view('includes/template',$data);
+	}
 	public function pdf()
 	{ 
 	    $this->load->helper('dompdf');
 		$data['main_content'] = 'pdf';
 		$html = $this->load->view('includes/pdf_template',$data, true);
-		pdf_create($html, 'filename');
+		pdf_create($html, 'Classic Resume');
+		//$data['main_content'] = 'pdf';
+		//$this->load->view('includes/pdf_template',$data);
+	}
+
+	public function executive()
+	{ 
+	    $this->load->helper('dompdf');
+		$data['main_content'] = 'executive';
+		$html = $this->load->view('includes/pdf_template',$data, true);
+		pdf_create($html, 'Executive Resume');
+		//$data['main_content'] = 'executive';
+		//$this->load->view('includes/pdf_template',$data);
+	}
+
+	public function modern()
+	{ 
+	    $this->load->helper('dompdf');
+		$data['main_content'] = 'modern';
+		$html = $this->load->view('includes/pdf_template',$data, true);
+		pdf_create($html, 'modern Resume');
+		//$data['main_content'] = 'modern';
+		//$this->load->view('includes/pdf_template',$data);
+	}
+
+	public function creative()
+	{ 
+	    $this->load->helper('dompdf');
+		$data['main_content'] = 'creative';
+		$html = $this->load->view('includes/pdf_template',$data, true);
+		pdf_create($html, 'Creative Resume');
+		//$data['main_content'] = 'modern';
+		//$this->load->view('includes/pdf_template',$data);
+	}
+
+	public function tech()
+	{ 
+	    $this->load->helper('dompdf');
+		$data['main_content'] = 'tech';
+		$html = $this->load->view('includes/pdf_template',$data, true);
+		pdf_create($html, 'Technology Resume');
+		//$data['main_content'] = 'tech';
+		//$this->load->view('includes/pdf_template',$data);
 	}
 
 	public function test()

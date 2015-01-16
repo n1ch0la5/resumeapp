@@ -42,10 +42,10 @@
 				<nav class="topnav">
 					<ul>
 						<li><a href="/examples">Examples</a></li>
-						<li><a href="">Resume Builder</a></li>
+						<li><a href="/builder">Resume Builder</a></li>
 						<li><a href="/tips">Tips</a></li>
 						<li><a href="/how-it-works">How it Works</a></li>
-						<li><a class="get-started" href="">Get Started</a></li>
+						<li><a class="get-started" href="/builder">Get Started</a></li>
 					</ul>
 				</nav>
 			</header>
