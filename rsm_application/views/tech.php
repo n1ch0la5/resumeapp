@@ -4,255 +4,66 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Tech Resume</title>
 <style type="text/css">
-
-body{
-	font-family:Arial, Helvetica, sans-serif;	
-}
-
-*{
-	padding:0px;
-	margin:0px;
-    -webkit-box-sizing:border-box;
-    box-sizing:border-box;	
-}
-
-p,h1,h2,h3,h4,h5,h6,ul,li{padding:0px;margin:0px;}
-
-ul li{
-	list-style-type:none	
-}
-
-p{line-height:20px;}
-
-.clearfix{clear:both;}
-
-a {text-decoration:none;}
-
-a img{border:0px;}
-
-
-.wrap{
-	width:100%;
-	margin:0 auto;
-	padding:0 10px 0 0;	
-}
-
-.header{
-	padding:16px 0 0 0;	
-	text-align:center;
-}
-
-.header h1, .header p, .header p a{
-	font-family:Arial, Helvetica, sans-serif;
-	margin-bottom:5px;
-}
-
-.header p a{
-	color:#06F;
-	font-size:12px;	
-}
-
-.right-part p {
-font-size: 14px;
-padding-left: 4px;
-}
-.resume-box {
-margin: 0px;
-padding-bottom: 20px;
-}
-.right-part ul li {
-list-style-type: disc;
-font-size: 14px;
-line-height: 25px;
-font-family: Arial, Helvetica, sans-serif;}
-.left-part h2 {
-font-size: 16px;
-color: #000;
-font-family: Arial, Helvetica, sans-serif;}
-.flt{float:left;}
-.fltr{float:right;}
-.left-part{width:22.22%;}
-hr{clear:both;display:block;}
-.top-righti{margin:16px 0 0 0;}
-.tech-bg{background:#eeeeee;border-bottom:2px solid #d9aa38;padding-bottom:15px;}
-.tech-bg .header{width:100%;margin:0 auto;text-align:left;padding:15px 30px 0px;}
-.logo img{border-radius:50%;}
-.tech-bg .title{margin:20px 0 0 23px;}
-.tech-bg .title h2{font-size:26px;}
-.tech-bg .title h3{font-size:20px;}
-.tech-bg .top-righti a{color:#000;}
-.tech-bg2{padding:16px 0px 0  20px;}
-.tech-bg2 .left-part{width:20%;}
-.tech-bg2 .left-part h2{color:#bc8f4e;}
-.tech-bg2 .right-part{width:80%;padding-top:0px;}
-.tech-bg3{background:#f4f4f4;}
-.tech-bg2 .right-part p{padding-left:0px;}
-.bdr2-btm{border-bottom:2px solid #eaeaea;margin-bottom:20px;}
-.skill-box{width:22.22%;padding-right:10px;}
-.skill-box ul li{list-style-type:none;}
-
-
+    body{font-family:Arial, Helvetica, sans-serif;}
+    h1, h2 {margin:0;}
+    table {width:100%; border-collapse: collapse;}
+    .header td {padding:1em;}
+    td {padding:0.5em 1em;}
+    .left {width:20%; color:#bc8f4e; font-style:italic; font-weight:bold;}
+    .right {width:80%;}
+    .header td {background: #eeeeee; border-bottom: 2px solid #d9aa38;}
+        .header-left {width:80%;}
+        .header-right {width:20%;}
 </style>
 </head>
-<body class="tech-bg3">
-
-
-<!--==============================--> 
-
-
-  <div class="tech-bg">
-	<div class="header">
-		
-        <div class="top-righti fltr">
-        	e: <a href="mailto:joe@bloggs.com">joe@bloggs.com</a> <br />
-        	w: <a href="www.bloggs.com">www.bloggs.com</a>   <br />
-            m: <a href="tel:1234567890">1234567890</a>
-        </div>
-                
-        <div class="logo flt"><img src="images/huge-avatar.png" alt=""/></div>
-		<div class="title flt">
-        	<h2>Joe Bloggs</h2>
-            <h3>Job Title</h3>
-        </div>
-   </div>     
-      <div class="clearfix"></div>  
-	</div>
-
-
-<div class="wrap">
- <div class="bottom-part tech-bg2"> 
-		
-	<div class="resume-box bdr2-btm">				
-
-
-       <div class="left-part flt">
-    		<h2><i>Personal Profile</i></h2>
-        </div>
-        
-    <div class="right-part flt">
-
-    
-        	<p>Nulla semper eros nec volutpat placerat. Vestibulum ante ipsum primis in   faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus eu   eros in elit gravida imperdiet. Proin arcu purus, porttitor eu mattis   vel, ultricies sit amet augue. Ut non mauris consequat, lacinia ante   eget, faucibus augue. Vivamus sollicitudin, arcu sed interdum congue, mi   felis luctus purus, at auctor lectus urna efficitur justo. Mauris vitae   leo at sapien viverra porta in ac nulla.</p>
-    </div>
-		
-        
-
-
-   <div class="clearfix"></div> 
-    <!--============Resume Box Ends==========-->
- </div>    
-
-
-	<div class="resume-box bdr2-btm">				
-
-
-       <div class="left-part flt">
-    		<h2><i>Work Experience</i></h2>
-        </div>
-        
-    <div class="right-part flt">
-
-    		<p><strong>Job Title at company</strong></p>
-            <p><i>April 2011-present</i></p>
-        	<p>Nulla semper eros nec volutpat placerat. Vestibulum ante ipsum primis in   faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus eu   eros in elit gravida imperdiet. Proin arcu purus, porttitor eu mattis   vel, ultricies sit amet augue. Ut non mauris consequat, lacinia ante   eget, faucibus augue.</p>
-            <br />
-    		<p><strong>Job Title at company</strong></p>
-            <p><i>April 2011-present</i></p>
-        	<p>Nulla semper eros nec volutpat placerat. Vestibulum ante ipsum primis in   faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus eu   eros in elit gravida imperdiet. Proin arcu purus, porttitor eu mattis   vel, ultricies sit amet augue. Ut non mauris consequat, lacinia ante   eget, faucibus augue.</p>
-
-    </div>
-		
-        
-
-
-   <div class="clearfix"></div> 
-    <!--============Resume Box Ends==========-->
- </div>    
-
-<div class="resume-box bdr2-btm">				
-
-
-       <div class="left-part flt">
-    		<h2><i>Key Skills</i></h2>
-        </div>
-        
-    <div class="right-part flt">
-
-			<div class="skill-box flt">
-            		<ul>
-                    	<li>A Key Skill</li>
-                    	<li>A Key Skill</li>
-                    	<li>A Key Skill</li>
-                    		
-            		</ul>
-            </div>	
-
-			<div class="skill-box flt">
-            		<ul>
-                    	<li>A Key Skill</li>
-                    	<li>A Key Skill</li>
-                    	<li>A Key Skill</li>
-                    		
-            		</ul>
-            </div>	
-
-			<div class="skill-box flt">
-            		<ul>
-                    	<li>A Key Skill</li>
-                    	<li>A Key Skill</li>
-                    	<li>A Key Skill</li>
-                    		
-            		</ul>
-            </div>	
-
-		
-
-    </div>
-		
-        
-
-
-   <div class="clearfix"></div> 
-    <!--============Resume Box Ends==========-->
- </div>
-
-	<div class="resume-box bdr2-btm">				
-
-
-       <div class="left-part flt">
-    		<h2><i>Education</i></h2>
-        </div>
-        
-    <div class="right-part flt">
-
-    		<p><strong>College/University</strong></p>
-            <p><i>Qualification</i></p>
-        	<p>Nulla semper eros nec volutpat placerat. Vestibulum ante ipsum primis in   faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus eu   eros in elit gravida imperdiet. </p>
-            <br />
-    		<p><strong>College/University</strong></p>
-            <p><i>Qualification</i></p>
-        	<p>Nulla semper eros nec volutpat placerat. Vestibulum ante ipsum primis in   faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus eu   eros in elit gravida imperdiet. </p>
-
-    </div>
-		
-        
-
-
-   <div class="clearfix"></div> 
-    <!--============Resume Box Ends==========-->
- </div>    
-
-
-
-
-     
-<!--=========Bottom Ends===========-->     
- </div>  
-
-<!--=========Wrap Ends===========-->
-</div>
-
-<!--==============================--> 
-
+<body>
+    <table>
+        <tr class="header">
+            <td class="header-left"><h1><?php if ($_POST["first_name"]) {echo $_POST["first_name"];} ?> <?php if ($_POST["last_name"]) { echo $_POST["last_name"]; } ?></h1><br /><?php if ($_POST["title"]) {echo "<h2>".$_POST["title"]."</h2>";} ?></td>
+            <td class="header-right"><?php if ($_POST["email"]) {echo "e:".$_POST["email"];} ?><br /><?php if ($_POST["phone"]) {echo "p:".$_POST["phone"];} ?></td>
+        </tr>
+        <tr>
+            <td class="left">Personal Profile</td>
+            <td class="right"><?php if ($_POST["statement"]) {echo $_POST["statement"];} ?></td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr /></td>
+        </tr>
+        <tr>
+            <td class="left">Work Experience</td>
+            <td class="right"><strong><?php if ($_POST["title"]) {echo $_POST["title"]." at ";} ?><?php if ($_POST["employer"]) {echo $_POST["employer"];} ?></strong><br /><em><?php if ($_POST["end_date"]) {echo $_POST["start_date"].' - '.$_POST["end_date"]; } else {$_POST["start_date"];} ?></em></td>
+        </tr>
+        <?php if ($_POST["employer2"]) { ?>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right"><strong><?php if ($_POST["title2"]) {echo $_POST["title2"]." at ";} ?><?php if ($_POST["employer2"]) {echo $_POST["employer2"];} ?></strong><br /><em><?php if ($_POST["end_date2"]) {echo $_POST["start_date2"].' - '.$_POST["end_date2"]; } else {$_POST["start_date2"];} ?></em></td>
+        </tr>
+        <?php } ?>
+        <?php if ($_POST["employer3"]) { ?>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right"><strong><?php if ($_POST["title3"]) {echo $_POST["title3"]." at ";} ?><?php if ($_POST["employer3"]) {echo $_POST["employer3"];} ?></strong><br /><em><?php if ($_POST["end_date3"]) {echo $_POST["start_date3"].' - '.$_POST["end_date3"]; } else {$_POST["start_date3"];} ?></em></td>
+        </tr>
+        <?php } ?>
+        <tr>
+            <td colspan="2"><hr /></td>
+        </tr>
+        <tr>
+            <td class="left">Education</td>
+            <td class="right"><strong><?php if ($_POST["school"]) {echo $_POST["school"];} ?></strong><br /><em><?php if ($_POST["degree"]) {echo $_POST["degree"];} ?><?php if ($_POST["area_of_study"]) {echo ', '.$_POST["area_of_study"];} ?><?php if ($_POST["school_year"]) {echo ', '.$_POST["school_year"];} ?></em></td>
+        </tr>
+        <?php if ($_POST["school2"]) { ?>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right"><strong><?php if ($_POST["school2"]) {echo $_POST["school2"];} ?></strong><br /><em><?php if ($_POST["degree2"]) {echo $_POST["degree2"];} ?><?php if ($_POST["area_of_study2"]) {echo ', '.$_POST["area_of_study2"];} ?><?php if ($_POST["school_year2"]) {echo ', '.$_POST["school_year2"];} ?></em></td>
+        </tr>
+        <?php } ?>
+        <?php if ($_POST["school3"]) { ?>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right"><strong><?php if ($_POST["school3"]) {echo $_POST["school3"];} ?></strong><br /><em><?php if ($_POST["degree3"]) {echo $_POST["degree3"];} ?><?php if ($_POST["area_of_study3"]) {echo ', '.$_POST["area_of_study3"];} ?><?php if ($_POST["school_year3"]) {echo ', '.$_POST["school_year3"];} ?></em></td>
+        </tr>
+        <?php } ?>
+    </table>
 </body>
 </html>
