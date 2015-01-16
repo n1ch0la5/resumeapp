@@ -22,7 +22,7 @@
 		  <script src="/js/modernizr.js" type="text/javascript"></script>
 		<![endif]-->
 	</head>
-	<body class="<?php echo $page_class; ?>">
+	<body class="<?php echo ( !isset($page_class) ? 'default' : $page_class ); ?>">
 		<div class="wrapper">
 			<header>
 				<div class="logo">

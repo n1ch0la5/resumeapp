@@ -63,8 +63,10 @@ class Pages extends CI_Controller {
 		$account_price = $this->erezzy->get_account_price($account_type);
 		echo $account_type . ' = ' . $account_price;*/
 		$this->load->model('resume_model');
-
 		print_r($this->resume_model->get_resume_data_by_resume_id(1));
+        //test test
+        //$this->load->spark('example-spark/1.0.0');      # We always specify the full path from the spark folder
+        //$this->example_spark->printHello();             # echo's "Hello from the example spark!"
 	}
 
 }

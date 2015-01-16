@@ -59,8 +59,8 @@ else
 	$route['migrate'] = "migrate";
 	$route['auth/(:any)'] = "auth/$1";
     //linkedin auth controller routes
-    $route['user'] = "user";
-    $route['user/(:any)'] = "user/$1";
+    $route['oauth'] = "oauths";
+    $route['oauth/(:any)'] = "oauths/$1";
 	// Keep the following line at the bottom
 	$route['(:any)'] = "pages/$1";
 }
