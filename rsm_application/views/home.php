@@ -1,10 +1,11 @@
 				<main class="alpha" role="main">
 					<div class="feature-video">
-						<div class="content">
+						<iframe width="560" height="315" src="//www.youtube.com/embed/sVFHEFPaE_M?autoplay=1" frameborder="0" allowfullscreen></iframe>
+						<!--<div class="content">
 							<h2>It's Not You, It's Your Resume</h2>
 							<p>Make your resume stand out. Let erezzy help.</p>
 							<a class="watch" href="#" data-id="sVFHEFPaE_Mj"><i class="fa fa-play-circle-o"></i> Watch Our Video</a>
-					    </div>
+					    </div>-->
 					</div>
 					<div class="cta-bar is-sticky">
 						<p>Get started on your professional resume today.</p>
