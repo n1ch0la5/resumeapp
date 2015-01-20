@@ -49,7 +49,7 @@ class MY_Loader extends CI_Loader
         {
             if($_SERVER['SERVER_NAME'] == 'erezzy.com')
             {
-                define('SPARKPATH', $_SERVER['DOCUMENT_ROOT'] . '/sparks/');     
+                define('SPARKPATH', '/var/nick/erezzy.com/sparks/');     
             }
             else
             {
