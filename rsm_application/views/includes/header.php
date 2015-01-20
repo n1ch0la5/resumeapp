@@ -34,18 +34,18 @@
                   <p class="welcome">Welcome, <?php echo $firstname; ?> | <a href="/auth/logout/">Logout</a></p>
                 <?php else : ?>
                   <ul>
-						<li><a href="">Sign In</a></li>
-						<li><a href="">Sign Up</a></li>
+						<li><a href="/auth/login/">Sign In</a></li>
+						<li><a href="/auth/logout/">Sign Up</a></li>
 				  </ul>
                 <?php endif; ?>
 				</nav>
 				<nav class="topnav">
 					<ul>
-						<li><a href="/examples">Examples</a></li>
-						<li><a href="/builder">Resume Builder</a></li>
-						<li><a href="/tips">Tips</a></li>
-						<li><a href="/how-it-works">How it Works</a></li>
-						<li><a class="get-started" href="/builder">Get Started</a></li>
+						<li><a href="/examples/">Examples</a></li>
+						<li><a href="/builder/">Resume Builder</a></li>
+						<li><a href="/tips/">Tips</a></li>
+						<li><a href="/how/">How it Works</a></li>
+						<li><a class="get-started" href="/builder/">Get Started</a></li>
 					</ul>
 				</nav>
 			</header>

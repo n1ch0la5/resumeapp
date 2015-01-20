@@ -12,8 +12,10 @@ class Auth extends CI_Controller {
 		// Load MongoDB library instead of native db driver if required
 		//$this->config->item('use_mongodb', 'ion_auth') ?
 		//$this->load->library('mongo_db') :
+        
+        //print_r($this->session->all_userdata());
 
-		$this->load->database();
+		//$this->load->database();
 
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 
@@ -41,7 +43,7 @@ class Auth extends CI_Controller {
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
 			//list the users
-			$this->data['users'] = $this->ion_auth->users()->result();
+		 	$this->data['users'] = $this->ion_auth->users()->result();
 			foreach ($this->data['users'] as $k => $user)
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
@@ -55,7 +57,8 @@ class Auth extends CI_Controller {
 	{
 		
 		$this->data['title'] = "Register";
-
+        $this->session->set_userdata('current_uri', $this->uri->uri_string());
+        
 		//validate form input
 		$this->form_validation->set_rules('first_name', 'First Name', 'required');
 		$this->form_validation->set_rules('last_name', 'Last Name', 'required');
@@ -122,43 +125,108 @@ class Auth extends CI_Controller {
 			);
 
 		$this->data['main_content'] = 'auth/register';
-		$this->load->view('includes/template',$this->data);
+		$this->load->view('includes/template', $this->data);
 		}
 	}
+    
+    function social_register()
+    {
+        if($this->input->post('first_name') == true)
+        {
+            $this->form_validation->set_rules('first_name', 'First Name', 'required');
+            $this->form_validation->set_rules('last_name', 'Last Name', 'required');
+            $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
+        }
+        if ( $this->form_validation->run() == true )
+        {
+            $username = ''; //no username's for this application
+            $password = ''; //no password for social (linkedin) signin
+            $email = $this->input->post('email');
+            $additional = array(
+                'first_name'	=>	$this->input->post('first_name'),
+                'last_name'		=>	$this->input->post('last_name')
+            );
+            $group = array('2');
+            
+            if( $user_id = $this->ion_auth->register( $username, $password, $email, $additional, $group ) )
+            {
+
+                //if the registration is successful
+                //redirect them back to the home page
+                //this message isn't working
+                //$this->session->set_flashdata('message', 'Account creation successful. Login below to access your account');
+                //redirect('/', 'refresh');
+                echo 'Account creation successful.';
+            }
+            else
+            {	
+                //if the login was un-successful
+                //redirect them back to the login page
+                //$this->session->set_flashdata('message', $this->ion_auth->errors());
+                //redirect('auth/register', 'refresh');
+                echo $this->ion_auth->errors();
+            }
+        }
+        else
+        {
+           
+        }
+    }
 
 
 	//log the user in
-	function login()
+	function login($social = null)
 	{
+        if($this->ion_auth->logged_in())
+        {
+            redirect();
+        }
 		$this->data['title'] = "Login";
+        $this->session->set_userdata('current_uri', $this->uri->uri_string());
 
 		//validate form input
 		$this->form_validation->set_rules('identity', 'Identity', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
+		
+        if( ! $social )
+        {
+            $this->form_validation->set_rules('password', 'Password', 'required');
+        }
 
-		if ($this->form_validation->run() == true)
+        if ($this->form_validation->run() == true || $this->session->flashdata('email'))
 		{
 			//check to see if the user is logging in
 			//check for "remember me"
 			$remember = (bool) $this->input->post('remember');
+            
+            $email = ($this->session->flashdata('email') ? $this->session->flashdata('email') : $this->input->post('identity'));
+            $password = ($this->input->post('identity') ? $this->input->post('password') : '');
 
-			if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
+			if ($this->ion_auth->login($email, $password, $remember, $social))
 			{
 				// If the login is successful
 				// Set the user's first name in a session var
 				$user = $this->ion_auth->user()->row();
 				$this->session->set_userdata('user_firstname', $user->first_name);
 				//redirect them back to the home page
-				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect('/', 'refresh');
+				
+                    $this->session->set_flashdata('message', $this->ion_auth->messages());
+                    redirect('/', 'refresh');
+               
 			}
 			else
 			{
 				//if the login was un-successful
 				//redirect them back to the login page
-				$this->session->set_flashdata('message', $this->ion_auth->errors());
+                if($social)
+                {
+                    echo $this->ion_auth->errors();
+                }
+                else
+                {
+                $this->session->set_flashdata('message', $this->ion_auth->errors());
 				redirect('auth/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
-			}
+                }
+            }
 		}
 		else
 		{

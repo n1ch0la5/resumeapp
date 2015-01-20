@@ -8,6 +8,8 @@ class Pages extends CI_Controller {
        	$this->load->library('ion_auth');
        	$uri = end($this->uri->segments);
        	if($uri == ''){$page_class = 'home';}else{$page_class = $uri;}
+        
+        $this->session->set_userdata('current_uri', $this->uri->uri_string());
 
        	$this->load->vars(
             array(
@@ -16,6 +18,7 @@ class Pages extends CI_Controller {
 			'page_class' => $page_class
 			)
         );
+        //print_r($this->session->all_userdata());
    }
 
 	public function index()
@@ -104,13 +107,13 @@ class Pages extends CI_Controller {
 	public function test()
 	{
 		//Testing the erezzy app library functions
-		/*$this->load->library('erezzy');
+		//$this->load->library('erezzy');
 		//print_r( $this->session->all_userdata() );
-		$account_type = $this->erezzy->get_account_type(1);
-		$account_price = $this->erezzy->get_account_price($account_type);
-		echo $account_type . ' = ' . $account_price;*/
-		$this->load->model('resume_model');
-		print_r($this->resume_model->get_resume_data_by_resume_id(1));
+		//$account_type = $this->erezzy->get_account_type(1);
+		//$account_price = $this->erezzy->get_account_price($account_type);
+		//echo $account_type . ' = ' . $account_price;*/
+		//$this->load->model('resume_model');
+		//print_r($this->resume_model->get_resume_data_by_resume_id(1));
         //test test
         //$this->load->spark('example-spark/1.0.0');      # We always specify the full path from the spark folder
         //$this->example_spark->printHello();             # echo's "Hello from the example spark!"

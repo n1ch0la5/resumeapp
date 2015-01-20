@@ -1,4 +1,5 @@
 <h1><?php echo lang('login_heading');?></h1>
+<p><a href="/oauth/linkedin/">Login with linkedin</a></p>
 <p><?php echo lang('login_subheading');?></p>
 
 <div id="infoMessage"><?php echo $message;?></div>

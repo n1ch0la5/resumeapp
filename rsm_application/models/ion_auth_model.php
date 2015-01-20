@@ -877,15 +877,28 @@ class Ion_auth_model extends CI_Model
 	 * @return bool
 	 * @author Mathew
 	 **/
-	public function login($identity, $password, $remember=FALSE)
+	public function login($identity, $password, $remember=FALSE, $social=null)
 	{
 		$this->trigger_events('pre_login');
 
-		if (empty($identity) || empty($password))
-		{
-			$this->set_error('login_unsuccessful');
-			return FALSE;
-		}
+		if( ! $social )
+        {
+            if (empty($identity) || empty($password))
+            {
+                echo 'made it here';
+                exit();
+                $this->set_error('login_unsuccessful');
+                return FALSE;
+            } 
+        }
+        else
+        {
+            if (empty($identity))
+            {
+                $this->set_error('login_unsuccessful');
+                return FALSE;
+            } 
+        }
 
 		$this->trigger_events('extra_where');
 
@@ -911,8 +924,9 @@ class Ion_auth_model extends CI_Model
 
 			$password = $this->hash_password_db($user->id, $password);
 
-			if ($password === TRUE)
+			if ($password === TRUE || $social)
 			{
+                
 				if ($user->active == 0)
 				{
 					$this->trigger_events('post_login_unsuccessful');

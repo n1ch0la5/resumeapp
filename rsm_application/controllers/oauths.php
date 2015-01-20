@@ -16,6 +16,8 @@ class Oauths extends CI_Controller {
 			'page_class' => $page_class
 			)
         );
+        
+        //print_r( $this->session->all_userdata() );
    }
 
 	public function index()
@@ -94,13 +96,59 @@ class Oauths extends CI_Controller {
 
             // Here you should use this information to A) look for a user B) help a new user sign up with existing data.
             // If you store it all in a cookie and redirect to a registration page this is crazy-simple.
-            print_r( $this->session->all_userdata() );
+            /*print_r( $this->session->all_userdata() );
             
             echo "<pre>Tokens: ";
             print_r($token).PHP_EOL.PHP_EOL;
 
-            echo "User Info: ";
-            print_r($user);
+            echo "User Info: ";*/
+            //print_r($user);
+            
+            //Send data to auth/social_register()
+            $user_data = array(
+                'first_name' =>  $user['first-name'],
+                'last_name'  =>  $user['last-name'],
+                'email'      =>  $user['email-address']
+            );
+            $this->load->library('curl');
+            $this->load->library('ion_auth');
+            
+            if($this->ion_auth->email_check($user['email-address']))
+            {
+                //Login the user
+                $this->session->set_flashdata( 'email', $user['email-address'] );
+                redirect('auth/login/1');
+            }
+            else
+            {
+                //register user account and login
+                if($response = $this->curl->simple_post('auth/social_register', $user_data))
+                {
+
+                    /*if($response == '<p>Email Already Used or Invalid</p><p>Unable to Create Account</p>')
+                    {
+                        $this->ion_auth->delete_user( 19 );
+                        redirect('oauth/linkedin');
+                    }*/
+
+                     //echo $response;
+                    // exit();
+
+                    if($response == 'Account creation successful.')
+                    {
+
+                        //Login the user
+                        $this->session->set_flashdata( 'email', $user['email-address'] );
+                        redirect('auth/login/1');
+
+                    }
+                    else
+                    {
+                        $this->session->set_flashdata('message', $response);
+                        redirect( $this->session->userdata('current_uri') );
+                    }
+                }
+            }
         }
     }
 }

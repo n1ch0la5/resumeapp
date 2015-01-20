@@ -57,6 +57,7 @@ else
 	$route['404_override'] = '';
 
 	$route['migrate'] = "migrate";
+    $route['auth'] = "auth";
 	$route['auth/(:any)'] = "auth/$1";
     //linkedin auth controller routes
     $route['oauth'] = "oauths";
