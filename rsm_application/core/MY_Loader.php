@@ -47,7 +47,14 @@ class MY_Loader extends CI_Loader
     {
         if(!defined('SPARKPATH'))
         {
-            define('SPARKPATH', dirname($_SERVER['DOCUMENT_ROOT']) . '/sparks/');
+            if($_SERVER['SERVER_NAME'] == 'erezzy.com')
+            {
+                define('SPARKPATH', $_SERVER['DOCUMENT_ROOT'] . '/sparks/');     
+            }
+            else
+            {
+                define('SPARKPATH', dirname($_SERVER['DOCUMENT_ROOT']) . '/sparks/');
+            }
         }
 
         $this->_is_lt_210 = (is_callable(array('CI_Loader', 'ci_autoloader'))
