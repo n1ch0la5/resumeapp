@@ -45,8 +45,11 @@ class Oauths extends CI_Controller {
         // Create the URL to return the user to
         //$callback = site_url('account/services/callback/'.$provider->name);
         $callback = site_url('oauth/linkedin');
+        
+        echo "<script language=\"javascript\">alert('test');</script>";
 
-        if ( ! $this->input->get_post('oauth_token'))
+        //if ( ! $this->input->get_post('oauth_token'))
+        if( ! $this->session->userdata('oauth_token'))
         {
             // Add the callback URL to the consumer
             $consumer->callback($callback); 
@@ -112,6 +115,8 @@ class Oauths extends CI_Controller {
             );
             $this->load->library('curl');
             $this->load->library('ion_auth');
+            
+            //NEED TO SAVE LINKEDIN USER DATA TO DB
             
             if($this->ion_auth->email_check($user['email-address']))
             {

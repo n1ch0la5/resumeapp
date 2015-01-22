@@ -8,13 +8,27 @@ class Pages extends CI_Controller {
        	$this->load->library('ion_auth');
        	$uri = end($this->uri->segments);
        	if($uri == ''){$page_class = 'home';}else{$page_class = $uri;}
-        
+        $firstname = null;
         $this->session->set_userdata('current_uri', $this->uri->uri_string());
+        
+        if( $this->ion_auth->logged_in() )
+        {
+            if($this->session->userdata('user_first_name') == false)
+            {
+                $user = $this->ion_auth->user()->row();
+                $firstname = $user->first_name;
+                $this->session->set_userdata('user_firstname', $user->first_name);
+            }
+            else
+            {
+                $firstname = $this->session->userdata('user_firstname');
+            }
+        }
 
        	$this->load->vars(
             array(
             // This session data is set on login in the /auth/login controller/method	
-			'firstname' => $this->session->userdata('user_firstname'),
+			'firstname' => $firstname,
 			'page_class' => $page_class
 			)
         );
@@ -108,7 +122,7 @@ class Pages extends CI_Controller {
 	{
 		//Testing the erezzy app library functions
 		//$this->load->library('erezzy');
-		//print_r( $this->session->all_userdata() );
+		print_r( $this->session->all_userdata() );
 		//$account_type = $this->erezzy->get_account_type(1);
 		//$account_price = $this->erezzy->get_account_price($account_type);
 		//echo $account_type . ' = ' . $account_price;*/
