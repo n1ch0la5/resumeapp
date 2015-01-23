@@ -1418,6 +1418,34 @@ class Migration_erezzy extends CI_Migration {
 		);
 		
 		$this->db->insert_batch('res_resume_user_companies', $data);
+        
+        //CI_SESSIONS
+        $this->dbforge->drop_table('ci_sessions');
+        $this->dbforge->add_field(array(
+            'session_id' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '40'
+            ),
+            'ip_address' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '16'
+            ),
+            'user_agent' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'last_activity' => array(
+                'type' => 'INT',
+                'constraint' => '10'
+            ),
+            'user_data' => array(
+                'type' => 'TEXT'
+            )
+        ));
+
+        $this->dbforge->add_key('session_id', TRUE);
+        $this->dbforge->create_table('ci_sessions', TRUE);
+            
 	}
 	public function down()
 	{
@@ -1451,5 +1479,6 @@ class Migration_erezzy extends CI_Migration {
 		$this->dbforge->drop_table('res_resume_user_skills');
 		$this->dbforge->drop_table('res_resume_user_schools');
 		$this->dbforge->drop_table('res_resume_user_companies');
+        $this->dbforge->drop_table('ci_sessions');
 	}
 }

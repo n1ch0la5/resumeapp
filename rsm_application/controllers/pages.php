@@ -11,6 +11,7 @@ class Pages extends CI_Controller {
         $firstname = null;
         $this->session->set_userdata('current_uri', $this->uri->uri_string());
         
+        //Save user's first name to session. 
         if( $this->ion_auth->logged_in() )
         {
             if($this->session->userdata('user_first_name') == false)
