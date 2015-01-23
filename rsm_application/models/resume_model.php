@@ -197,5 +197,7 @@ class resume_model extends CI_Model{
 	{
 		$this->db->delete('res_templates', array('id' => $template_id));
 	}
+    
+   
 
 }

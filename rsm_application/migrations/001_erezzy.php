@@ -481,10 +481,10 @@ class Migration_erezzy extends CI_Migration {
 				'type' => 'VARCHAR',
 				'constraint' => '100'
 			),
-			'degree_type' => array(
-				'type' => 'DECIMAL',
-				'constraint' => '10,2'
-			),
+            'degree_type' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100'
+            ),
 			'year_graduated' => array( // debit or credit
 				'type' => 'VARCHAR',
 				'constraint' => '4'

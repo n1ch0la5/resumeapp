@@ -25,6 +25,65 @@ class Oauths extends CI_Controller {
         redirect('/');
 	}
     
+    public function import_linkedin()
+    {
+        $this->load->model('user_model');
+        $user = $this->session->flashdata('linkedin_data');
+        $user_id = $this->session->userdata('user_id');
+        if( ! empty($user) )
+        {
+            // Insert Profile data
+            $user_profile_data = array('firstname' => $user['first-name'], 'lastname' => $user['last-name']);
+            $this->user_model->insert_user_profile_data($user_profile_data, $user_id);
+            
+            // Insert Email Address
+            $this->user_model->insert_user_email($user['email-address']);
+            
+            // Insert Phone Numbers
+            if($user['phone-numbers']['attributes']['total'] >= 1)
+            {
+                foreach($user['phone-numbers']['phone-number'] as $phone)
+                {
+                    $data = array('phone_type' => $phone['phone-type'], 'number' => $phone['phone-number'] );
+                    $this->user_model->insert_phone_number($data, $user_id);
+                }
+            }
+            
+            // Insert Skills
+            if( $user['skills']['attributes']['total'] >= 1 )
+            {
+                foreach($user['skills']['skill'] as $skill)
+                {
+                    $this->user_model->insert_user_skills($skill['skill'], $user_id);
+                }
+            }
+            
+            // Insert Educations / Schools
+            if($user['educations']['attributes']['total'] >= 1)
+            {
+                foreach($user['educations']['education'] as $school)
+                {
+                    $data = array( 'school' => $school['school-name'], 'degree' => $school['degree'], 'degree_type' => $school['field-of-study'], 'year_graduated' => $school['end-date'] );
+                    $this->user_model->insert_user_school($data, $user_id);
+                }
+                
+            }
+            
+            // Insert Positions / Companies
+            if($user['positions']['attributes']['total'] >= 3)
+            {
+                foreach($user['positions']['position'] as $company)
+                {
+                    $data = array('company' => $company['company']['name'],'title' => $company['title'], 'start_date' => $company['start-date']['year'] );
+                    if($company['is-current'] == false ){
+                        $data['end_date'] = $company['end-date']['year'];
+                    }
+                    $this->user_model->insert_user_company($data, $user_id);
+                }
+            }
+        }
+    }
+    
     public function linkedin()
     {
         $this->load->spark('oauth/0.3.1');
@@ -46,8 +105,6 @@ class Oauths extends CI_Controller {
         //$callback = site_url('account/services/callback/'.$provider->name);
         $callback = site_url('oauth/linkedin');
         
-        echo "<script language=\"javascript\">alert('test');</script>";
-
         //if ( ! $this->input->get_post('oauth_token'))
         if( ! $this->session->userdata('oauth_token'))
         {
@@ -97,6 +154,7 @@ class Oauths extends CI_Controller {
             // We got the token, let's get some user data
             $user = $provider->get_user_info($consumer, $token);
 
+
             // Here you should use this information to A) look for a user B) help a new user sign up with existing data.
             // If you store it all in a cookie and redirect to a registration page this is crazy-simple.
             /*print_r( $this->session->all_userdata() );
@@ -105,8 +163,8 @@ class Oauths extends CI_Controller {
             print_r($token).PHP_EOL.PHP_EOL;
 
             echo "User Info: ";*/
-            //print_r($user);
-            
+            print_r($user);
+            exit();
             //Send data to auth/social_register()
             $user_data = array(
                 'first_name' =>  $user['first-name'],
@@ -130,18 +188,8 @@ class Oauths extends CI_Controller {
                 if($response = $this->curl->simple_post('auth/social_register', $user_data))
                 {
 
-                    /*if($response == '<p>Email Already Used or Invalid</p><p>Unable to Create Account</p>')
-                    {
-                        $this->ion_auth->delete_user( 19 );
-                        redirect('oauth/linkedin');
-                    }*/
-
-                     //echo $response;
-                    // exit();
-
                     if($response == 'Account creation successful.')
                     {
-
                         //Login the user
                         $this->session->set_flashdata( 'email', $user['email-address'] );
                         redirect('auth/login/1');

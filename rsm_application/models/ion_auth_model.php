@@ -885,8 +885,6 @@ class Ion_auth_model extends CI_Model
         {
             if (empty($identity) || empty($password))
             {
-                echo 'made it here';
-                exit();
                 $this->set_error('login_unsuccessful');
                 return FALSE;
             } 

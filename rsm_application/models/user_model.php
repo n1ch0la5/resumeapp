@@ -90,6 +90,30 @@ class user_model extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();
 	}
+    
+    function insert_user_profile_info($data, $user_id)
+    {
+        date_default_timezone_set('America/New_York');
+        $created = date('Y-m-d H:i:s');
+
+        $data['created_at'] = $created;
+        $this->db->where("user_id = $user_id");
+        $insert = $this->db->insert('user_profiles', $data);
+        
+        return $insert;
+    }
+    
+    function insert_user_profile_info($data)
+    {
+        date_default_timezone_set('America/New_York');
+        $created = date('Y-m-d H:i:s');
+
+        $data['created_at'] = $created;
+        $this->db->where("user_id = $user_id");
+        $insert = $this->db->insert('user_profiles', $data);
+
+        return $insert;
+    }
 
 ////////////////////////////
 // EXAMPLE MODELS (delete)
