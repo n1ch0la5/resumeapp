@@ -7,10 +7,11 @@
 h1, h2 {margin:0; margin-top:2px; border-top:1px solid #838383;}
 table {width:100%; border-collapse: collapse;}
 .header {background:#d7d7d7; text-align: center;}
-    .header td {border-top:5px solid #838383; padding-top:3px;}
+    .header td {border-top:5px solid #838383; padding:3px 0 0 0;}
 .header-bottom {background:#d7d7d7; text-align: center;}
     .header-bottom td {border-bottom:6px solid #838383;}
 .left {width:80%;}
+td {padding:10px 0;}
 </style>
 </head>
 <body>
@@ -32,7 +33,7 @@ table {width:100%; border-collapse: collapse;}
             <td class="right"><em><?php if ($_POST["end_date"]) {echo $_POST["start_date"].' - '.$_POST["end_date"]; } else {$_POST["start_date"];} ?></em></td>
         </tr>
         <tr>
-            <td colspan="2"><?php if ($_POST["work_description"]) {echo $_POST["work_description"]} ?></td>
+            <td colspan="2"><?php if ($_POST["work_description"]) {echo $_POST["work_description"];} ?></td>
         </tr>
         <?php if ($_POST["employer2"]) { ?>
         <tr>
@@ -40,7 +41,7 @@ table {width:100%; border-collapse: collapse;}
             <td class="right"><em><?php if ($_POST["end_date2"]) {echo $_POST["start_date2"].' - '.$_POST["end_date2"]; } else {$_POST["start_date2"];} ?></em></td>
         </tr>
         <tr>
-            <td colspan="2"><?php if ($_POST["work_description"]) {echo $_POST["work_description"]} ?></td>
+            <td colspan="2"><?php if ($_POST["work_description2"]) {echo $_POST["work_description2"];} ?></td>
         </tr>
         <?php } ?>
         <?php if ($_POST["employer3"]) { ?>
@@ -49,7 +50,7 @@ table {width:100%; border-collapse: collapse;}
             <td class="right"><em><?php if ($_POST["end_date3"]) {echo $_POST["start_date3"].' - '.$_POST["end_date3"]; } else {$_POST["start_date3"];} ?></em></td>
         </tr>
         <tr>
-            <td colspan="2"><?php if ($_POST["work_description"]) {echo $_POST["work_description"]} ?></td>
+            <td colspan="2"><?php if ($_POST["work_description3"]) {echo $_POST["work_description3"];} ?></td>
         </tr>
         <?php } ?>
         <tr class="header">
@@ -60,7 +61,7 @@ table {width:100%; border-collapse: collapse;}
             <td class="right">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="2"><?php if ($_POST["ed_description"]) {echo $_POST["ed_description"]} ?></td>
+            <td colspan="2"><?php if ($_POST["ed_description"]) {echo $_POST["ed_description"];} ?></td>
         </tr>
         <?php if ($_POST["school2"]) { ?>
         <tr>
@@ -68,7 +69,7 @@ table {width:100%; border-collapse: collapse;}
             <td class="right">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="2"><?php if ($_POST["ed_description2"]) {echo $_POST["ed_description2"]} ?></td>
+            <td colspan="2"><?php if ($_POST["ed_description2"]) {echo $_POST["ed_description2"];} ?></td>
         </tr>
         <?php } ?>
         <?php if ($_POST["school3"]) { ?>
@@ -77,7 +78,23 @@ table {width:100%; border-collapse: collapse;}
             <td class="right">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="2"><?php if ($_POST["ed_description3"]) {echo $_POST["ed_description3"]} ?></td>
+            <td colspan="2"><?php if ($_POST["ed_description3"]) {echo $_POST["ed_description3"];} ?></td>
+        </tr>
+        <?php } ?>
+        <?php if ($_POST["awards"]) { ?>
+        <tr class="header">
+            <td colspan="2"><h2>Awards</h2></td>
+        </tr>
+        <tr>
+            <td colspan="2"><?php echo $_POST["awards"]; ?></td>
+        </tr>
+        <?php } ?>
+        <?php if ($_POST["interests"]) { ?>
+        <tr class="header">
+            <td colspan="2"><h2>Interests</h2></td>
+        </tr>
+        <tr>
+            <td colspan="2"><?php echo $_POST["interests"]; ?></td>
         </tr>
         <?php } ?>
     </table>

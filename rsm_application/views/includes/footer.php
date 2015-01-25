@@ -10,7 +10,7 @@
 					</ul>
 				</nav>
 				<ul class="footer-social-links">
-					<!--<li><a class="facebook" href=""><i class="fa fa-facebook-square"></i></a></li>-->
+					<li><a class="facebook" href="https://www.facebook.com/eRezzy?ref=hl"><i class="fa fa-facebook-square"></i></a></li>
 					<li><a class="twitter" href="https://twitter.com/TweetERezzy"><i class="fa fa-twitter-square"></i></a></li>
 					<li><a class="linkedin" href="https://www.linkedin.com/company/5324765?trk=tyah&trkInfo=tarId%3A1420464517983%2Ctas%3Aerezzy%2Cidx%3A1-1-1"><i class="fa fa-linkedin-square"></i></a></li>
 				</ul>

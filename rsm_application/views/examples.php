@@ -18,7 +18,7 @@
 	</div>
 </div>
 <div class="secondary">
-	<div class="col col1">
+	<!--<div class="col col1">
 		<h3>Most Popular Resume Examples</h3>
 		<ul>
 			<li><a href="/images/resume-examples/executive_marketing_1.jpg">Executive Design</a></li>
@@ -27,8 +27,8 @@
 			<li><a href="/images/resume-examples/creative-resume.jpg">Creative Design</a></li>
 			<li><a href="/images/resume-examples/tech-resume.jpg">Tech Design</a></li>
 		</ul>
-	</div>
-	<div class="col col2">
+	</div>-->
+	<div class="site-content">
 		<p>If you want your resume to have a good chance of being read by prospective employers, you must invest time and energy not only in its content, but also in its look. Whether you're creating your resume for the first time or in the process of revising it, be mindful of your resume's audience. Having a resume that stand out from the pile and but is easily scannable, is as important as it's content.</p>
 	</div>
 </div>

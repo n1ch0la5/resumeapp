@@ -37,7 +37,7 @@
         </tr>
         <tr>
             <td class="left">&nbsp;</td>
-            <td class="right"><?php if ($_POST["work_description"]) {echo $_POST["work_description"]} ?></td>
+            <td class="right"><?php if ($_POST["work_description"]) {echo $_POST["work_description"];} ?></td>
         </tr>
         <?php if ($_POST["employer2"]) { ?>
         <tr>
@@ -46,7 +46,7 @@
         </tr>
         <tr>
             <td class="left">&nbsp;</td>
-            <td class="right"><?php if ($_POST["work_description2"]) {echo $_POST["work_description2"]} ?></td>
+            <td class="right"><?php if ($_POST["work_description2"]) {echo $_POST["work_description2"];} ?></td>
         </tr>
         <?php } ?>
         <?php if ($_POST["employer3"]) { ?>
@@ -56,7 +56,7 @@
         </tr>
         <tr>
             <td class="left">&nbsp;</td>
-            <td class="right"><?php if ($_POST["work_description3"]) {echo $_POST["work_description3"]} ?></td>
+            <td class="right"><?php if ($_POST["work_description3"]) {echo $_POST["work_description3"];} ?></td>
         </tr>
         <?php } ?>
         <tr>
@@ -68,7 +68,7 @@
         </tr>
         <tr>
             <td class="left">&nbsp;</td>
-            <td class="right"><?php if ($_POST["ed_description"]) {echo $_POST["ed_description"]} ?></td>
+            <td class="right"><?php if ($_POST["ed_description"]) {echo $_POST["ed_description"];} ?></td>
         </tr>
         <?php if ($_POST["school2"]) { ?>
         <tr>
@@ -77,7 +77,7 @@
         </tr>
         <tr>
             <td class="left">&nbsp;</td>
-            <td class="right"><?php if ($_POST["ed_description2"]) {echo $_POST["ed_description2"]} ?></td>
+            <td class="right"><?php if ($_POST["ed_description2"]) {echo $_POST["ed_description2"];} ?></td>
         </tr>
         <?php } ?>
         <?php if ($_POST["school3"]) { ?>
@@ -87,7 +87,7 @@
         </tr>
         <tr>
             <td class="left">&nbsp;</td>
-            <td class="right"><?php if ($_POST["ed_description3"]) {echo $_POST["ed_description3"]} ?></td>
+            <td class="right"><?php if ($_POST["ed_description3"]) {echo $_POST["ed_description3"];} ?></td>
         </tr>
         <?php } ?>
     </table>
