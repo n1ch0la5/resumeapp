@@ -35,7 +35,7 @@
                 <?php else : ?>
                   <ul>
 						<li><a href="/auth/login/">Sign In</a></li>
-						<li><a href="/auth/logout/">Sign Up</a></li>
+						<li><a href="/auth/register/">Sign Up</a></li>
 				  </ul>
                 <?php endif; ?>
 				</nav>

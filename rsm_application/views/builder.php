@@ -260,6 +260,15 @@
 	    </select>
 	  </div>
 	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="ed_description">Description</label>
+	  <div class="controls">
+	    <textarea rows="4" cols="50" id="ed_description" name="ed_description" class="input-large"></textarea>
+	    
+	  </div>
+	</div>
 </div>
 
 
@@ -388,6 +397,15 @@
 	      <option>Ed.D</option>
 	      <option>J.D.</option>
 	    </select>
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="ed_description2">Description</label>
+	  <div class="controls">
+	    <textarea rows="4" cols="50" id="ed_description2" name="ed_description2" class="input-large"></textarea>
+	    
 	  </div>
 	</div>
 </div>
@@ -519,6 +537,14 @@
 	    </select>
 	  </div>
 	</div>
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="ed_description3">Description</label>
+	  <div class="controls">
+	    <textarea rows="4" cols="50" id="ed_description3" name="ed_description3" class="input-large"></textarea>
+	    
+	  </div>
+	</div>
 </div>
 <div class="expand add_education"><a>Add Education</a></div>
 <!-- Experience -->
@@ -565,6 +591,15 @@
 	  <label class="control-label" for="end_date">End Date</label>
 	  <div class="controls">
 	    <input id="end_date" name="end_date" type="text" placeholder="2011" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="work_description">Description</label>
+	  <div class="controls">
+	    <textarea rows="4" cols="50" id="work_description" name="work_description" class="input-large"></textarea>
 	    
 	  </div>
 	</div>
@@ -615,6 +650,15 @@
 	    
 	  </div>
 	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="work_description2">Description</label>
+	  <div class="controls">
+	    <textarea rows="4" cols="50" id="work_description2" name="work_description2" class="input-large"></textarea>
+	    
+	  </div>
+	</div>
 </div>
 <!-- Experience 3-->
 <div class="group experience three">
@@ -659,6 +703,15 @@
 	  <label class="control-label" for="end_date2">End Date</label>
 	  <div class="controls">
 	    <input id="end_date3" name="end_date3" type="text" placeholder="2011" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="work_description3">Description</label>
+	  <div class="controls">
+	    <textarea rows="4" cols="50" id="work_description3" name="work_description3" class="input-large"></textarea>
 	    
 	  </div>
 	</div>

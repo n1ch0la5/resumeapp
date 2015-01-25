@@ -31,16 +31,25 @@ table {width:100%; border-collapse: collapse;}
             <td class="left"><?php if ($_POST["title"]) {echo $_POST["title"]." at ";} ?><br /><strong><?php if ($_POST["employer"]) {echo $_POST["employer"];} ?></strong></td>
             <td class="right"><em><?php if ($_POST["end_date"]) {echo $_POST["start_date"].' - '.$_POST["end_date"]; } else {$_POST["start_date"];} ?></em></td>
         </tr>
+        <tr>
+            <td colspan="2"><?php if ($_POST["work_description"]) {echo $_POST["work_description"]} ?></td>
+        </tr>
         <?php if ($_POST["employer2"]) { ?>
         <tr>
             <td class="left"><?php if ($_POST["title2"]) {echo $_POST["title2"]." at ";} ?><br /><strong><?php if ($_POST["employer2"]) {echo $_POST["employer2"];} ?></strong></td>
             <td class="right"><em><?php if ($_POST["end_date2"]) {echo $_POST["start_date2"].' - '.$_POST["end_date2"]; } else {$_POST["start_date2"];} ?></em></td>
+        </tr>
+        <tr>
+            <td colspan="2"><?php if ($_POST["work_description"]) {echo $_POST["work_description"]} ?></td>
         </tr>
         <?php } ?>
         <?php if ($_POST["employer3"]) { ?>
         <tr>
             <td class="left"><?php if ($_POST["title3"]) {echo $_POST["title3"]." at ";} ?><br /><strong><?php if ($_POST["employer3"]) {echo $_POST["employer3"];} ?></strong></td>
             <td class="right"><em><?php if ($_POST["end_date3"]) {echo $_POST["start_date3"].' - '.$_POST["end_date3"]; } else {$_POST["start_date3"];} ?></em></td>
+        </tr>
+        <tr>
+            <td colspan="2"><?php if ($_POST["work_description"]) {echo $_POST["work_description"]} ?></td>
         </tr>
         <?php } ?>
         <tr class="header">
@@ -50,16 +59,25 @@ table {width:100%; border-collapse: collapse;}
             <td class="left"><strong><?php if ($_POST["school"]) {echo $_POST["school"];} ?></strong><br /><em><?php if ($_POST["degree"]) {echo $_POST["degree"];} ?><?php if ($_POST["area_of_study"]) {echo ', '.$_POST["area_of_study"];} ?><?php if ($_POST["school_year"]) {echo ', '.$_POST["school_year"];} ?></em></td>
             <td class="right">&nbsp;</td>
         </tr>
+        <tr>
+            <td colspan="2"><?php if ($_POST["ed_description"]) {echo $_POST["ed_description"]} ?></td>
+        </tr>
         <?php if ($_POST["school2"]) { ?>
         <tr>
             <td class="left"><strong><?php if ($_POST["school2"]) {echo $_POST["school2"];} ?></strong><br /><em><?php if ($_POST["degree2"]) {echo $_POST["degree2"];} ?><?php if ($_POST["area_of_study2"]) {echo ', '.$_POST["area_of_study2"];} ?><?php if ($_POST["school_year2"]) {echo ', '.$_POST["school_year2"];} ?></em></td>
             <td class="right">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2"><?php if ($_POST["ed_description2"]) {echo $_POST["ed_description2"]} ?></td>
         </tr>
         <?php } ?>
         <?php if ($_POST["school3"]) { ?>
         <tr>
             <td class="left"><strong><?php if ($_POST["school3"]) {echo $_POST["school3"];} ?></strong><br /><em><?php if ($_POST["degree3"]) {echo $_POST["degree3"];} ?><?php if ($_POST["area_of_study3"]) {echo ', '.$_POST["area_of_study3"];} ?><?php if ($_POST["school_year3"]) {echo ', '.$_POST["school_year3"];} ?></em></td>
             <td class="right">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2"><?php if ($_POST["ed_description3"]) {echo $_POST["ed_description3"]} ?></td>
         </tr>
         <?php } ?>
     </table>

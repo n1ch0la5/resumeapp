@@ -358,7 +358,7 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
 
   /* Homepage */
   .home .site-content {padding-top:0; padding-bottom:0; border-bottom:none;}
-  .feature-video {position:relative; /*background:url(/images/fpo.jpg) center top no-repeat; background-size:cover;*/ padding:2em 1em; margin:0 -1em; text-align:center;}
+  .feature-video {position:relative; /*background:url(/images/fpo.jpg) center top no-repeat; background-size:cover;*/ padding:0; margin:0 -1em; text-align:center;}
   .feature-video .content {background:rgba(255,255,255,0.85); padding:0.75em 1.25em; display:inline-block; border-radius:5px;}
   .feature-video h2 {margin-top:0;}
 
@@ -511,7 +511,7 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
   header .sign-in,
   header .topnav {right:2em;}
   header .topnav a {font-size:1em;}
-  .feature-video,
+  .feature-video {margin:0 -2em;}
   .cta-bar,
   .primary {padding-left:2em; padding-right:2em; margin:0 -2em;}
   .cta-bar {text-align:right;}
