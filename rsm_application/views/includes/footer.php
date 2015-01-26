@@ -3,10 +3,7 @@
 				<p class="copyright">&copy; Copyright <?php echo date("Y") ?> <a href="">eRezzy.com</a> All rights reserved.</p>
 				<nav class="footer-nav">
 					<ul>
-						<li><a href="/about">About Us</a></li>
-						<li><a href="">Privacy Policy</a></li>
-						<li><a href="">Terms of Use</a></li>
-						<li><a href="">Contact Us</a></li>
+						<li><a class="newWin" href="/privacy.html">Privacy Policy</a></li>
 					</ul>
 				</nav>
 				<ul class="footer-social-links">
@@ -21,13 +18,13 @@
 				<?php if( $this->ion_auth->logged_in() ) : ?>
 				<li class="login"><a href="/auth/logout/">Logout</a></li>
 				<?php else : ?>
-				<li><a class="login" href="">Sign In</a></li>
-				<li><a class="login" href="">Sign Up</a></li>
+				<li><a class="login" href="/auth/login/">Sign In</a></li>
+				<li><a class="login" href="/auth/register/">Sign Up</a></li>
 				<?php endif; ?>
-				<li><a href="">Examples</a></li>
-				<li><a href="">Resume Builder</a></li>
-				<li><a href="">Tips</a></li>
-				<li><a href="">How it Works</a></li>
+				<li><a href="/examples">Examples</a></li>
+				<li><a href="/builder">Resume Builder</a></li>
+				<li><a href="/tips">Tips</a></li>
+				<li><a href="/how">How it Works</a></li>
 				<li><a class="get-started" href="">Get Started</a></li>
 			</ul>
 		</nav><!--End Off Canvas Menu-->
