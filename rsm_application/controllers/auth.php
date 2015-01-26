@@ -79,11 +79,13 @@ class Auth extends CI_Controller {
 
 			if( $user_id = $this->ion_auth->register( $username, $password, $email, $additional, $group ) )
 			{
-
-				//if the registration is successful
-				//redirect them back to the home page
-				//this message isn't working
-				$this->session->set_flashdata('message', 'Account creation successful. Login below to access your account');
+				//set user account type to free on registration
+                $this->load->model('user_model');
+                $this->user_model->set_user_account_type(1, $user_id);
+                
+                //if the registration is successful
+                //redirect them back to the home page
+                $this->session->set_flashdata('message', 'Account creation successful. Login below to access your account');
 				redirect('/', 'refresh');
 		
 			}
@@ -150,13 +152,10 @@ class Auth extends CI_Controller {
             
             if( $user_id = $this->ion_auth->register( $username, $password, $email, $additional, $group ) )
             {
-
-                //if the registration is successful
-                //redirect them back to the home page
-                //this message isn't working
-                //$this->session->set_flashdata('message', 'Account creation successful. Login below to access your account');
-                //redirect('/', 'refresh');
-                echo 'Account creation successful.';
+                //set user account type to free on registration
+                $this->load->model('user_model');
+                $this->user_model->set_user_account_type(1, $user_id);
+                echo $user_id;
             }
             else
             {	

@@ -91,28 +91,154 @@ class user_model extends CI_Model{
 		return $query->result();
 	}
     
-    function insert_user_profile_info($data, $user_id)
+    function set_user_account_type($account_type_id, $user_id)
+    {
+
+        $insert_data = array(
+            'user_id'           => $user_id,
+            'account_type_id'   => $account_type_id
+        );
+
+        $insert = $this->db->insert('user_users_account_type', $insert_data);
+
+        return $insert;
+    }
+    
+    function update_user_account_type($account_type_id, $user_id)
+    {
+        $data = array(
+            'account_type_id' => $account_type_id
+        );
+
+        $this->db->where('user_id', $user_id);
+        $this->db->update('user_users_account_type', $data); 
+    }
+    
+    function insert_user_profile_data($data, $user_id)
     {
         date_default_timezone_set('America/New_York');
         $created = date('Y-m-d H:i:s');
+        
+        $insert_data = array(
+            'user_id'        => $user_id,
+            'firstname'      => $data['firstname'],
+            'lastname'       => $data['lastname'],
+            'middle_initial' => (isset($data['middle_initial']) ? $data['middle_initial'] : ''),
+            'nickname'       => (isset($data['nickname']) ? $data['nickname'] : ''),
+            'salutation'     => (isset($data['salutation']) ? $data['salutation'] : ''),
+            'suffix'         => (isset($data['suffix']) ? $data['suffix'] : ''),
+            'birth_date'     => (isset($data['birth_date']) ? $data['birth_date'] : ''),
+            'created_at'     => $created
+        );
 
-        $data['created_at'] = $created;
-        $this->db->where("user_id = $user_id");
-        $insert = $this->db->insert('user_profiles', $data);
+        $insert = $this->db->insert('user_profiles', $insert_data);
         
         return $insert;
     }
     
-    function insert_user_profile_info($data)
+    function insert_user_email($email, $user_id)
     {
         date_default_timezone_set('America/New_York');
         $created = date('Y-m-d H:i:s');
 
-        $data['created_at'] = $created;
-        $this->db->where("user_id = $user_id");
-        $insert = $this->db->insert('user_profiles', $data);
+        $insert_data = array(
+            'user_id'     => $user_id,
+            'email_type'  => 'home',
+            'email'       => $email,
+            'created_at'  => $created
+        );
+
+        $insert = $this->db->insert('user_emails', $insert_data);
 
         return $insert;
+    }
+    
+    function insert_user_phone($data, $user_id)
+    {
+        date_default_timezone_set('America/New_York');
+        $created = date('Y-m-d H:i:s');
+
+        $insert_data = array(
+            'user_id'     => $user_id,
+            'phone_type'  => $data['phone_type'],
+            'number'       => $data['number'],
+            'created_at'  => $created
+        );
+
+        $insert = $this->db->insert('user_phone_numbers', $insert_data);
+
+        return $insert;
+    }
+    
+    function insert_user_skill($skill, $user_id)
+    {
+        $insert_data = array(
+            'user_id'     => $user_id,
+            'skill'  => $skill
+        );
+
+        $insert = $this->db->insert('user_skills', $insert_data);
+
+        return $insert;
+    }
+    
+    function insert_user_school($data, $user_id)
+    {
+        date_default_timezone_set('America/New_York');
+        $created = date('Y-m-d H:i:s');
+
+        $insert_data = array(
+            'user_id'        => $user_id,
+            'school'         => $data['school'],
+            'degree'         => $data['degree'],
+            'degree_type'    => (isset($data['degree_type'])? $data['degree_type'] : ''),
+            'year_graduated' => (isset($data['year_graduated']) ? $data['year_graduated'] : ''),
+            'gpa'            => (isset($data['gpa']) ? $data['gpa'] : ''),
+            'created_at'     => $created
+        );
+
+        $insert = $this->db->insert('user_schools', $insert_data);
+
+        return $insert;
+    }
+    
+    function insert_user_company($data, $user_id)
+    {
+        date_default_timezone_set('America/New_York');
+        $created = date('Y-m-d H:i:s');
+
+        $insert_data = array(
+            'user_id'            => $user_id,
+            'company'            => $data['company'],
+            'address'            => (isset($data['address']) ? $data['address'] : ''),
+            'address_2'          => (isset($data['address_2']) ? $data['address_2'] : ''),
+            'city'               => (isset($data['city']) ? $data['city'] : ''),
+            'state'              => (isset($data['state']) ? $data['state'] : ''),
+            'postal_code'        => (isset($data['postal_code']) ? $data['postal_code'] : ''),
+            'title'              => (isset($data['title']) ? $data['title'] : ''),
+            'start_date'         => (isset($data['start_date']) ? $data['start_date'] : ''),
+            'end_date'           => (isset($data['end_date']) ? $data['end_date'] : ''),
+            'parent_company'     => (isset($data['parent_company']) ? $data['parent_company'] : ''),
+            'department'         => (isset($data['department']) ? $data['department'] : ''),
+            'division'           => (isset($data['division']) ? $data['division'] : ''),
+            'work_type'          => (isset($data['work_type']) ? $data['work_type'] : ''),
+            'currently_employed' => (isset($data['currently_employed']) ? $data['currently_employed'] : ''),
+            'created_at'    => $created
+        );
+
+        $insert = $this->db->insert('user_companies', $insert_data);
+
+        return $insert;
+    }
+    
+    function linkedin_data_imported($user_id)
+    {
+        $data = array(
+            'linkedin_data_import' => 1
+        );
+
+        $this->db->where('user_id', $user_id);
+        $this->db->update('user_profiles', $data); 
     }
 
 ////////////////////////////

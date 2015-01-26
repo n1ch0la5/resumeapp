@@ -51,6 +51,10 @@ class Migration_erezzy extends CI_Migration {
 				'type' => 'VARCHAR',
 				'constraint' => '20'
 			),
+            'linkedin_data_import' => array(
+                'type' => 'TINYINT',
+                'constraint' => '1'
+            ),
 			'created_at' => array(
 				'type' => 'DATETIME'
 			),
