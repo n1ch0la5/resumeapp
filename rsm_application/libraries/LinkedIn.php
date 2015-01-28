@@ -1,5 +1,5 @@
 <?php 
-// Linked in library for importa
+// Linked in library for import
 class LinkedIn {
 
 	public function __construct()

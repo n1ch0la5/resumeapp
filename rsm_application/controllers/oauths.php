@@ -131,7 +131,7 @@ class Oauths extends CI_Controller {
                     {
                         
                         // Save Linkedin user data to db
-                        $this->load->library('linkedin');
+                        $this->load->library('LinkedIn');
                         $this->load->model('resume_model');
                         $user_id = $response;
                         $resume = $this->resume_model->get_resumes_by_user_id($user_id);
