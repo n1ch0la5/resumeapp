@@ -79,9 +79,16 @@ class Auth extends CI_Controller {
 
 			if( $user_id = $this->ion_auth->register( $username, $password, $email, $additional, $group ) )
 			{
-				//set user account type to free on registration
-                $this->load->model('user_model');
+				$this->load->model('user_model');
+                $this->load->model('resume_model');
+                // Set user account type to free on registration
                 $this->user_model->set_user_account_type(1, $user_id);
+                // Create first resume for user
+                $this->resume_model->create_new_resume($user_id);
+                // Create empty contact details insert
+                $data = array();
+                $this->user_model->insert_user_contact_data($data, $user_id);
+                
                 
                 //if the registration is successful
                 //redirect them back to the home page
@@ -152,9 +159,16 @@ class Auth extends CI_Controller {
             
             if( $user_id = $this->ion_auth->register( $username, $password, $email, $additional, $group ) )
             {
-                //set user account type to free on registration
+                
                 $this->load->model('user_model');
+                $this->load->model('resume_model');
+                // Set user account type to free on registration
                 $this->user_model->set_user_account_type(1, $user_id);
+                // Create first resume for user
+                $this->resume_model->create_new_resume($user_id);
+                // Create empty contact details insert
+                $data = array();
+                $this->user_model->insert_user_contact_data($data, $user_id);
                 echo $user_id;
             }
             else

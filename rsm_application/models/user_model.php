@@ -38,8 +38,20 @@ class user_model extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();
 	}
+    
+    function get_user_profile_info_by_user_id($user_id)
+    {
+        $this->db->select('user_profiles.*, user_contact.*, user_emails.email, user_phone_numbers.number');
+        $this->db->from('user_profiles, user_contact, user_emails, user_phone_numbers');
+        $this->db->where("user_profiles.user_id = $user_id");
+        $this->db->where("user_contact.user_id = $user_id");
+        $this->db->where("user_emails.user_id = $user_id");
+        $this->db->where("user_phone_numbers.user_id = $user_id");
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 
-	function get_user_profile_info_by_id($user_id)
+	function get_all_user_profile_info_by_user_id($user_id)
 	{
 		$this->db->select('*');
 		$this->db->from('auth_users user, user_profiles upro');
@@ -67,7 +79,7 @@ class user_model extends CI_Model{
 		return $query->result();
 	}
 
-	function get_user_contact_info($user_id)
+	function get_user_contact_info_by_user_id($user_id)
 	{
 		$this->db->select('*');
 		$this->db->from('user_contact ucon');
@@ -78,6 +90,16 @@ class user_model extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();
 	}
+    
+    function get_user_email_and_phone_by_user_id()
+    {
+        $this->db->select('user_emails.email, user_phone_numbers.number');
+        $this->db->from('user_emails, user_phone_numbers');
+        $this->db->where("user_emails.user_id = $user_id");
+        $this->db->where("user_phone_numbers.user_id = $user_id");
+        $query = $this->db->get();
+        return $query->result();
+    }
 
 	function get_user_resume_info($user_id)
 	{
@@ -136,6 +158,27 @@ class user_model extends CI_Model{
         return $insert;
     }
     
+    function insert_user_contact_data($data, $user_id)
+    {
+        date_default_timezone_set('America/New_York');
+        $created = date('Y-m-d H:i:s');
+
+        $insert_data = array(
+            'user_id'      => $user_id,
+            'address'      => (isset($data['address']) ? $data['address'] : ''),
+            'address_2'    => (isset($data['address_2']) ? $data['address_2'] : ''),
+            'city'         => (isset($data['city']) ? $data['city'] : ''),
+            'state'        => (isset($data['state']) ? $data['state'] : ''),
+            'postal_code'  => (isset($data['postal_code']) ? $data['postal_code'] : ''),
+            'country'      => (isset($data['country']) ? $data['country'] : ''),
+            'created_at'   => $created
+        );
+
+        $insert = $this->db->insert('user_contact', $insert_data);
+
+        return $insert;
+    }
+    
     function insert_user_email($email, $user_id)
     {
         date_default_timezone_set('America/New_York');
@@ -177,9 +220,9 @@ class user_model extends CI_Model{
             'skill'  => $skill
         );
 
-        $insert = $this->db->insert('user_skills', $insert_data);
-
-        return $insert;
+        $this->db->insert('user_skills', $insert_data);
+        $insert_id = $this->db->insert_id();
+        return $insert_id;
     }
     
     function insert_user_school($data, $user_id)
@@ -197,9 +240,9 @@ class user_model extends CI_Model{
             'created_at'     => $created
         );
 
-        $insert = $this->db->insert('user_schools', $insert_data);
-
-        return $insert;
+        $this->db->insert('user_schools', $insert_data);
+        $insert_id = $this->db->insert_id();
+        return $insert_id;
     }
     
     function insert_user_company($data, $user_id)
@@ -226,9 +269,9 @@ class user_model extends CI_Model{
             'created_at'    => $created
         );
 
-        $insert = $this->db->insert('user_companies', $insert_data);
-
-        return $insert;
+        $this->db->insert('user_companies', $insert_data);
+        $insert_id = $this->db->insert_id();
+        return $insert_id;
     }
     
     function linkedin_data_imported($user_id)

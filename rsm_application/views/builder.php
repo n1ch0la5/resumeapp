@@ -8,7 +8,7 @@
 	<div class="control-group">
 	  <label class="control-label" for="first_name">First Name</label>
 	  <div class="controls">
-	    <input id="first_name" name="first_name" type="text" placeholder="First" class="input-large" required="">
+	    <input id="first_name" name="first_name" type="text" placeholder="First" class="input-large" required="" value="<?php if($profile_info){echo $profile_info[0]['firstname'];} ?>">
 	    
 	  </div>
 	</div>
@@ -17,7 +17,7 @@
 	<div class="control-group">
 	  <label class="control-label" for="last_name">Last Name</label>
 	  <div class="controls">
-	    <input id="last_name" name="last_name" type="text" placeholder="Last" class="input-large" required="">
+          <input id="last_name" name="last_name" type="text" placeholder="Last" class="input-large" required="" value="<?php if($profile_info){echo $profile_info[0]['lastname'];} ?>">
 	    
 	  </div>
 	</div>
@@ -26,7 +26,7 @@
 	<div class="control-group">
 	  <label class="control-label" for="phone">Phone</label>
 	  <div class="controls">
-	    <input id="phone" name="phone" type="text" placeholder="000-000-0000" class="input-large">
+          <input id="phone" name="phone" type="text" placeholder="000-000-0000" class="input-large" value="<?php if($profile_info){echo $profile_info[0]['number'];} ?>">
 	    
 	  </div>
 	</div>
@@ -35,7 +35,7 @@
 	<div class="control-group">
 	  <label class="control-label" for="email">Email</label>
 	  <div class="controls">
-	    <input id="email" name="email" type="text" placeholder="example@email.com" class="input-large" required="">
+          <input id="email" name="email" type="text" placeholder="example@email.com" class="input-large" required="" value="<?php if($profile_info){echo $profile_info[0]['email'];} ?>">
 	    
 	  </div>
 	</div>
@@ -44,7 +44,7 @@
 	<div class="control-group">
 	  <label class="control-label" for="street">Street Address</label>
 	  <div class="controls">
-	    <input id="street" name="street" type="text" placeholder="123 W. Main St." class="input-large">
+          <input id="street" name="street" type="text" placeholder="123 W. Main St." class="input-large" value="<?php if($profile_info){echo $profile_info[0]['address'];} ?>">
 	    
 	  </div>
 	</div>
@@ -53,7 +53,7 @@
 	<div class="control-group">
 	  <label class="control-label" for="city">City</label>
 	  <div class="controls">
-	    <input id="city" name="city" type="text" placeholder="City" class="input-large">
+          <input id="city" name="city" type="text" placeholder="City" class="input-large" value="<?php if($profile_info){echo $profile_info[0]['city'];} ?>">
 	    
 	  </div>
 	</div>
@@ -122,7 +122,7 @@
 	<div class="control-group">
 	  <label class="control-label" for="zip">Zip Code</label>
 	  <div class="controls">
-	    <input id="zip" name="zip" type="text" placeholder="12345" class="input-large">
+          <input id="zip" name="zip" type="text" placeholder="12345" class="input-large" value="<?php if($profile_info){echo $profile_info[0]['postal_code'];} ?>">
 	    
 	  </div>
 	</div>
@@ -131,7 +131,156 @@
 	  <h3><label for="statement">Personal Statement</label> </h2>            
 	  <textarea id="statement" name="statement" style="width:100%" rows="10"></textarea>
 </div>
+<?php 
+if( $resume_info['schools'] ) :
+    $ed_num = array('one', 'two', 'three');
+for($i=0;$i<=2;$i++) :
+//foreach($resume_info['schools'] as $school) :
+    if($i >= 1){$n = $i+1;}else{$n=null;}
+    ?>
+    <!-- Education -->
+    <div class="group education <?php echo $ed_num[$i]; ?>" <?php if(isset($resume_info['schools'][$i]) && $i>0){echo 'style="display: block;"';}?></div>
+        <h3>Education</h3>
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="school">School</label>
+            <div class="controls">
+                <input id="school" name="school<?php echo $n; ?>" type="text" placeholder="School" class="input-large" value="<?php if(isset($resume_info['schools'][$i]['school'])){echo $resume_info['schools'][$i]['school'];} ?>">
 
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="school-city">City</label>
+            <div class="controls">
+                <input id="school-city" name="school-city<?php echo $n; ?>" type="text" placeholder="City" class="input-large" >
+
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+            <label class="control-label" for="school-state">State</label>
+            <div class="controls">
+                <select id="school-state" name="school-state<?php echo $n; ?>" class="input-medium">
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="school_year">Graduation Year</label>
+            <div class="controls">
+                <input id="school_year" name="school_year<?php echo $n; ?>" type="text" placeholder="2007" class="input-large" value="<?php if(isset($resume_info['schools'][$i]['year_graduated'])){echo $resume_info['schools'][$i]['year_graduated'];} ?>">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="area_of_study">Area of Study</label>
+            <div class="controls">
+                <input id="area_of_study" name="area_of_study<?php echo $n; ?>" type="text" placeholder="Business" class="input-large" value="<?php if(isset($resume_info['schools'][$i]['degree_type'])){echo $resume_info['schools'][$i]['degree_type'];} ?>">
+
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+            <label class="control-label" for="degree">Degree Earned</label>
+            <div class="controls">
+                <select id="degree" name="degree<?php echo $n; ?>" class="input-small">
+                    <option>A.A.</option>
+                    <option>A.S.</option>
+                    <option>A.A.S.</option>
+                    <option>A.E.</option>
+                    <option>A.A.A.</option>
+                    <option>A.P.S.</option>
+                    <option>B.A.</option>
+                    <option>B.S.</option>
+                    <option>B.F.A.</option>
+                    <option>B.B.A.</option>
+                    <option>B.Arch.</option>
+                    <option>M.A.</option>
+                    <option>M.S.</option>
+                    <option>M.Res.</option>
+                    <option>M.Phil.</option>
+                    <option>LL.M.</option>
+                    <option>M.B.A.</option>
+                    <option>PhD</option>
+                    <option>M.D.</option>
+                    <option>Ed.D</option>
+                    <option>J.D.</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="ed_description">Description</label>
+            <div class="controls">
+                <textarea rows="4" cols="50" id="ed_description" name="ed_description<?php echo $n; ?>" class="input-large"></textarea>
+
+            </div>
+        </div>
+    </div>
+    <?php
+
+    endfor;
+else :
+?>
 <!-- Education -->
 <div class="group education one">
 	<h3>Education</h3>
@@ -278,7 +427,7 @@
 	<div class="control-group">
 	  <label class="control-label" for="school2">School</label>
 	  <div class="controls">
-	    <input id="school2" name="school2" type="text" placeholder="School" class="input-large">
+	    <input id="school2" name="school2" type="text" placeholder="School" class="input-large" >
 	    
 	  </div>
 	</div>
@@ -546,7 +695,75 @@
 	  </div>
 	</div>
 </div>
+<?php endif; ?>
 <div class="expand add_education"><a>Add Education</a></div>
+<?php
+    if( $resume_info['companies'] ) :
+    $ed_num = array('one', 'two', 'three');
+    for($i=0;$i<=2;$i++) :
+    if($i >= 1){$n = $i+1;}else{$n=null;}
+?>
+    <!-- Experience -->
+    <div class="group experience one">
+        <h3>Work Experience</h3>
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="employer">Employer</label>
+            <div class="controls">
+                <input id="employer" name="employer<?php echo $n; ?>" type="text" placeholder="Job Inc." class="input-large" value="<?php if(isset($resume_info['companies'][$i]['company'])){echo $resume_info['companies'][$i]['company'];} ?>">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="employer_location">Employer Location</label>
+            <div class="controls">
+                <input id="employer_location" name="employer_location<?php echo $n; ?>" type="text" placeholder="Woodbridge, CT" class="input-large" value="<?php if(isset($resume_info['companies'][$i]['city'])){echo $resume_info['companies'][$i]['city'];} if(isset($resume_info['companies'][$i]['state']) && $resume_info['companies'][$i]['state']){echo ', ' . $resume_info['companies'][$i]['state'];} ?>">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="title">Title</label>
+            <div class="controls">
+                <input id="title" name="title<?php echo $n; ?>" type="text" placeholder="Chief Executive Officer" class="input-large" value="<?php if(isset($resume_info['companies'][$i]['title'])){echo $resume_info['companies'][$i]['title'];} ?>">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="start_date">Start Date</label>
+            <div class="controls">
+                <input id="start_date" name="start_date<?php echo $n; ?>" type="text" placeholder="2008" class="input-large" value="<?php if(isset($resume_info['companies'][$i]['start_date'])){echo $resume_info['companies'][$i]['start_date'];} ?>">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="end_date">End Date</label>
+            <div class="controls">
+                <input id="end_date" name="end_date<?php echo $n; ?>" type="text" placeholder="2011" class="input-large" value="<?php if(isset($resume_info['companies'][$i]['end_date'])){echo $resume_info['companies'][$i]['end_date'];} ?>">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="work_description">Description</label>
+            <div class="controls">
+                <textarea rows="4" cols="50" id="work_description" name="work_description<?php echo $n; ?>" class="input-large"></textarea>
+
+            </div>
+        </div>
+    </div>
+<?php
+    endfor;
+    else :
+?>
 <!-- Experience -->
 <div class="group experience one">
 	<h3>Work Experience</h3>
@@ -716,6 +933,7 @@
 	  </div>
 	</div>
 </div>
+<?php endif; ?>
 <div class="expand add_experience"><a>Add Work Experience</a></div>
 <div class="group">
 	<!-- Textarea -->

@@ -18,7 +18,7 @@ class resume_model extends CI_Model{
 		// resume companies and company duties, res schools,
 		// that's it for now. need a db spot for objective, references, objective, career summary, cover letter.
 		//$this->db->select('tpl.file_path, sec.section, rescon.*, usrcmp.company, usrcmp');
-		$sections = $this->get_resume_sections($resume_id);
+		$sections = $this->get_resume_sections_by_resume_id($resume_id);
 
 		foreach($sections as $sect){
 			if($sect == 'experience' || $sect == 'education' || $sect == 'skills')
@@ -116,7 +116,7 @@ class resume_model extends CI_Model{
 		return $query->result_array();
 	}
 
-	function get_resume_sections($resume_id)
+	function get_resume_sections_by_resume_id($resume_id)
 	{
 		$this->db->select('section');
 		$this->db->from('res_sections, res_resume_sections');
@@ -132,6 +132,27 @@ class resume_model extends CI_Model{
 		}
 		return $array;
 	}
+    
+    function get_all_resume_sections()
+    {
+        $this->db->select('section');
+        $this->db->from('res_sections');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
+    function insert_resume_sections($section_id, $resume_id)
+    {
+        $data = array(
+            'resume_id' => $resume_id,
+            'section_id' => $section_id,
+            'order' => $section_id //default order
+        );
+
+        $insert = $this->db->insert('res_resume_sections', $data);
+        return $insert;
+    }
+
 
 	function get_resume_company_duties($company_id)
 	{
@@ -176,7 +197,32 @@ class resume_model extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();
 	}
+    
+    function create_new_resume( $user_id )
+    {
+        date_default_timezone_set('America/New_York');
+        $created = date('Y-m-d H:i:s');
 
+        $data = array(
+            'user_id' => $user_id,
+            'template_id' => 1, //default
+            'created_at' => $created
+        );
+
+        $insert = $this->db->insert('resumes', $data);
+        
+        $resume_id = $this->db->insert_id();
+        
+        $num_sections = count( $this->get_all_resume_sections() );
+        
+        for( $i=1; $i<=$num_sections; $i++)
+        {
+            $this->insert_resume_sections( $i, $resume_id );
+        }
+        
+        return $insert;
+    }
+    
 	function create_new_template($template_data)
 	{
 		date_default_timezone_set('America/New_York');
@@ -192,12 +238,42 @@ class resume_model extends CI_Model{
 		$insert = $this->db->insert('res_user_custom_sections', $data);
 		return $insert;
 	}
+    
+    function connect_resume_skill($resume_id, $skill_id)
+    {
+        $data = array(
+            'resume_id' => $resume_id,
+            'skill_id' => $skill_id
+        );
+
+        $insert = $this->db->insert('res_resume_user_skills', $data);
+        return $insert;
+    }
+    
+    function connect_resume_school($resume_id, $school_id)
+    {
+        $data = array(
+            'resume_id' => $resume_id,
+            'school_id' => $school_id
+        );
+
+        $insert = $this->db->insert('res_resume_user_schools', $data);
+        return $insert;
+    }
+    
+    function connect_resume_company($resume_id, $company_id)
+    {
+        $data = array(
+            'resume_id' => $resume_id,
+            'company_id' => $company_id
+        );
+
+        $insert = $this->db->insert('res_resume_user_companies', $data);
+        return $insert;
+    }
 
 	function delete_resume_template($template_id)
 	{
 		$this->db->delete('res_templates', array('id' => $template_id));
-	}
-    
-   
-
+	} 
 }

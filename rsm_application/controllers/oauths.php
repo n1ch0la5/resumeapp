@@ -127,19 +127,20 @@ class Oauths extends CI_Controller {
                 //register user account and login
                 if($response = $this->curl->simple_post('auth/social_register', $user_data))
                 {
-
                     if(is_numeric($response))
                     {
                         
                         // Save Linkedin user data to db
                         $this->load->library('linkedin');
+                        $this->load->model('resume_model');
                         $user_id = $response;
-                        $this->linkedin->insert_data($user, $user_id);
+                        $resume = $this->resume_model->get_resumes_by_user_id($user_id);
+                        $resume_id = $resume[0]['id'];
+                        $this->linkedin->insert_data($user, $user_id, $resume_id);
                         
                         //Login the user
                         $this->session->set_flashdata( 'email', $user['email-address'] );
                         redirect('auth/login/1');
-
                     }
                     else
                     {

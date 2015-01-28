@@ -5,6 +5,7 @@ class LinkedIn {
 	public function __construct()
 	{
 		$this->load->model('user_model');
+        $this->load->model('resume_model');
         $user_id = $this->session->userdata('user_id');
 		//$this->load->model('resume_model');
 		//$this->load->model('user_model');
@@ -16,7 +17,7 @@ class LinkedIn {
     	return $CI->$key;
 	}
 
-	public function insert_data( $user_info, $user_id )
+	public function insert_data( $user_info, $user_id, $resume_id )
 	{
         if( ! empty($user_info) )
         {
@@ -36,11 +37,12 @@ class LinkedIn {
             }
 
             // Insert Skills
-            if( $user_info['skills']['@attributes']['total'] >= 1 )
+            if( $user_info['skills']['@attributes']['total'] > 1 )
             {
                 foreach($user_info['skills']['skill'] as $skill)
                 {
-                    $this->user_model->insert_user_skill($skill['skill']['name'], $user_id);
+                    $skill_id = $this->user_model->insert_user_skill($skill['skill']['name'], $user_id);
+                    $this->resume_model->connect_resume_skill($resume_id, $skill_id);
                 }
             }
 
@@ -52,17 +54,20 @@ class LinkedIn {
                 {
                     $school = $user_info['educations']['education'];
                     $data = array( 'school' => $school['school-name'], 'degree' => $school['degree'], 'degree_type' => $school['field-of-study'], 'year_graduated' => $school['end-date']['year'] );
-                    $this->user_model->insert_user_school($data, $user_id);
+                    $school_id = $this->user_model->insert_user_school($data, $user_id);
+                    // Connect a resume to the school
+                    $this->resume_model->connect_resume_school($resume_id, $school_id);
                 }
                 else
                 {
                     foreach($user_info['educations']['education'] as $school)
                     {
                         $data = array( 'school' => $school['school-name'], 'degree' => $school['degree'], 'degree_type' => $school['field-of-study'], 'year_graduated' => $school['end-date']['year'] );
-                        $this->user_model->insert_user_school($data, $user_id);
+                        $school_id = $this->user_model->insert_user_school($data, $user_id);
+                        // Connect a resume to the school
+                        $this->resume_model->connect_resume_school($resume_id, $school_id);
                     }
                 }
-                
             }
 
             // Insert Positions / Companies
@@ -75,7 +80,9 @@ class LinkedIn {
                     if($company['is-current'] == false ){
                         $data['end_date'] = $company['end-date']['year'];
                     }
-                    $this->user_model->insert_user_company($data, $user_id);
+                    $company_id = $this->user_model->insert_user_company($data, $user_id);
+                    // Connect a resume to the school
+                    $this->resume_model->connect_resume_company($resume_id, $company_id);
                 }
                 else
                 {
@@ -85,7 +92,9 @@ class LinkedIn {
                         if($company['is-current'] == false ){
                             $data['end_date'] = $company['end-date']['year'];
                         }
-                        $this->user_model->insert_user_company($data, $user_id);
+                        $company_id = $this->user_model->insert_user_company($data, $user_id);
+                        // Connect a resume to the school
+                        $this->resume_model->connect_resume_company($resume_id, $company_id);
                     } 
                 }
                 
