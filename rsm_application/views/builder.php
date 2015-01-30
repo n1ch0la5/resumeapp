@@ -135,7 +135,6 @@
 if( $resume_info['schools'] ) :
     $ed_num = array('one', 'two', 'three');
 for($i=0;$i<=2;$i++) :
-//foreach($resume_info['schools'] as $school) :
     if($i >= 1){$n = $i+1;}else{$n=null;}
     ?>
     <!-- Education -->
@@ -941,8 +940,15 @@ else :
 	<textarea id="awards" name="awards" style="width:100%" rows="10"></textarea>
 
 	<!-- Textarea -->
-	<h3><label for="interests">Interests</label> </h2>            
-	<textarea id="interests" name="interests" style="width:100%" rows="10"></textarea>
+	<h3><label for="interests">Interests</label> </h2>
+   <?php
+$skills = null;
+if( isset($resume_info['skills']) && ! empty($resume_info['skills']) )
+{
+    $skills = implode(', ', $resume_info['skills']);
+}
+    ?>
+    <textarea id="interests" name="interests" style="width:100%" rows="10"><?php echo $skills; ?></textarea>
 
 
 	<!-- Resume Template -->
