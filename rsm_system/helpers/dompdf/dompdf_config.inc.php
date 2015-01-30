@@ -100,7 +100,8 @@ def("DOMPDF_FONT_CACHE", DOMPDF_FONT_DIR);
  * The temporary directory is required to download remote images and when
  * using the PFDLib back end.
  */
-def("DOMPDF_TEMP_DIR", sys_get_temp_dir());
+//def("DOMPDF_TEMP_DIR", sys_get_temp_dir());
+def( "DOMPDF_TEMP_DIR", getcwd() .'/tmp' );
 
 /**
  * ==== IMPORTANT ====
