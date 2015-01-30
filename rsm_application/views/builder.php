@@ -953,7 +953,6 @@ else :
 	    <select id="template-select" name="template-select" class="input-small">
 	    	<option value="pdf">Classic</option>
 	    	<option value="executive">Executive</option>
-	    	<option value="creative">Creative</option>
 	    	<option value="modern">Modern</option>
 	    	<option value="tech">Tech</option>
 	    </select>

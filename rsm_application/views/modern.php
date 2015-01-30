@@ -30,7 +30,7 @@ a img{border:0px;}
 
 
 .wrap{
-	width:900px;
+	width:100%;
 	margin:0 auto;
 	padding:0 10px 0 4px;	
 }
@@ -54,22 +54,22 @@ padding: 16px 0px 0 20px;
 }
 
 .tech-bg3{background:#f4f4f4;}
-.flt{float:left;}
-.fltr{float:right;}	
+.flt{display:inline-block; vertical-align:top;}
+.fltr{display:inline-block; vertical-align:top;}	
 .modern-bg{background:#4e80bb;padding-bottom:20px;}
-.modern-bg .header{width:900px;margin:0 auto;text-align:left;}
+.modern-bg .header{width:100%;margin:0 auto;text-align:left;}
 .modern-bg .header .logo{background:url(images/ballon-logo.png) no-repeat;width:195px;height:173px;}
-.modern-bg .top-righti{border-left: 2px solid #a3c4e7;margin-left: 12px;margin-top: 0;padding-left: 12px;width: 660px;}
+.modern-bg .top-righti{border-left: 2px solid #a3c4e7;margin-left: 12px;margin-top: 0;padding-left: 12px;width: 70%;}
 .modern-bg .top-righti p{color:#FFF;clear:both;}
-.box1{float:left;text-align:center;width:219px;font-size:13px;}
+.box1{display:inline-block; vertical-align:top;text-align:center;width:33%;font-size:13px;}
 .box1 a{color:#FFF;}
-.box1 img{display:block;margin:8px auto 10px;}
+.box1 img{display:inline-block; height:50px; margin:15px 0 0 20px;}
 .logo h2{color: #557dbb;font-family: Arial,Helvetica,sans-serif;font-size: 22px;font-weight: 700;margin-top: 19px;text-align: center;width: 97px;}
 .logo h3{color: #557dbb;font-family: Arial,Helvetica,sans-serif;font-size: 28px;font-weight: 800;line-height: 22px;margin-top: 26px;text-align: center;text-transform: uppercase;width: 225px;}
 .tech-bg3 .header p a{color:#557dbb;display: block;font-size: 12px;text-align: center;width: 226px;}
 .new-wrap{border-left:3px solid #dcdcdc;border-top:3px solid #dcdcdc;margin-top:20px;padding-bottom:30px;}
-.new-wrap .lefti{width:150px;text-align:right;font-size:13px;color:#858585;padding-right:30px;}
-.new-wrap .righti{width:670px;}
+.new-wrap .lefti{width:20%;text-align:right;font-size:13px;color:#858585;padding-right:30px;}
+.new-wrap .righti{width:70%;}
 .new-wrap .righti h2{font-size:19px;color:#5182ba;}
 .new-wrap .righti h3{font-size:17px;color:#000;}
 .new-wrap .righti p{color:#000;font-size:13px;text-align:justify;}
@@ -103,26 +103,26 @@ padding: 16px 0px 0 20px;
         <div class="logo flt">
         	<h2>Hello</h2>
         	<h3>
-            	John <br />
-                Smith
+            	<?php if ($_POST["first_name"]) {echo $_POST["first_name"];} ?> <br />
+                <?php if ($_POST["last_name"]) { echo $_POST["last_name"]; } ?>
             </h3>
-			<p><a href="#">www.jhonsmith.com</a></p>
+			<!--<p><a href="#">www.jhonsmith.com</a></p>-->
         </div>
 
         <div class="top-righti flt">
-			<p>My name is Jhon Smith, a Web Developer and Graphic Designer. I am looking to obtain a position within a challenging and dynamic environment that will enable me to use my strong organizational skills, educational background,  and technical expertise.</p>	
+			<p><?php if ($_POST["statement"]) {echo $_POST["statement"];} ?></p>	
 
         	<div class="box1">
-            	<img src="images/email.png" alt="" />
-				<a href="mailto:Kukook.com@gmail.com">Kukook.com@gmail.com</a>
+            	<img src="images/email.png" alt="" /><br />
+				<a><?php if ($_POST["email"]) {echo $_POST["email"];} ?></a>
             </div>
             <div class="box1">
-            	<img src="images/telephone.png" alt=""/>
-            	<a href="tel:(555) 555-5555">(555) 555-5555</a>
+            	<img src="images/telephone.png" alt=""/><br />
+            	<a><?php if ($_POST["phone"]) {echo $_POST["phone"];} ?></a>
             </div>
             <div class="box1">
-            	<img src="images/map.png" alt=""/>
-                <a href="#">Scottsdale, Hawai 22222</a>
+            	<img src="images/map.png" alt=""/><br />
+                <a href="#"><?php if ($_POST["city"]) { echo $_POST["city"]; } ?>, <?php if ($_POST["state"]) { echo $_POST["state"]; } ?> </a>
             </div>
         		
         </div>
@@ -143,13 +143,13 @@ padding: 16px 0px 0 20px;
             <div class="cv-box">
 				
                 <div class="lefti flt">
-                	<p>2012-Current</p>
+                	<p><?php if ($_POST["end_date"]) {echo $_POST["start_date"].' - '.$_POST["end_date"]; } else {$_POST["start_date"].'- Current';} ?></p>
                 </div>
                 
                 <div class="righti flt">
-                		<h2>Kukook International</h2>
-                        <h3>Lead Web Designer</h3>
-                        <p>My name is Jhon Smith, a Web Developer and Graphic Designer. I am looking to obtain a position within a challenging and dynamic environment that will enable me to use my strong organizational skills, educational background,  and technical expertise.</p>	
+                		<h2><?php if ($_POST["employer"]) {echo $_POST["employer"];} ?></h2>
+                        <h3><?php if ($_POST["title"]) {echo $_POST["title"];} ?></h3>
+                        <p><?php if ($_POST["work_description"]) {echo $_POST["work_description"];} ?></p>	
                         
                 
                 </div>
@@ -157,116 +157,115 @@ padding: 16px 0px 0 20px;
 		<!--=============/CV BOX===================-->                
 				<div class="clearfix"></div>
 	    	</div>
-
+<?php if ($_POST["employer2"]) { ?>
             <div class="cv-box">
-				
+                
                 <div class="lefti flt">
-                	<p>2012-Current</p>
+                    <p><?php if ($_POST["end_date2"]) {echo $_POST["start_date2"].' - '.$_POST["end_date2"]; } else {$_POST["start_date2"].'- Current';} ?></p>
                 </div>
                 
                 <div class="righti flt">
-                		<h2>Kukook International</h2>
-                        <h3>Lead Web Designer</h3>
-                        <p>My name is Jhon Smith, a Web Developer and Graphic Designer. I am looking to obtain a position within a challenging and dynamic environment that will enable me to use my strong organizational skills, educational background,  and technical expertise.</p>	
+                        <h2><?php if ($_POST["employer2"]) {echo $_POST["employer2"];} ?></h2>
+                        <h3><?php if ($_POST["title2"]) {echo $_POST["title2"];} ?></h3>
+                        <p><?php if ($_POST["work_description2"]) {echo $_POST["work_description2"];} ?></p>  
                         
                 
                 </div>
                 
-		<!--=============/CV BOX===================-->                
-				<div class="clearfix"></div>
-	    	</div>
-
+        <!--=============/CV BOX===================-->                
+                <div class="clearfix"></div>
+            </div>
+<?php } ?>
+<?php if ($_POST["employer3"]) { ?>
             <div class="cv-box">
-				
+                
                 <div class="lefti flt">
-                	<p>2012-Current</p>
+                    <p><?php if ($_POST["end_date3"]) {echo $_POST["start_date3"].' - '.$_POST["end_date3"]; } else {$_POST["start_date3"].'- Current';} ?></p>
                 </div>
                 
                 <div class="righti flt">
-                		<h2>Kukook International</h2>
-                        <h3>Lead Web Designer</h3>
-                        <p>My name is Jhon Smith, a Web Developer and Graphic Designer. I am looking to obtain a position within a challenging and dynamic environment that will enable me to use my strong organizational skills, educational background,  and technical expertise.</p>	
+                        <h2><?php if ($_POST["employer3"]) {echo $_POST["employer3"];} ?></h2>
+                        <h3><?php if ($_POST["title3"]) {echo $_POST["title3"];} ?></h3>
+                        <p><?php if ($_POST["work_description3"]) {echo $_POST["work_description3"];} ?></p>  
                         
                 
                 </div>
                 
-		<!--=============/CV BOX===================-->                
-				<div class="clearfix"></div>
-	    	</div>
-            
-		  <div class="cv-box">
-				
-                <div class="lefti flt">
-                	<p>2012-2013</p>
-                </div>
-                
-                <div class="righti flt">
-                		<h2>Kukook International</h2>
-                        <h3>Lead Web Designer</h3>
-                        <p>My name is Jhon Smith, a Web Developer and Graphic Designer. I am looking to obtain a position within a challenging and dynamic environment that will enable me to use my strong organizational skills, educational background,  and technical expertise.</p>	
-                        
-                
-                </div>
-                
-		<!--=============/CV BOX===================-->                
-				<div class="clearfix"></div>
-	    	</div>            
+        <!--=============/CV BOX===================-->                
+                <div class="clearfix"></div>
+            </div>
+<?php } ?>            
 
 
 
 		<!--=============/NEW WRAP===================-->                
 		</div>
         
+        <div class="new-wrap">   
+                <h1 class="headin-newst">Education</h1>
+            <div class="cv-box">
+                
+                <div class="lefti flt">
+                    <p><?php if ($_POST["school_year"]) {echo ', '.$_POST["school_year"];} ?></p>
+                </div>
+                
+                <div class="righti flt">
+                        <h2><?php if ($_POST["school"]) {echo $_POST["school"];} ?></h2>
+                        <h3><?php if ($_POST["degree"]) {echo $_POST["degree"];} ?></h3>
+                        <p><?php if ($_POST["ed_description"]) {echo $_POST["ed_description"];} ?></p>    
+                        
+                
+                </div>
+                
+        <!--=============/CV BOX===================-->                
+                <div class="clearfix"></div>
+            </div>
+<?php if ($_POST["school2"]) { ?>
+            <div class="cv-box">
+                
+                <div class="lefti flt">
+                    <p><?php if ($_POST["school_year2"]) {echo ', '.$_POST["school_year2"];} ?></p>
+                </div>
+                
+                <div class="righti flt">
+                        <h2><?php if ($_POST["school2"]) {echo $_POST["school2"];} ?></h2>
+                        <h3><?php if ($_POST["degree2"]) {echo $_POST["degree2"];} ?></h3>
+                        <p><?php if ($_POST["ed_description2"]) {echo $_POST["ed_description2"];} ?></p>    
+                        
+                
+                </div>
+                
+        <!--=============/CV BOX===================-->                
+                <div class="clearfix"></div>
+            </div>
+<?php } ?>
+<?php if ($_POST["school3"]) { ?>
+            <div class="cv-box">
+                
+                <div class="lefti flt">
+                    <p><?php if ($_POST["school_year3"]) {echo ', '.$_POST["school_year3"];} ?></p>
+                </div>
+                
+                <div class="righti flt">
+                        <h2><?php if ($_POST["school3"]) {echo $_POST["school3"];} ?></h2>
+                        <h3><?php if ($_POST["degree3"]) {echo $_POST["degree3"];} ?></h3>
+                        <p><?php if ($_POST["ed_description3"]) {echo $_POST["ed_description3"];} ?></p>    
+                        
+                
+                </div>
+                
+        <!--=============/CV BOX===================-->                
+                <div class="clearfix"></div>
+            </div>
+<?php } ?>           
+
+
+
+        <!--=============/NEW WRAP===================-->                
+        </div>
         
         
-       <div class="new-wrap-2">
-       	
-        	<div class="boxi1 flt">
-            		<h1 class="headin-newst">Education</h1>	
-                	<h2>Kukook State University. Hawaii</h2>
-                    <h3>Masters. Graphic Arts</h3>
-                    <p>Focus on typography and color theory, and web development languages.</p>    
-            </div>		
-        	
-            <div class="boxi2 fltr">
-            		<h1 class="headin-newst">Skills</h1>	
-                	<h2>Kukook State University. Hawaii</h2>
-                    <h3>Masters. Graphic Arts</h3>
-                    <p>Focus on typography and color theory, and web development languages.</p>    
-            </div>		
-
-        	<div class="boxi1 flt">
-            		
-                	<h2>Kukook State University. Hawaii</h2>
-                    <h3>Masters. Graphic Arts</h3>
-                    <p>Focus on typography and color theory, and web development languages.</p>    
-            </div>		
-        	
-            <div class="boxi2 fltr">
-            		
-                	<h2>Kukook State University. Hawaii</h2>
-                    <h3>Masters. Graphic Arts</h3>
-                    <p>Focus on typography and color theory, and web development languages.</p>    
-            </div>		
-
-        	<div class="boxi1 flt">
-            		
-                	<h2>Kukook State University. Hawaii</h2>
-                    <h3>Masters. Graphic Arts</h3>
-                    <p>Focus on typography and color theory, and web development languages.</p>    
-            </div>		
-        	
-            <div class="boxi2 fltr">
-            		
-                	<h2>Kukook State University. Hawaii</h2>
-                    <h3>Masters. Graphic Arts</h3>
-                    <p>Focus on typography and color theory, and web development languages.</p>    
-            </div>		
-
-
-			<div class="clearfix"></div>
-		<!--=============/NEW WRAP2===================-->                
-       </div> 
+       
 
 	    
 
