@@ -1,6 +1,6 @@
 <h1>Resume Builder</h1>
 <div>
-<form class="form-horizontal" action="/pdf" method="POST">
+<form class="form-horizontal" action="/pdf/" method="POST">
 <!-- Personal Info -->
 <div class="group">
 	<h3>Personal Information</h2>
