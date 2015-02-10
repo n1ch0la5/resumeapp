@@ -1,6 +1,8 @@
 				<main class="alpha" role="main">
 					<div class="feature-video">
-						<iframe width="560" height="315" src="//www.youtube.com/embed/sVFHEFPaE_M?autoplay=1" frameborder="0" allowfullscreen></iframe>
+						<div class="video-box">
+							<iframe width="560" height="315" src="//www.youtube.com/embed/sVFHEFPaE_M?autoplay=1" frameborder="0" allowfullscreen></iframe>
+						</div>
 						<!--<div class="content">
 							<h2>It's Not You, It's Your Resume</h2>
 							<p>Make your resume stand out. Let erezzy help.</p>

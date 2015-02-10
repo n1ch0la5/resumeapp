@@ -65,7 +65,7 @@ padding: 16px 0px 0 20px;
 .box1 a{color:#FFF;}
 .box1 img{display:inline-block; height:50px; margin:15px 0 0 20px;}
 .logo h2{color: #557dbb;font-family: Arial,Helvetica,sans-serif;font-size: 22px;font-weight: 700;margin-top: 19px;text-align: center;width: 97px;}
-.logo h3{color: #557dbb;font-family: Arial,Helvetica,sans-serif;font-size: 28px;font-weight: 800;line-height: 22px;margin-top: 26px;text-align: center;text-transform: uppercase;width: 225px;}
+.logo h3{color: #557dbb;font-family: Arial,Helvetica,sans-serif;font-size: 22px;font-weight: 800;line-height: 22px;margin-top: 32px;text-align: center;text-transform: uppercase;width: 225px;}
 .tech-bg3 .header p a{color:#557dbb;display: block;font-size: 12px;text-align: center;width: 226px;}
 .new-wrap{border-left:3px solid #dcdcdc;border-top:3px solid #dcdcdc;margin-top:20px;padding-bottom:30px;}
 .new-wrap .lefti{width:20%;text-align:right;font-size:13px;color:#858585;padding-right:30px;}
@@ -206,7 +206,7 @@ padding: 16px 0px 0 20px;
             <div class="cv-box">
                 
                 <div class="lefti flt">
-                    <p><?php if ($_POST["school_year"]) {echo ', '.$_POST["school_year"];} ?></p>
+                    <p><?php if ($_POST["school_year"]) {echo $_POST["school_year"];} ?></p>
                 </div>
                 
                 <div class="righti flt">
@@ -224,7 +224,7 @@ padding: 16px 0px 0 20px;
             <div class="cv-box">
                 
                 <div class="lefti flt">
-                    <p><?php if ($_POST["school_year2"]) {echo ', '.$_POST["school_year2"];} ?></p>
+                    <p><?php if ($_POST["school_year2"]) {echo $_POST["school_year2"];} ?></p>
                 </div>
                 
                 <div class="righti flt">
@@ -243,7 +243,7 @@ padding: 16px 0px 0 20px;
             <div class="cv-box">
                 
                 <div class="lefti flt">
-                    <p><?php if ($_POST["school_year3"]) {echo ', '.$_POST["school_year3"];} ?></p>
+                    <p><?php if ($_POST["school_year3"]) {echo $_POST["school_year3"];} ?></p>
                 </div>
                 
                 <div class="righti flt">

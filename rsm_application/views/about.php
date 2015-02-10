@@ -1,1 +1,3 @@
 <h1>About eRezzy</h1>
+<p>eRezzy, is the leading resume creation technology company and its simple!  Our SaaS based product was created by a leading recruiter in the technology sector who recognized the need for a quick and easy solution where people like you can create a presentable rezzy on the fly! Simply add in your info, choose the look of your resume and print from the PDF that is sent to you.</p>
+<p>Follow us on <a href="https://www.facebook.com/eRezzy?ref=hl">Facebook</a> and also on <a href="https://twitter.com/TweetERezzy">Twitter</a>.</p>

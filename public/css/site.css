@@ -104,7 +104,7 @@ hr {clear:both; width:100%;}
 
 /* Form Elements
    ----------------------------------------------------*/
-form {margin:0 0 1em; max-width:500px;}
+form {margin:0 0 1em; max-width:500px; width:100%;}
 label {display:block; font-weight:bold;}
 button[type="submit"] {}
 button, input, select, textarea {margin:0; margin:0 0 0.5em; font-size:100%; vertical-align:baseline; *vertical-align:middle;}
@@ -121,7 +121,7 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {-webkit-appearance:none;}
 button::-moz-focus-inner,
 input::-moz-focus-inner {border:0; padding:0;}
-textarea {overflow:auto; vertical-align:top;}
+textarea {overflow:auto; vertical-align:top; max-width:100%;}
 .education, .experience {margin-top:2em;}
 .education.two, .education.three, .experience.two, .experience.three {display:none;}
 .expand a:hover {cursor:pointer;}
@@ -519,6 +519,12 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
   .cta-bar a {margin-top:0;}
 
   .secondary {padding:0; margin:0 -2em;}
+
+  .video-box {width:800px; margin:0 auto; padding:46px 35px 120px 25px; background:url(/images/led.png);
+    -webkit-background-size:100%;
+       -moz-background-size:100%;
+            background-size:100%;
+  }
 
   .footer-social-links {right:2em;}
 
