@@ -4,6 +4,7 @@
 				<nav class="footer-nav">
 					<ul>
 						<li><a class="newWin" href="/privacy.html">Privacy Policy</a></li>
+						<li><a href="/about">About</a></li>
 					</ul>
 				</nav>
 				<ul class="footer-social-links">
