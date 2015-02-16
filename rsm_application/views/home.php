@@ -17,11 +17,11 @@
 					<div class="trust">
 					</div>
 					<div class="primary three-col">
-						<h2>erezzy’s free customizable resume templates allow you to tell the story of your career in an attractive, professional way.</h2>
+						<h2>erezzy’s customizable resume templates allow you to tell the story of your career in an attractive, professional way.</h2>
 						<div class="col col1">
 							<div class="image"><img src="/images/file.png" alt="What is eRezzy?" /></div>
 							<h3>What is eRezzy?</h3>
-							<p>erezzy provides the free tools to build a customizable resume that helps job seekers take the next step in their career. With a better resume, you’re more likely to earn a better job.</p>
+							<p>erezzy provides the tools to build a customizable resume that helps job seekers take the next step in their career. With a better resume, you’re more likely to earn a better job.</p>
 						</div>
 						<div class="col col2">
 							<div class="image"><img src="/images/macbook.png" alt="How Does it Work?" /></div>
@@ -46,7 +46,7 @@
 							<h3>Erezzy Helps You</h3>
 							<ul class="arrow">
 								<li>Put your tailored resume in more hands, faster</li>
-								<li>Build a professional resume for free</li>
+								<li>Build a professional resume</li>
 							</ul>
 						</div>
 					</div>
