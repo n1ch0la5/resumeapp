@@ -251,14 +251,31 @@ $('.watch').click(function(event) {
     }
   }
 })(jQuery);
+
 $(window).on('load resize', function(){
   $(".secondary").find('.col').equalHeights();
 });
 
 $('#template-select').change(function(){
+  var returnParams = "";
+  $( ":text, textarea, select" ).each(function(event) {
+    $value = $(this).val();
+    $label = $(this).attr('name');
+    returnParams += $label + '=' + $value + '&';
+  });
+  $template = $(this).val();
+  $('.return-value').attr('value', 'http://erezzy.dev/process?template-select=/' + $template  + '&' + returnParams);
+});
+
+
+/*$('#template-select').change(function(){
   $template = $(this).val();
   $('.form-horizontal').attr('action', '/' + $template);
+});*/
+$(window).load(function(){
+  $('.process-form').submit();
 });
+
 
 $('.add_education').click(function(){
   $('.education:hidden:first').slideDown();

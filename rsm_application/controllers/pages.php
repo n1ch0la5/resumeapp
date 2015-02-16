@@ -54,6 +54,12 @@ class Pages extends CI_Controller {
 		$this->load->view('includes/template',$data);
 	}
 
+	public function process()
+	{
+		$data['main_content'] = 'process';
+		$this->load->view('includes/template',$data);
+	}
+
 	public function tips()
 	{
 		$data['main_content'] = 'tips';

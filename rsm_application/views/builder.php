@@ -1,6 +1,7 @@
 <h1>Resume Builder</h1>
 <div>
-<form class="form-horizontal" action="/pdf/" method="POST">
+	<!--https://www.paypal.com/cgi-bin/webscr-->
+<form class="form-horizontal" onsubmit="" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <!-- Personal Info -->
 <div class="group">
 	<h3>Personal Information</h2>
@@ -956,16 +957,22 @@ if( isset($resume_info['skills']) && ! empty($resume_info['skills']) )
 	  <h3>Select Resume Template</h3>
 	  <label class="control-label" for="degree">Style</label>
 	  <div class="controls">
-	    <select id="template-select" name="template-select" class="input-small">
+	    <select id="template-select" name="template-select" class="input-small" required="required">
+	    	<option value="">-</option>
 	    	<option value="pdf">Classic</option>
 	    	<option value="executive">Executive</option>
-	    	<option value="modern">Modern</option>
 	    	<option value="tech">Tech</option>
 	    </select>
 	  </div>
 	</div>
 </div>
-<input type="submit" value="submit">
+<!--<input type="submit" value="submit">-->
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="L5PLLHLA9NM7Y">
+<input type="hidden" value="2" name="rm">
+<input class="return-value" type="hidden" name="return" value="http://erezzy.dev/process?template-select=/pdf">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
 </div>
