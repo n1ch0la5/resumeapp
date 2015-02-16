@@ -1,5 +1,6 @@
+<?php $this->load->view('includes/header'); ?>
 <h1><?php echo lang('login_heading');?></h1>
-<p><a href="/oauth/linkedin/">Login with linkedin</a></p>
+<p><a class="linkedin-login" href="/oauth/linkedin/">Login with linkedin</a></p>
 <p><?php echo lang('login_subheading');?></p>
 
 <div id="infoMessage"><?php echo $message;?></div>
@@ -27,3 +28,4 @@
 <?php echo form_close();?>
 
 <p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
+<?php $this->load->view('includes/footer'); ?>

@@ -422,6 +422,7 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
   .elevator {margin-bottom:2em; text-align:center;}
     .elevator p {text-align:left;}
     .elevator .btn {text-transform:uppercase; font-size:1.25em; padding:0.75em;}
+  .linkedin-login {height:50px; width:227px; background:url(/images/loginlinkedin.png) top left no-repeat; text-indent:-99999px; display: block;}
 
   /* Resume Builder Page */
   .resume-preview {border:1px solid #000; padding:1em;
