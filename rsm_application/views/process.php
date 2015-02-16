@@ -1,4 +1,5 @@
-<form style="hidden" class="process-form" action="<?php if (isset($_GET['template-select'])) echo $_GET['template-select']; ?>" method="post" target="_top">
+<img src="/images/loading-x.gif" alt="loading">
+<form style="display:none;" class="process-form" action="<?php if (isset($_GET['template-select'])) echo $_GET['template-select']; ?>" method="post" target="_top">
 	<input id="first_name" name="first_name" type="text" placeholder="First" class="input-large" required="" value="<?php if (isset($_GET['first_name'])) echo $_GET['first_name']; ?>">
   	<input id="last_name" name="last_name" type="text" placeholder="Last" class="input-large" required="" value="<?php if (isset($_GET['last_name'])) echo $_GET['last_name']; ?>">
   	<input id="phone" name="phone" type="text" placeholder="000-000-0000" class="input-large" value="<?php if (isset($_GET['phone'])) echo $_GET['phone']; ?>">
