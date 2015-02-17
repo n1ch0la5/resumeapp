@@ -972,7 +972,7 @@ if( isset($resume_info['skills']) && ! empty($resume_info['skills']) )
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="L5PLLHLA9NM7Y">
 <input type="hidden" value="2" name="rm">
-<input class="return-value" type="hidden" name="return" value="http://erezzy.dev/process?template-select=/pdf">
+<input class="return-value" type="hidden" name="return" value="http://erezzy.com/process?template-select=/pdf">
 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
