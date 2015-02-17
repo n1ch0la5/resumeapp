@@ -359,8 +359,9 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
   /* Homepage */
   .home .site-content {padding-top:0; padding-bottom:0; border-bottom:none;}
   .feature-video {position:relative; /*background:url(/images/fpo.jpg) center top no-repeat; background-size:cover;*/ padding:0; margin:0 -1em; text-align:center;}
-  .feature-video .content {background:rgba(255,255,255,0.85); padding:0.75em 1.25em; display:inline-block; border-radius:5px;}
-  .feature-video h2 {margin-top:0;}
+  .li-home-feature {position:relative;}
+  .li-home-feature .content {position:absolute; top:20%; background:rgba(255,255,255,0.85); padding:0.75em 1.25em; border-radius:5px; width:80%; left:10%;}
+  .li-home-feature h2 {margin-top:0;}
 
   .feature-video .vid {position:absolute; top:0; left:0; right:0; bottom:0;}
 
@@ -485,6 +486,8 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
   .primary h2 {margin:0.45em 0 0.95em;}
   .secondary {margin:0 -2em; padding:0;}
   .secondary .col {margin:0; float:left; width:50%; padding:1em 2em;}
+
+  .li-home-feature .content {top:30%; width:400px; left:50%; margin-left:-200px; font-size:2em; line-height: 1em}
 
   .cta-bar {position:relative;}
   .stuck .cta-bar {margin:0; right:0; left:0;}

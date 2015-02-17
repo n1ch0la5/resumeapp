@@ -961,6 +961,8 @@ if( isset($resume_info['skills']) && ! empty($resume_info['skills']) )
 	    	<option value="">-</option>
 	    	<option value="pdf">Classic</option>
 	    	<option value="executive">Executive</option>
+	    	<option value="modern">Modern</option>
+	    	<option value="simple">Simple</option>
 	    	<option value="tech">Tech</option>
 	    </select>
 	  </div>

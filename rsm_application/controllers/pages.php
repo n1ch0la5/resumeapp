@@ -108,10 +108,10 @@ class Pages extends CI_Controller {
 		//$this->load->view('includes/pdf_template',$data);
 	}
 
-	public function modern()
+	public function simple()
 	{ 
 	    $this->load->helper('dompdf');
-		$data['main_content'] = 'modern';
+		$data['main_content'] = 'simple';
 		$html = $this->load->view('includes/pdf_template',$data, true);
 		pdf_create($html, 'modern Resume');
 		//$data['main_content'] = 'modern';

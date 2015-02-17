@@ -1,14 +1,20 @@
 				<main class="alpha" role="main">
+					<?php if( $this->ion_auth->logged_in() ) : ?>
+					<div class="li-home-feature">
+						<div class="img-container">
+							<img src="images/placeholder.jpg" alt="eRezzy Resume">
+						</div>
+						<div class="content">
+							<p>Welcome back <?php echo $firstname; ?>. Ready to make your resume stand out? <a href="/builder">Get Started</a></p>
+					    </div>
+					</div>
+					<?php else : ?>
 					<div class="feature-video">
 						<div class="video-box">
-							<iframe width="560" height="315" src="//www.youtube.com/embed/sVFHEFPaE_M?autoplay=1" frameborder="0" allowfullscreen></iframe>
+							<iframe width="560" height="315" src="//www.youtube.com/embed/sVFHEFPaE_M?autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
 						</div>
-						<!--<div class="content">
-							<h2>It's Not You, It's Your Resume</h2>
-							<p>Make your resume stand out. Let erezzy help.</p>
-							<a class="watch" href="#" data-id="sVFHEFPaE_Mj"><i class="fa fa-play-circle-o"></i> Watch Our Video</a>
-					    </div>-->
 					</div>
+					<?php endif; ?>
 					<div class="cta-bar is-sticky">
 						<p>Get started on your professional resume today.</p>
 						<a class="green" href="/builder">Create a Resume</a>

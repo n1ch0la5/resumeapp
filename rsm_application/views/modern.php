@@ -5,281 +5,48 @@
 <title>Modern Template</title>
 
 <style type="text/css">
-body{
-	font-family:Arial, Helvetica, sans-serif;	
-}
-
-*{
-	padding:0px;
-	margin:0px;	
-}
-
-p,h1,h2,h3,h4,h5,h6,ul,li{padding:0px;margin:0px;}
-
-ul li{
-	list-style-type:none	
-}
-
-p{line-height:20px;}
-
-.clearfix{clear:both;}
-
-a {text-decoration:none;}
-
-a img{border:0px;}
-
-
-.wrap{
-	width:100%;
-	margin:0 auto;
-	padding:0 10px 0 4px;	
-}
-
-.header{
-	padding:16px 0 0 0;	
-	text-align:center;
-}
-
-.header h1, .header p, .header p a{
-	font-family:Arial, Helvetica, sans-serif;
-	margin-bottom:5px;
-}
-
-.header p a{
-	color:#06F;
-	font-size:12px;	
-}
-.tech-bg2 {
-padding: 16px 0px 0 20px;
-}
-
-.tech-bg3{background:#f4f4f4;}
-.flt{display:inline-block; vertical-align:top;}
-.fltr{display:inline-block; vertical-align:top;}	
-.modern-bg{background:#4e80bb;padding-bottom:20px;}
-.modern-bg .header{width:100%;margin:0 auto;text-align:left;}
-.modern-bg .header .logo{background:url(images/ballon-logo.png) no-repeat;width:195px;height:173px;}
-.modern-bg .top-righti{border-left: 2px solid #a3c4e7;margin-left: 12px;margin-top: 0;padding-left: 12px;width: 70%;}
-.modern-bg .top-righti p{color:#FFF;clear:both;}
-.box1{display:inline-block; vertical-align:top;text-align:center;width:33%;font-size:13px;}
-.box1 a{color:#FFF;}
-.box1 img{display:inline-block; height:50px; margin:15px 0 0 20px;}
-.logo h2{color: #557dbb;font-family: Arial,Helvetica,sans-serif;font-size: 22px;font-weight: 700;margin-top: 19px;text-align: center;width: 97px;}
-.logo h3{color: #557dbb;font-family: Arial,Helvetica,sans-serif;font-size: 22px;font-weight: 800;line-height: 22px;margin-top: 32px;text-align: center;text-transform: uppercase;width: 225px;}
-.tech-bg3 .header p a{color:#557dbb;display: block;font-size: 12px;text-align: center;width: 226px;}
-.new-wrap{border-left:3px solid #dcdcdc;border-top:3px solid #dcdcdc;margin-top:20px;padding-bottom:30px;}
-.new-wrap .lefti{width:20%;text-align:right;font-size:13px;color:#858585;padding-right:30px;}
-.new-wrap .righti{width:70%;}
-.new-wrap .righti h2{font-size:19px;color:#5182ba;}
-.new-wrap .righti h3{font-size:17px;color:#000;}
-.new-wrap .righti p{color:#000;font-size:13px;text-align:justify;}
-.cv-box{padding:20px 0px 0px;}
-.headin-newst{background:#f4f4f4;position:relative;top:-15px;color:#5182ba;font-size:22px;width:155px;left:-10px;padding-bottom:10px;}
-.new-wrap-2{border-top:3px solid #dcdcdc;background:url(images/center-bg.png) center repeat-y;padding-bottom:40px;}
-.boxi1 .headin-newst{background:#f4f4f4;position:relative;top:-15px;color:#5182ba;font-size:22px;width:155px;left:-10px;padding-bottom:10px;clear:both;}
-.boxi2 .headin-newst{background:#f4f4f4;position:relative;top:-15px;color:#5182ba;font-size:22px;width:155px;left:-36px;padding-bottom:10px;clear:both;padding-left:19px;}
-.new-wrap-2 .boxi1 h2, .new-wrap-2 .boxi2 h2{font-size:17px;color:#5182ba;}
-.new-wrap-2 .boxi1 h3, .new-wrap-2 .boxi2 h3{font-size:16px;color:#000;}
-.new-wrap-2 .boxi1 p, .new-wrap-2 .boxi2 p{color:#000;font-size:13px;text-align:justify;}
-.boxi1 {width:288px;margin-bottom:20px;}
-.boxi2{width:288px;margin-right:121px;margin-bottom:20px;}
-.boxi1 p, .boxi1 h2, .boxi1 h3,  .boxi2 p, .boxi2 h2, .boxi2 h3{padding-left:20px;padding-right:5px;}
-	
-	
-
+body{font-family:Arial, Helvetica, sans-serif;	}
+*{padding:0px;margin:0px;}
+h1 {text-align:center; font-size:2em; color:#005A8A;}
+h2 {text-align:center; font-size:1.5em; color:#005A8A; border-bottom:1px solid #000;}
+strong {color:#005A8A;}
+.contact {margin-bottom:1px solid #000;}
 </style>
 
 
 </head>
-<body class="tech-bg3">
+<body>
+<h1><?php if ($_POST["first_name"]) {echo $_POST["first_name"];} ?> <?php if ($_POST["last_name"]) { echo $_POST["last_name"]; } ?></h1>
+<p class='contact'><?php if ($_POST["street"]) {echo $_POST["street"]; ?>&block;<?php if ($_POST["city"]) { echo $_POST["city"]; } ?>, <?php if ($_POST["state"]) { echo $_POST["state"]; } ?> <?php if ($_POST["zip"]) { echo $_POST["zip"]; } ?>&block;<?php if ($_POST["phone"]) {echo 'Phone: '.$_POST["phone"];} ?>&block;<?php if ($_POST["email"]) {echo 'Email: '.$_POST["email"];} ?></p>
+<p class="statement"><?php if ($_POST["statement"]) {echo $_POST["statement"];} ?></p>
 
-<!--==============================--> 
-
-
-  <div class="modern-bg">
-	<div class="header">
-		
-                
-        <div class="logo flt">
-        	<h2>Hello</h2>
-        	<h3>
-            	<?php if ($_POST["first_name"]) {echo $_POST["first_name"];} ?> <br />
-                <?php if ($_POST["last_name"]) { echo $_POST["last_name"]; } ?>
-            </h3>
-			<!--<p><a href="#">www.jhonsmith.com</a></p>-->
-        </div>
-
-        <div class="top-righti flt">
-			<p><?php if ($_POST["statement"]) {echo $_POST["statement"];} ?></p>	
-
-        	<div class="box1">
-            	<img src="images/email.png" alt="" /><br />
-				<a><?php if ($_POST["email"]) {echo $_POST["email"];} ?></a>
-            </div>
-            <div class="box1">
-            	<img src="images/telephone.png" alt=""/><br />
-            	<a><?php if ($_POST["phone"]) {echo $_POST["phone"];} ?></a>
-            </div>
-            <div class="box1">
-            	<img src="images/map.png" alt=""/><br />
-                <a href="#"><?php if ($_POST["city"]) { echo $_POST["city"]; } ?>, <?php if ($_POST["state"]) { echo $_POST["state"]; } ?> </a>
-            </div>
-        		
-        </div>
-		
-
-   </div>     
-
-	<!--=========/Modern BG=============-->
-      <div class="clearfix"></div>  
-	</div>
-
-
-<div class="wrap">
- <div class="bottom-part tech-bg2"> 
-				
-		<div class="new-wrap">   
-				<h1 class="headin-newst">Employment</h1>
-            <div class="cv-box">
-				
-                <div class="lefti flt">
-                	<p><?php if ($_POST["end_date"]) {echo $_POST["start_date"].' - '.$_POST["end_date"]; } else {$_POST["start_date"].'- Current';} ?></p>
-                </div>
-                
-                <div class="righti flt">
-                		<h2><?php if ($_POST["employer"]) {echo $_POST["employer"];} ?></h2>
-                        <h3><?php if ($_POST["title"]) {echo $_POST["title"];} ?></h3>
-                        <p><?php if ($_POST["work_description"]) {echo $_POST["work_description"];} ?></p>	
-                        
-                
-                </div>
-                
-		<!--=============/CV BOX===================-->                
-				<div class="clearfix"></div>
-	    	</div>
+<h2>Professional Experience</h2>
+<p><strong><?php if ($_POST["employer"]) {echo $_POST["employer"];} ?></strong> - <?php if ($_POST["employer_location"]) {echo $_POST["employer_location"];} ?>
+    <br />
+    <em><?php if ($_POST["title"]) {echo $_POST["title"]; ?> - <?php if ($_POST["end_date"]) {echo $_POST["start_date"].' - '.$_POST["end_date"]; } else {echo $_POST["start_date"];} ?></em>
+</p>
+<p><?php if ($_POST["work_description"]) {echo $_POST["work_description"];} ?></p>
 <?php if ($_POST["employer2"]) { ?>
-            <div class="cv-box">
-                
-                <div class="lefti flt">
-                    <p><?php if ($_POST["end_date2"]) {echo $_POST["start_date2"].' - '.$_POST["end_date2"]; } else {$_POST["start_date2"].'- Current';} ?></p>
-                </div>
-                
-                <div class="righti flt">
-                        <h2><?php if ($_POST["employer2"]) {echo $_POST["employer2"];} ?></h2>
-                        <h3><?php if ($_POST["title2"]) {echo $_POST["title2"];} ?></h3>
-                        <p><?php if ($_POST["work_description2"]) {echo $_POST["work_description2"];} ?></p>  
-                        
-                
-                </div>
-                
-        <!--=============/CV BOX===================-->                
-                <div class="clearfix"></div>
-            </div>
+<p><strong><?php if ($_POST["employer2"]) {echo $_POST["employer2"];} ?></strong> - <?php if ($_POST["employer_location2"]) {echo $_POST["employer_location2"];} ?>
+    <br />
+    <em><?php if ($_POST["title2"]) {echo $_POST["title2"]; ?> - <?php if ($_POST["end_date2"]) {echo $_POST["start_date2"].' - '.$_POST["end_date2"]; } else {echo $_POST["start_date2"];} ?></em>
+</p>
+<p><?php if ($_POST["work_description3"]) {echo $_POST["work_description3"];} ?></p>
 <?php } ?>
 <?php if ($_POST["employer3"]) { ?>
-            <div class="cv-box">
-                
-                <div class="lefti flt">
-                    <p><?php if ($_POST["end_date3"]) {echo $_POST["start_date3"].' - '.$_POST["end_date3"]; } else {$_POST["start_date3"].'- Current';} ?></p>
-                </div>
-                
-                <div class="righti flt">
-                        <h2><?php if ($_POST["employer3"]) {echo $_POST["employer3"];} ?></h2>
-                        <h3><?php if ($_POST["title3"]) {echo $_POST["title3"];} ?></h3>
-                        <p><?php if ($_POST["work_description3"]) {echo $_POST["work_description3"];} ?></p>  
-                        
-                
-                </div>
-                
-        <!--=============/CV BOX===================-->                
-                <div class="clearfix"></div>
-            </div>
-<?php } ?>            
-
-
-
-		<!--=============/NEW WRAP===================-->                
-		</div>
-        
-        <div class="new-wrap">   
-                <h1 class="headin-newst">Education</h1>
-            <div class="cv-box">
-                
-                <div class="lefti flt">
-                    <p><?php if ($_POST["school_year"]) {echo $_POST["school_year"];} ?></p>
-                </div>
-                
-                <div class="righti flt">
-                        <h2><?php if ($_POST["school"]) {echo $_POST["school"];} ?></h2>
-                        <h3><?php if ($_POST["degree"]) {echo $_POST["degree"];} ?></h3>
-                        <p><?php if ($_POST["ed_description"]) {echo $_POST["ed_description"];} ?></p>    
-                        
-                
-                </div>
-                
-        <!--=============/CV BOX===================-->                
-                <div class="clearfix"></div>
-            </div>
-<?php if ($_POST["school2"]) { ?>
-            <div class="cv-box">
-                
-                <div class="lefti flt">
-                    <p><?php if ($_POST["school_year2"]) {echo $_POST["school_year2"];} ?></p>
-                </div>
-                
-                <div class="righti flt">
-                        <h2><?php if ($_POST["school2"]) {echo $_POST["school2"];} ?></h2>
-                        <h3><?php if ($_POST["degree2"]) {echo $_POST["degree2"];} ?></h3>
-                        <p><?php if ($_POST["ed_description2"]) {echo $_POST["ed_description2"];} ?></p>    
-                        
-                
-                </div>
-                
-        <!--=============/CV BOX===================-->                
-                <div class="clearfix"></div>
-            </div>
+<p><strong><?php if ($_POST["employer3"]) {echo $_POST["employer3"];} ?></strong> - <?php if ($_POST["employer_location3"]) {echo $_POST["employer_location3"];} ?>
+    <br />
+    <em><?php if ($_POST["title3"]) {echo $_POST["title3"]; ?> - <?php if ($_POST["end_date3"]) {echo $_POST["start_date3"].' - '.$_POST["end_date3"]; } else {echo $_POST["start_date3"];} ?></em>
+</p>
+<p><?php if ($_POST["work_description3"]) {echo $_POST["work_description3"];} ?></p>
 <?php } ?>
-<?php if ($_POST["school3"]) { ?>
-            <div class="cv-box">
-                
-                <div class="lefti flt">
-                    <p><?php if ($_POST["school_year3"]) {echo $_POST["school_year3"];} ?></p>
-                </div>
-                
-                <div class="righti flt">
-                        <h2><?php if ($_POST["school3"]) {echo $_POST["school3"];} ?></h2>
-                        <h3><?php if ($_POST["degree3"]) {echo $_POST["degree3"];} ?></h3>
-                        <p><?php if ($_POST["ed_description3"]) {echo $_POST["ed_description3"];} ?></p>    
-                        
-                
-                </div>
-                
-        <!--=============/CV BOX===================-->                
-                <div class="clearfix"></div>
-            </div>
-<?php } ?>           
 
-
-
-        <!--=============/NEW WRAP===================-->                
-        </div>
-        
-        
-       
-
-	    
-
-
-
-
-     
-<!--=========Bottom Ends===========-->     
- </div>  
-
-<!--=========Wrap Ends===========-->
-</div>
-
-<!--==============================--> 
-
+<h2>Education</h2>
+<p><strong><?php if ($_POST["school"]) {echo $_POST["school"];} ?></strong> - <em><?php if ($_POST["degree"]) {echo $_POST["degree"];} ?><?php if ($_POST["area_of_study"]) {echo ', '.$_POST["area_of_study"];} ?></em><?php if ($_POST["school_year"]) {echo ' - '.$_POST["school_year"];} ?>
+</p>
+<p><strong><?php if ($_POST["school2"]) {echo $_POST["school2"];} ?></strong> - <em><?php if ($_POST["degree2"]) {echo $_POST["degree2"];} ?><?php if ($_POST["area_of_study2"]) {echo ', '.$_POST["area_of_study2"];} ?></em><?php if ($_POST["school_year2"]) {echo ' - '.$_POST["school_year2"];} ?>
+</p>
+<p><strong><?php if ($_POST["school3"]) {echo $_POST["school3"];} ?></strong> - <em><?php if ($_POST["degree3"]) {echo $_POST["degree3"];} ?><?php if ($_POST["area_of_study3"]) {echo ', '.$_POST["area_of_study3"];} ?></em><?php if ($_POST["school_year3"]) {echo ' - '.$_POST["school_year3"];} ?>
+</p>
 </body>
 </html>

@@ -356,3 +356,8 @@ left:50 ,
 menubar:0
 });
 
+$(window).on('load resize', function() {
+  offset = $('.li-home-feature').offset().left;
+  $('.li-home-feature').find('.img-container').css({'margin-left': '-'+offset+'px', 'margin-right': '-'+offset+'px'});
+})
+
