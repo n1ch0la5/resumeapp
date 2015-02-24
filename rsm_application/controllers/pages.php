@@ -56,6 +56,10 @@ class Pages extends CI_Controller {
 
 	public function process()
 	{
+        if($this->input->get('pd') == 1)
+        {
+            // Update database to paid customer
+        }
 		$data['main_content'] = 'process';
 		$this->load->view('includes/template',$data);
 	}
@@ -75,6 +79,7 @@ class Pages extends CI_Controller {
             $this->load->model('resume_model');
             $this->load->model('user_model');
             $resume = $this->resume_model->get_resumes_by_user_id($this->session->userdata('user_id'));
+            $data['paid'] = 1; // Check db to see if user is paid
             $data['resume_info'] = $this->resume_model->get_resume_data_by_resume_id( $resume[0]['id'] );
             $data['profile_info'] = $this->user_model->get_user_profile_info_by_user_id( $this->session->userdata('user_id') );   
         }
