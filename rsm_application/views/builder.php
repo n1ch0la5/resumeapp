@@ -1,4 +1,5 @@
 <h1>Resume Builder</h1>
+<p><a class="linkedin-login" href="/oauth/linkedin/">Login with linkedin</a></p>
 <div>
 	<!--https://www.paypal.com/cgi-bin/webscr-->
 <form class="form-horizontal" onsubmit="" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
