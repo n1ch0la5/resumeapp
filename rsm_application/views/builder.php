@@ -934,6 +934,118 @@ else :
 	  </div>
 	</div>
 </div>
+<!-- Experience 4-->
+<div class="group experience four">
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="employer4">Employer</label>
+	  <div class="controls">
+	    <input id="employer4" name="employer4" type="text" placeholder="Job Inc." class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="employer_location4">Employer Location</label>
+	  <div class="controls">
+	    <input id="employer_location4" name="employer_location4" type="text" placeholder="Woodbridge, CT" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="title4">Title</label>
+	  <div class="controls">
+	    <input id="title4" name="title4" type="text" placeholder="Chief Executive Officer" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="start_date4">Start Date</label>
+	  <div class="controls">
+	    <input id="start_date4" name="start_date4" type="text" placeholder="2008" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="end_date4">End Date</label>
+	  <div class="controls">
+	    <input id="end_date4" name="end_date4" type="text" placeholder="2011" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="work_description3">Description</label>
+	  <div class="controls">
+	    <textarea rows="4" cols="50" id="work_description4" name="work_description4" class="input-large"></textarea>
+	    
+	  </div>
+	</div>
+</div>
+<!-- Experience 4-->
+<div class="group experience five">
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="employer5">Employer</label>
+	  <div class="controls">
+	    <input id="employer5" name="employer5" type="text" placeholder="Job Inc." class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="employer_location5">Employer Location</label>
+	  <div class="controls">
+	    <input id="employer_location5" name="employer_location5" type="text" placeholder="Woodbridge, CT" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="title5">Title</label>
+	  <div class="controls">
+	    <input id="title5" name="title5" type="text" placeholder="Chief Executive Officer" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="start_date5">Start Date</label>
+	  <div class="controls">
+	    <input id="start_date5" name="start_date5" type="text" placeholder="2008" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="end_date5">End Date</label>
+	  <div class="controls">
+	    <input id="end_date5" name="end_date5" type="text" placeholder="2011" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="work_description5">Description</label>
+	  <div class="controls">
+	    <textarea rows="4" cols="50" id="work_description5" name="work_description5" class="input-large"></textarea>
+	    
+	  </div>
+	</div>
+</div>
 <?php endif; ?>
 <div class="expand add_experience"><a>Add Work Experience</a></div>
 <div class="group">
