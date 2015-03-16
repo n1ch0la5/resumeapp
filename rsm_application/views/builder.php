@@ -3,6 +3,21 @@
 <div>
 	<!--https://www.paypal.com/cgi-bin/webscr-->
 <form class="form-horizontal" onsubmit="" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<!-- Resume Template -->
+	<div class="control-group">
+	  <h3>Select Resume Template</h3>
+	  <label class="control-label" for="degree">Style</label>
+	  <div class="controls">
+	    <select id="template-select" name="template-select" class="input-small" required="required">
+	    	<option value="">-</option>
+	    	<option value="pdf">Classic</option>
+	    	<option value="executive">Executive</option>
+	    	<option value="modern">Modern</option>
+	    	<option value="simple">Simple</option>
+	    	<option value="tech">Tech</option>
+	    </select>
+	  </div>
+	</div>
 <!-- Personal Info -->
 <div class="group">
 	<h3>Personal Information</h2>
@@ -1064,22 +1079,14 @@ if( isset($resume_info['skills']) && ! empty($resume_info['skills']) )
     ?>
     <textarea id="interests" name="interests" style="width:100%" rows="10"><?php echo $skills; ?></textarea>
 
-
-	<!-- Resume Template -->
+<!-- agree to terms-->
 	<div class="control-group">
-	  <h3>Select Resume Template</h3>
-	  <label class="control-label" for="degree">Style</label>
+	  <label class="control-label" for="accept_terms"> I agree to the <a class="newWin" href="/privacy.html">terms of service.</a></label>
 	  <div class="controls">
-	    <select id="template-select" name="template-select" class="input-small" required="required">
-	    	<option value="">-</option>
-	    	<option value="pdf">Classic</option>
-	    	<option value="executive">Executive</option>
-	    	<option value="modern">Modern</option>
-	    	<option value="simple">Simple</option>
-	    	<option value="tech">Tech</option>
-	    </select>
+			<input id="accept_terms" name="accept_terms" type="checkbox" required>   
 	  </div>
 	</div>
+	
 </div>
 <!--<input type="submit" value="submit">-->
 <input type="hidden" name="cmd" value="_s-xclick">

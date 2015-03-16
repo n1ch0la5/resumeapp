@@ -256,7 +256,7 @@ $(window).on('load resize', function(){
   $(".secondary").find('.col').equalHeights();
 });
 
-$('#template-select').change(function(){
+$('#accept_terms').click(function(){
   var returnParams = "";
   $( ":text, textarea, select" ).each(function(event) {
     $value = $(this).val();
