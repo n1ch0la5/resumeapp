@@ -27,32 +27,32 @@
 						<div class="col col1">
 							<div class="image"><img src="/images/file.png" alt="What is eRezzy?" /></div>
 							<h3>What is eRezzy?</h3>
-							<p>eRezzy provides the tools to build a customizable resume that helps job seekers take the next step in their career. With a better resume, you’re more likely to earn a better job.</p>
+							<p>eRezzy provides the tools to build a customizable resume that helps job seekers take the next step in their career. With a better resume, you’re more likely to land a better job.</p>
 						</div>
 						<div class="col col2">
 							<div class="image"><img src="/images/macbook.png" alt="How Does it Work?" /></div>
 							<h3>How Does it Work?</h3>
-							<p>You tell us about your career. We suggest the best way to format it in a resume. Enter your work history, select from key phrases, and let erezzy handle the rest.</p>
+							<p>You tell us about your career. We suggest the best way to format it in a resume. Enter your work history, select from key phrases, and let eRezzy handle the rest.</p>
 						</div>
 						<div class="col col3">
 							<div class="image"><img src="/images/browser.png" alt="Key Phrases" /></div>
 							<h3>Key Phrases</h3>
-							<p>Recruiters screen hundreds of resumes, looking for the words that will make candidates stand out. Erezzy lets you build those words into your resume at the start.</p>
+							<p>Recruiters screen hundreds of resumes, looking for the words that will make candidates stand out. eRezzy lets you build those words into your resume at the start.</p>
 						</div>
 					</div>
 					<div class="secondary two-col">
 						<div class="col col1">
 							<h3>Resume Templates</h3>
 							<ul class="arrow">
-								<li>Take some of the hassle out of job hunting</li>
-								<li>Clearly tell your future employer about your work experience</li>
+								<li>Take some of the hassle out of resume writing by choosing one of our customizable templates</li>
+								<li>Create a clear and concise resume with eRezzy</li>
 							</ul>
 						</div>
 						<div class="col col2">
 							<h3>eRezzy Helps You</h3>
 							<ul class="arrow">
 								<li>Put your tailored resume in more hands, faster</li>
-								<li>Build a professional resume</li>
+								<li>Build a professional resume in seconds</li>
 							</ul>
 						</div>
 					</div>

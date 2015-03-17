@@ -1,7 +1,23 @@
 <h1>Resume Builder</h1>
+<p><a class="linkedin-login" href="/oauth/linkedin/">Login with linkedin</a></p>
 <div>
 	<!--https://www.paypal.com/cgi-bin/webscr-->
 <form class="form-horizontal" onsubmit="" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<!-- Resume Template -->
+	<div class="control-group">
+	  <h3>Select Resume Template</h3>
+	  <label class="control-label" for="degree">Style</label>
+	  <div class="controls">
+	    <select id="template-select" name="template-select" class="input-small" required="required">
+	    	<option value="">-</option>
+	    	<option value="pdf">Classic</option>
+	    	<option value="executive">Executive</option>
+	    	<option value="modern">Modern</option>
+	    	<option value="simple">Simple</option>
+	    	<option value="tech">Tech</option>
+	    </select>
+	  </div>
+	</div>
 <!-- Personal Info -->
 <div class="group">
 	<h3>Personal Information</h2>
@@ -933,6 +949,118 @@ else :
 	  </div>
 	</div>
 </div>
+<!-- Experience 4-->
+<div class="group experience four">
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="employer4">Employer</label>
+	  <div class="controls">
+	    <input id="employer4" name="employer4" type="text" placeholder="Job Inc." class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="employer_location4">Employer Location</label>
+	  <div class="controls">
+	    <input id="employer_location4" name="employer_location4" type="text" placeholder="Woodbridge, CT" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="title4">Title</label>
+	  <div class="controls">
+	    <input id="title4" name="title4" type="text" placeholder="Chief Executive Officer" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="start_date4">Start Date</label>
+	  <div class="controls">
+	    <input id="start_date4" name="start_date4" type="text" placeholder="2008" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="end_date4">End Date</label>
+	  <div class="controls">
+	    <input id="end_date4" name="end_date4" type="text" placeholder="2011" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="work_description3">Description</label>
+	  <div class="controls">
+	    <textarea rows="4" cols="50" id="work_description4" name="work_description4" class="input-large"></textarea>
+	    
+	  </div>
+	</div>
+</div>
+<!-- Experience 4-->
+<div class="group experience five">
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="employer5">Employer</label>
+	  <div class="controls">
+	    <input id="employer5" name="employer5" type="text" placeholder="Job Inc." class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="employer_location5">Employer Location</label>
+	  <div class="controls">
+	    <input id="employer_location5" name="employer_location5" type="text" placeholder="Woodbridge, CT" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="title5">Title</label>
+	  <div class="controls">
+	    <input id="title5" name="title5" type="text" placeholder="Chief Executive Officer" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="start_date5">Start Date</label>
+	  <div class="controls">
+	    <input id="start_date5" name="start_date5" type="text" placeholder="2008" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="end_date5">End Date</label>
+	  <div class="controls">
+	    <input id="end_date5" name="end_date5" type="text" placeholder="2011" class="input-large">
+	    
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="work_description5">Description</label>
+	  <div class="controls">
+	    <textarea rows="4" cols="50" id="work_description5" name="work_description5" class="input-large"></textarea>
+	    
+	  </div>
+	</div>
+</div>
 <?php endif; ?>
 <div class="expand add_experience"><a>Add Work Experience</a></div>
 <div class="group">
@@ -951,22 +1079,14 @@ if( isset($resume_info['skills']) && ! empty($resume_info['skills']) )
     ?>
     <textarea id="interests" name="interests" style="width:100%" rows="10"><?php echo $skills; ?></textarea>
 
-
-	<!-- Resume Template -->
+<!-- agree to terms-->
 	<div class="control-group">
-	  <h3>Select Resume Template</h3>
-	  <label class="control-label" for="degree">Style</label>
+	  <label class="control-label" for="accept_terms"> I agree to the <a class="newWin" href="/privacy.html">terms of service.</a></label>
 	  <div class="controls">
-	    <select id="template-select" name="template-select" class="input-small" required="required">
-	    	<option value="">-</option>
-	    	<option value="pdf">Classic</option>
-	    	<option value="executive">Executive</option>
-	    	<option value="modern">Modern</option>
-	    	<option value="simple">Simple</option>
-	    	<option value="tech">Tech</option>
-	    </select>
+			<input id="accept_terms" name="accept_terms" type="checkbox" required>   
 	  </div>
 	</div>
+	
 </div>
 <?php if($paid) : ?>
     <input type="submit" value="submit">

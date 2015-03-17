@@ -123,7 +123,7 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {border:0; padding:0;}
 textarea {overflow:auto; vertical-align:top; max-width:100%;}
 .education, .experience {margin-top:2em;}
-.education.two, .education.three, .experience.two, .experience.three {display:none;}
+.education.two, .education.three, .experience.two, .experience.three, .experience.four {display:none;}
 .expand a:hover {cursor:pointer;}
 
 

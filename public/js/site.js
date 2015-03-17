@@ -219,7 +219,7 @@ $(document).ready(function(){
 $('.watch').click(function(event) {
   event.preventDefault();
   var $src = $(this).attr("data-id");
-  $('.feature-video > .content').replaceWith('<iframe width="560" height="315" src="//www.youtube.com/embed/' + $src + '?autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>');
+  $('.feature-video > .content').replaceWith('<iframe width="560" height="315" src="//www.youtube.com/embed/' + $src + '?autoplay=1&rel=0&controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>');
   $('.feature-video').css('padding', '0').fitVids();
 });
 
@@ -256,7 +256,7 @@ $(window).on('load resize', function(){
   $(".secondary").find('.col').equalHeights();
 });
 
-$('#template-select').change(function(){
+$('#accept_terms').click(function(){
   var returnParams = "";
   $( ":text, textarea, select" ).each(function(event) {
     $value = $(this).val();
