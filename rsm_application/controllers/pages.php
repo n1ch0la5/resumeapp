@@ -73,13 +73,14 @@ class Pages extends CI_Controller {
 	{
         $data['resume_info'] = null;
         $data['profile_info'] = null;
+        $data['paid'] = null;
         
         if( $this->ion_auth->logged_in() )
         {
             $this->load->model('resume_model');
             $this->load->model('user_model');
             $resume = $this->resume_model->get_resumes_by_user_id($this->session->userdata('user_id'));
-            $data['paid'] = 1; // Check db to see if user is paid
+            $data['paid'] = false; // Check db to see if user is paid
             $data['resume_info'] = $this->resume_model->get_resume_data_by_resume_id( $resume[0]['id'] );
             $data['profile_info'] = $this->user_model->get_user_profile_info_by_user_id( $this->session->userdata('user_id') );   
         }
