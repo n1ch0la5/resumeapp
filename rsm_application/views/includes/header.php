@@ -28,6 +28,7 @@
 				<div class="logo">
 					<h1><a href="/">eRezzy</a></h1>
 				</div>
+				<a class="buynow" href="/builder"><img src="/images/buy.jpg" alt="buy now"></a>
 				<p class="button-menu transform"><a href="#nav"><span></span></a></p>
 				<nav class="sign-in">
                 <?php if( $this->ion_auth->logged_in() ) : ?>

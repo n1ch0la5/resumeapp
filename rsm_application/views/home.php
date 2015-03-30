@@ -18,7 +18,6 @@
 					<div class="cta-bar is-sticky">
 						<p>Get started on your professional resume today.</p>
 						<a class="green" href="/builder">Create a Resume</a>
-						<a class="white icon-arrow-right" href="">Sign Up</a>
 					</div>
 					<div class="trust">
 					</div>
