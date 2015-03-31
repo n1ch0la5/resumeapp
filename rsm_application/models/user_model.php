@@ -41,12 +41,21 @@ class user_model extends CI_Model{
     
     function get_user_profile_info_by_user_id($user_id)
     {
-        $this->db->select('user_profiles.*, user_contact.*, user_emails.email, user_phone_numbers.number');
+       /* $this->db->select('user_profiles.*, user_contact.*, user_emails.email, user_phone_numbers.number');
         $this->db->from('user_profiles, user_contact, user_emails, user_phone_numbers');
         $this->db->where("user_profiles.user_id = $user_id");
         $this->db->where("user_contact.user_id = $user_id");
         $this->db->where("user_emails.user_id = $user_id");
         $this->db->where("user_phone_numbers.user_id = $user_id");
+        $query = $this->db->get();
+        return $query->result_array();
+        */
+        $this->db->select('up.*, uc.*, ue.email, un.number');
+        $this->db->from('user_profiles up');
+        $this->db->where('up.user_id', $user_id);
+        $this->db->join('user_contact uc', 'uc.user_id = up.user_id', 'left');
+        $this->db->join('user_emails ue', 'ue.user_id = up.user_id', 'left');
+        $this->db->join('user_phone_numbers un', 'un.user_id = up.user_id', 'left');
         $query = $this->db->get();
         return $query->result_array();
     }
