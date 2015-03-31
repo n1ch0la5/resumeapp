@@ -79,10 +79,14 @@ class Pages extends CI_Controller {
         {
             $this->load->model('resume_model');
             $this->load->model('user_model');
-            $resume = $this->resume_model->get_resumes_by_user_id($this->session->userdata('user_id'));
+            $user_id = $this->session->userdata('user_id');
+            $resume = $this->resume_model->get_resumes_by_user_id( $user_id );
             $data['paid'] = false; // Check db to see if user is paid
             $data['resume_info'] = $this->resume_model->get_resume_data_by_resume_id( $resume[0]['id'] );
-            $data['profile_info'] = $this->user_model->get_user_profile_info_by_user_id( $this->session->userdata('user_id') );   
+            $data['profile_info'] = $this->user_model->get_user_profile_info_by_user_id( $user_id );   
+            
+            print_r($data['profile_info']);
+            exit();
         }
         
 		$data['main_content'] = 'builder';
