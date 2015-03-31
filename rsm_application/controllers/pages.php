@@ -5,6 +5,7 @@ class Pages extends CI_Controller {
 	public function __construct()
    {
         parent::__construct();
+        date_default_timezone_set('America/New_York');
        	$this->load->library('ion_auth');
        	$uri = end($this->uri->segments);
        	if($uri == ''){$page_class = 'home';}else{$page_class = $uri;}
