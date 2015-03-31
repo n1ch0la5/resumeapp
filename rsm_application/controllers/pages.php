@@ -85,6 +85,7 @@ class Pages extends CI_Controller {
             $data['resume_info'] = $this->resume_model->get_resume_data_by_resume_id( $resume[0]['id'] );
             $data['profile_info'] = $this->user_model->get_user_profile_info_by_user_id( $user_id );   
             
+            print_r( $this->session->all_userdata() );
             print_r($data['profile_info']);
             exit();
         }
