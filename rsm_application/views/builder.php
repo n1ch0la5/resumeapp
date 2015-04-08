@@ -1096,7 +1096,7 @@ if( isset($resume_info['skills']) && ! empty($resume_info['skills']) )
     <input type="hidden" value="2" name="rm">
     <input class="return-value" type="hidden" name="return" value="http://erezzy.com/process?template-select=/pdf&pd=1">
     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"><br />($29.99)
 <?php endif; ?>
 
 </form>

@@ -356,8 +356,6 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
   .col {margin-bottom:2em;}
   .home .col {margin-bottom:0;}
 
-  .buynow {display:inline-block; width:150px; margin-left:3em;}
-
   /* Homepage */
   .home .site-content {padding-top:0; padding-bottom:0; border-bottom:none;}
   .feature-video {position:relative; /*background:url(/images/fpo.jpg) center top no-repeat; background-size:cover;*/ padding:0; margin:0 -1em; text-align:center;}
@@ -368,7 +366,7 @@ figcaption {display:block; text-align:left; line-height:1.5em;}
   .feature-video .vid {position:absolute; top:0; left:0; right:0; bottom:0;}
 
   .cta-bar {padding:1em 1em 1.25em 1em; margin:0 -1em; background:#2e3f53; color:#fff; text-align:center; font-family:Lato, "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif; font-weight:300;}
-    .cta-bar a {display:inline-block; vertical-align:top; min-width: 10em; margin:0.35em 0.45em 0 0.4em; padding:.5em .875em .6em; color:#fff; font-size:1.25em; text-decoration:none; border:3px solid #fff; text-align: center;
+    .cta-bar a {display:inline-block; vertical-align:top; width:150px; margin:0.35em 0.45em 0 0.4em; padding:0; color:#fff; font-size:1.25em; text-decoration:none; border:3px solid #fff; text-align: center;
       -webkit-border-radius: 8px;
          -moz-border-radius: 8px;
               border-radius: 8px;
