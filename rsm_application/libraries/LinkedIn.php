@@ -23,6 +23,15 @@ class LinkedIn {
         {
             // Insert Profile data
             $user_info_profile_data = array('firstname' => $user_info['first-name'], 'lastname' => $user_info['last-name']);
+            // Check if summary (personal statement) is set
+            if(isset($user_info['summary']))
+            {
+                $user_info_profile_data['summary'] = $user_info['summary'];
+            }
+            else
+            {
+                $user_info_profile_data['summary'] = '';
+            }
             $this->user_model->insert_user_profile_data($user_info_profile_data, $user_id);
 
             // Insert Email Address
@@ -35,7 +44,7 @@ class LinkedIn {
                 $data = array('phone_type' => $phone['phone-type'], 'number' => $phone['phone-number'] );
                 $this->user_model->insert_user_phone($data, $user_id);
             }
-
+            
             // Insert Skills
             if( $user_info['skills']['@attributes']['total'] > 1 )
             {

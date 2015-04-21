@@ -159,6 +159,7 @@ class user_model extends CI_Model{
             'salutation'     => (isset($data['salutation']) ? $data['salutation'] : ''),
             'suffix'         => (isset($data['suffix']) ? $data['suffix'] : ''),
             'birth_date'     => (isset($data['birth_date']) ? $data['birth_date'] : ''),
+            'summary'        => (isset($data['summary']) ? $data['summary'] : ''),
             'created_at'     => $created
         );
 

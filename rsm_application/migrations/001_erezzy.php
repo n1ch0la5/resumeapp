@@ -51,6 +51,9 @@ class Migration_erezzy extends CI_Migration {
 				'type' => 'VARCHAR',
 				'constraint' => '20'
 			),
+            'summary' => array(
+                'type' => 'TEXT'
+            ),
             'linkedin_data_import' => array(
                 'type' => 'TINYINT',
                 'constraint' => '1'
@@ -77,6 +80,7 @@ class Migration_erezzy extends CI_Migration {
 				'salutation' => 'Mr.',
 				'suffix' => 'Jr.',
 				'birth_date' => '12/25/1985',
+                'summary' => 'This is my summary.',
 				'created_at' => date('Y-m-d H:i:s')
 			)
 		);

@@ -146,7 +146,7 @@
 
 	<!-- Textarea -->
 	  <h3><label for="statement">Personal Statement</label> </h2>            
-	  <textarea id="statement" name="statement" style="width:100%" rows="10"></textarea>
+    <textarea id="statement" name="statement" style="width:100%" rows="10"><?php if($profile_info){echo $profile_info[0]['summary'];} ?></textarea>
 </div>
 <?php 
 if( $resume_info['schools'] ) :
@@ -714,7 +714,7 @@ else :
 <?php endif; ?>
 <div class="expand add_education"><a>Add Education</a></div>
 <?php
-    if( $resume_info['companies'] ) :
+    if( isset($resume_info['companies']) ) :
     $ed_num = array('one', 'two', 'three');
     for($i=0;$i<=2;$i++) :
     if($i >= 1){$n = $i+1;}else{$n=null;}
