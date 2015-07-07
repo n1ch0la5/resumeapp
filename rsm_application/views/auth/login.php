@@ -1,5 +1,6 @@
 <?php $this->load->view('includes/header'); ?>
 <h1><?php echo lang('login_heading');?></h1>
+<p><em>By clicking Login with LinkedIn, you agree to let erezzy store your LinkedIn profile information.</em></p>
 <p><a class="linkedin-login" href="/oauth/linkedin/">Login with linkedin</a></p>
 <p><?php echo lang('login_subheading');?></p>
 
