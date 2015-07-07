@@ -32,8 +32,10 @@ class OAuth_Provider_Linkedin extends OAuth_Provider {
 	public function get_user_info(OAuth_Consumer $consumer, OAuth_Token $token)
 	{
 		// Create a new GET request with the required parameters
-        $url = 'https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,phone-numbers,main-address,headline,honors,interests,specialties,skills,certifications,educations,courses,member-url-resources,summary,picture-url,positions,primary-twitter-account,public-profile-url)';
-		$request = OAuth_Request::forge('resource', 'GET', $url, array(
+        //$url = 'https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,phone-numbers,main-address,headline,honors,interests,specialties,skills,certifications,educations,courses,member-url-resources,summary,picture-url,positions,primary-twitter-account,public-profile-url)';
+        $url = 'https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,headline,specialties,summary,picture-url,positions,public-profile-url)';
+
+        $request = OAuth_Request::forge('resource', 'GET', $url, array(
 			'oauth_consumer_key' => $consumer->key,
 			'oauth_token' => $token->access_token,
 		));
