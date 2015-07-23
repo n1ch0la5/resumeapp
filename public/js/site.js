@@ -256,7 +256,7 @@ $(window).on('load resize', function(){
   $(".secondary").find('.col').equalHeights();
 });
 
-$('#accept_terms').click(function(){
+/*$('#accept_terms').click(function(){
   var returnParams = "";
   $( ":text, textarea, select" ).each(function(event) {
     $value = $(this).val();
@@ -264,16 +264,13 @@ $('#accept_terms').click(function(){
     returnParams += $label + '=' + $value + '&';
   });
   $template = $(this).val();
-  $('.return-value').attr('value', 'http://erezzy.dev/process?template-select=/' + $template  + '&' + returnParams);
-});
+  $('.form-horizontal').attr('action', '/' + $template  + '&' + returnParams);
+});*/
 
 
-/*$('#template-select').change(function(){
+$('#template-select').change(function(){
   $template = $(this).val();
   $('.form-horizontal').attr('action', '/' + $template);
-});*/
-$(window).load(function(){
-  $('.process-form').submit();
 });
 
 

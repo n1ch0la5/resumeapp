@@ -6,7 +6,7 @@
 <!--
 <form class="form-horizontal" onsubmit="" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 -->
-<form class="form-horizontal" onsubmit="" action="http://erezzy.com/process?template-select=/pdf&pd=1" method="post" target="_top">
+<form class="form-horizontal" onsubmit="" action="/pdf" method="post" target="_top">
 <!-- Resume Template -->
 	<div class="control-group">
 	  <h3>Select Resume Template</h3>
