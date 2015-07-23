@@ -17,8 +17,7 @@
 					<?php endif; ?>
 					<div class="cta-bar is-sticky">
 						<p>Get started on your free professional resume today</p>
-						<a class="buynow" href="/builder"><img src="/images/buy.jpg" alt="buy now"></a>
-						<!--<a class="green" href="/builder">Create a Resume</a>-->
+						<a class="green" href="/builder">Get Started</a>
 					</div>
 					<div class="trust">
 					</div>
